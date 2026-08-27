@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "raw_files": [
+    {
+      "path": "workspace/data_raw/附件1.xlsx",
+      "sha256": "b799a137294a5c5497fed9667c5dfed6c967f1fb180316c5adc8509cfa6f0932",
+      "readonly": true
+    },
+    {
+      "path": "workspace/data_raw/附件2.xlsx",
+      "sha256": "869081a3ab47d3bf8d0955106b622aaf0fd2c068fada7948da69b20ebf1d00ce",
+      "readonly": true
+    },
+    {
+      "path": "workspace/data_raw/附件3/result1_1.xlsx",
+      "sha256": "4f2484c0d70a5c4d047163f2ee6ef486949e813330466f46def4bd7d98af06af",
+      "readonly": true
+    },
+    {
+      "path": "workspace/data_raw/附件3/result1_2.xlsx",
+      "sha256": "6166d43f5a64bf9d1657e80d4aee7f10f54bb1a5695b81a28a0ac5e657297649",
+      "readonly": true
+    },
+    {
+      "path": "workspace/data_raw/附件3/result2.xlsx",
+      "sha256": "6a1ba9fc28d14d0a4a795e5f0b7261fb6e32165517afee62bcd1931aba5bee8a",
+      "readonly": true
+    }
+  ],
+  "attachment_mapping": [
+    {
+      "file": "附件1.xlsx",
+      "sheets": [
+        "乡村的现有耕地(54地块)",
+        "乡村种植的农作物(41作物)"
+      ],
+      "maps_to": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "role": "地块/作物/适宜性"
+    },
+    {
+      "file": "附件2.xlsx",
+      "sheets": [
+        "2023年的农作物种植情况(87条)",
+        "2023年统计的相关数据(107条)"
+      ],
+      "maps_to": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "role": "2023基准/亩产/成本/价格区间"
+    },
+    {
+      "file": "附件3/result1_1.xlsx",
+      "maps_to": [
+        "Q1"
+      ],
+      "role": "情形1输出模板"
+    },
+    {
+      "file": "附件3/result1_2.xlsx",
+      "maps_to": [
+        "Q1"
+      ],
+      "role": "情形2输出模板"
+    },
+    {
+      "file": "附件3/result2.xlsx",
+      "maps_to": [
+        "Q2"
+      ],
+      "role": "Q2输出模板"
+    }
+  ],
+  "fields": [
+    {
+      "name": "plot_id",
+      "n": 54,
+      "type": "str",
+      "notes": "54地块; A-F系列"
+    },
+    {
+      "name": "plot_type",
+      "n": 6,
+      "levels": {
+        "平旱地": 365.0,
+        "梯田": 619.0,
+        "山坡地": 108.0,
+        "水浇地": 109.0,
+        "普通大棚": 9.599999999999998,
+        "智慧大棚": 2.4
+      },
+      "notes": "类型面积不平衡: 梯田619亩 vs 智慧大棚2.4亩"
+    },
+    {
+      "name": "crop_id",
+      "n": 41,
+      "type": "int 1..41",
+      "notes": "与模板列序一致"
+    },
+    {
+      "name": "yield_jin_per_mu",
+      "n": 107,
+      "notes": "107条, 全部>0"
+    },
+    {
+      "name": "cost_yuan_per_mu",
+      "n": 107,
+      "notes": "107条, 全部>0"
+    },
+    {
+      "name": "price",
+      "n": 107,
+      "type": "区间字符串",
+      "notes": "全部解析为[low, high]; 代表值口径待人工定"
+    },
+    {
+      "name": "expected_sales",
+      "n": 0,
+      "type": "缺失字段",
+      "notes": "附件中不存在该字段; 候选来源见production_2023_candidate"
+    }
+  ],
+  "quality": {
+    "missingness": {
+      "expected_sales": "字段完全缺失（附件2无此列），2023产量候选派生见concentration_metrics",
+      "attachment1_crop_suitability": "合并单元格锚点值已填充，无行缺失",
+      "attachment2_planting_plot_name": "26处合并单元格已按锚点填充，无缺失",
+      "stats_2023": "107/107 行字段完整"
+    },
+    "duplicates": {
+      "planting_keys": {},
+      "stats_keys": {}
+    },
+    "impossible_values": [],
+    "outliers": {
+      "widest_price_intervals": [
+        {
+          "crop": "南瓜",
+          "type": "平旱地",
+          "season": "单季",
+          "high_over_low": 2.0
+        },
+        {
+          "crop": "南瓜",
+          "type": "梯田",
+          "season": "单季",
+          "high_over_low": 2.0
+        },
+        {
+          "crop": "南瓜",
+          "type": "山坡地",
+          "season": "单季",
+          "high_over_low": 2.0
+        },
+        {
+          "crop": "空心菜",
+          "type": "水浇地",
+          "season": "第一季",
+          "high_over_low": 2.0
+        },
+        {
+          "crop": "空心菜",
+          "type": "普通大棚",
+          "season": "第一季",
+          "high_over_low": 2.0
+        },
+        {
+          "crop": "空心菜",
+          "type": "智慧大棚",
+          "season": "第二季",
+          "high_over_low": 2.0
+        }
+      ],
+      "note": "价格区间宽度大不构成错误，但代表值选择影响收益口径"
+    }
+  },
+  "coverage": {
+    "rows": 107,
+    "effective_sample_size": 107,
+    "time_range": "2023年单年截面",
+    "time_gaps": "无时间序列数据；Q2变化率只来自题面文字",
+    "stats_combo_coverage": {
+      "required_combos": 125,
+      "available_in_stats": 107,
+      "derived_from_note2": [
+        "(17, '智慧大棚', '第一季')",
+        "(18, '智慧大棚', '第一季')",
+        "(19, '智慧大棚', '第一季')",
+        "(20, '智慧大棚', '第一季')",
+        "(21, '智慧大棚', '第一季')",
+        "(22, '智慧大棚', '第一季')",
+        "(23, '智慧大棚', '第一季')",
+        "(24, '智慧大棚', '第一季')",
+        "(25, '智慧大棚', '第一季')",
+        "(26, '智慧大棚', '第一季')",
+        "(27, '智慧大棚', '第一季')",
+        "(28, '智慧大棚', '第一季')",
+        "(29, '智慧大棚', '第一季')",
+        "(30, '智慧大棚', '第一季')",
+        "(31, '智慧大棚', '第一季')",
+        "(32, '智慧大棚', '第一季')",
+        "(33, '智慧大棚', '第一季')",
+        "(34, '智慧大棚', '第一季')"
+      ],
+      "missing_after_derivation": []
+    }
+  },
+  "distribution_risks": {
+    "class_imbalance": {
+      "plot_type_area_mu": {
+        "平旱地": 365.0,
+        "梯田": 619.0,
+        "山坡地": 108.0,
+        "水浇地": 109.0,
+        "普通大棚": 9.599999999999998,
+        "智慧大棚": 2.4
+      }
+    },
+    "rare_categories": [
+      "食用菌4种(仅普通大棚第二季)",
+      "水稻1种(仅水浇地单季)"
+    ],
+    "high_cardinality": [],
+    "redundancy_warnings": [
+      "普通大棚第一季与智慧大棚第一季亩产/成本/价格完全相同（附件2注2，非冗余错误）",
+      "大白菜/白萝卜/红萝卜仅水浇地第二季3种组合"
+    ],
+    "concentration_metrics": {
+      "top3_crops_2023_area_share": 0.4288,
+      "top_crops_2023": [
+        {
+          "crop_id": 6,
+          "area_mu": 222.0
+        },
+        {
+          "crop_id": 8,
+          "area_mu": 185.0
+        },
+        {
+          "crop_id": 1,
+          "area_mu": 147.0
+        },
+        {
+          "crop_id": 7,
+          "area_mu": 135.0
+        },
+        {
+          "crop_id": 4,
+          "area_mu": 96.0
+        }
+      ],
+      "production_2023_candidate_expected_sales_jin": {
+        "1": 57000.0,
+        "2": 21850.0,
+        "3": 22400.0,
+        "4": 33040.0,
+        "5": 9875.0,
+        "6": 170840.0,
+        "7": 132750.0,
+        "8": 71400.0,
+        "9": 30000.0,
+        "10": 12500.0,
+        "11": 1500.0,
+        "12": 35100.0,
+        "13": 36000.0,
+        "14": 14000.0,
+        "15": 10000.0,
+        "16": 21000.0,
+        "17": 36480.0,
+        "18": 26880.0,
+        "19": 6480.0,
+        "20": 30000.0,
+        "21": 36210.0,
+        "22": 45360.0,
+        "23": 900.0,
+        "24": 2610.0,
+        "25": 3600.0,
+        "26": 4050.0,
+        "27": 4500.0,
+        "28": 35480.0,
+        "29": 13050.0,
+        "30": 2850.0,
+        "31": 1200.0,
+        "32": 3600.0,
+        "33": 1800.0,
+        "34": 1800.0,
+        "35": 150000.0,
+        "36": 100000.0,
+        "37": 36000.0,
+        "38": 9000.0,
+        "39": 7200.0,
+        "40": 18000.0,
+        "41": 4200.0
+      }
+    }
+  },
+  "per_question_readiness": {
+    "Q1": "ready_with_warnings",
+    "Q1_warnings": [
+      "预期销售量字段缺失：需要人工决定是否以2023产量（或其它口径）作为预期销量",
+      "价格区间代表值（均值/低/高）未定",
+      "2023年D7/D8单季水稻与D1-D6两季蔬菜并存，2024年重茬初始条件以2023记录为准（无更早数据）"
+    ],
+    "Q2": "ready_with_warnings",
+    "Q2_warnings": [
+      "无任何概率分布或情景观测数据，不确定性只来自题面区间与趋势文字",
+      "Q2超额产量销售规则题面未明示，需人工决定沿用Q1哪种情形",
+      "风险定义与容忍度无数据支撑，需人工设定"
+    ],
+    "Q3": "blocked_on_relationship_data",
+    "Q3_warnings": [
+      "无作物替代/互补或经济变量相关性的观测数据，只能做可复现模拟假设",
+      "模拟关系强度、方向与比较指标需人工设定后再评估"
+    ]
+  },
+  "cleaned_files": [
+    "plots.csv",
+    "crops.csv",
+    "stats_2023.csv",
+    "stats_2023_derived.csv",
+    "planting_2023.csv",
+    "template_structure.json"
+  ],
+  "cleaning_notes": [
+    "所有字符串字段去首尾空白（普通大棚 /菠菜 /生菜 /说明 等尾随空格）",
+    "附件2种植表与附件1作物表合并单元格按锚点值向下填充，未改动数值",
+    "智慧大棚第一季参数按附件2注(2)从普通大棚第一季派生，单独文件存放，不并入stats_2023.csv",
+    "未进行任何插补、删除、缩尾或重编码"
+  ],
+  "unresolved_risks": [
+    "预期销量来源未定（全题收益口径依赖此项）",
+    "价格代表值未定",
+    "管理便利阈值无数据，需人工给出",
+    "Q2不确定性分布与Q3关系结构无观测数据"
+  ]
+}

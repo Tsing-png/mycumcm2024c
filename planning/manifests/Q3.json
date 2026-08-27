@@ -3,12 +3,13 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G1",
-  "status": "literature_analyzed_waiting_data_profile",
+  "status": "data_profiled_waiting_human_conventions",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
     "framing_decisions": "planning/framing_decisions.jsonl",
     "literature_analysis": "workspace/papers/related_paper_analysis.md",
+    "data_profile": "workspace/data_clean/data_profile.json",
     "method_card": null,
     "decision_ledger": null,
     "risk_probe": null,
@@ -21,12 +22,13 @@
     "final_assembly": false
   },
   "blockers": [
-    "simulation relationships and comparison criteria unresolved"
+    "Q3 relationship and simulation settings unresolved",
+    "Q3 comparison criteria unresolved"
   ],
   "next_action": {
-    "owner": "ai",
-    "skill": "data-auditor-cleaner",
-    "reason": "Literature shows that observed relation evidence is weak; available data and simulation gaps must be profiled before screening methods"
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "no observed relation data; human must set simulation assumptions before method screening"
   },
-  "updated_at": "2026-08-27T20:59:46+08:00"
+  "updated_at": "2026-08-27T21:20:00+08:00"
 }

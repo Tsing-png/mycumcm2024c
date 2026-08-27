@@ -3,11 +3,12 @@
   "question_id": "Q1",
   "rigor_profile": "lean",
   "current_gate": "G1",
-  "status": "classified_waiting_research_and_data_profile",
+  "status": "literature_analyzed_waiting_data_profile",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
     "framing_decisions": "planning/framing_decisions.jsonl",
+    "literature_analysis": "workspace/papers/related_paper_analysis.md",
     "method_card": null,
     "decision_ledger": null,
     "risk_probe": null,
@@ -24,8 +25,8 @@
   ],
   "next_action": {
     "owner": "ai",
-    "skill": "related-paper-analyzer",
-    "reason": "Q1 classification is complete; relevant sources should inform later screening without selecting a method yet"
+    "skill": "data-auditor-cleaner",
+    "reason": "Literature cues are mapped; raw data must now be profiled before framing management thresholds or screening methods"
   },
-  "updated_at": "2026-08-27T20:46:57+08:00"
+  "updated_at": "2026-08-27T20:59:46+08:00"
 }

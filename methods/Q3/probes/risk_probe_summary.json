@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "generated_at": "2026-08-27T21:51:47+08:00",
+  "data_refs": ["workspace/data_clean/data_profile.json", "workspace/data_clean/data_report.md", "workspace/papers/related_paper_analysis.md"],
+  "selection_rule": "Matched Q2 marginal scenarios; 12-dimensional equicorrelation probes at human-approved weak, medium and strong settings; 2000 draws with seed 2024.",
+  "methods": [
+    {
+      "id": "Q3-M1",
+      "role": "main_candidate",
+      "executability": {"status": "PASS", "evidence": {"correlation_settings_generated": 3, "sample_count_per_setting": 2000, "seed": 2024}},
+      "data_coverage": {"status": "CONDITIONAL", "evidence": {"observed_relationship_rows": 0, "simulated_settings": 3}, "condition": "Relationships are explicit simulation assumptions, not empirical estimates."},
+      "assumption_checks": [
+        {"name": "correlation_matrix_positive_definite", "status": "PASS", "metric": "minimum_eigenvalue", "value": 0.45, "threshold": 0},
+        {"name": "empirical_correlation_recovery", "status": "PASS", "metric": "maximum_absolute_error", "value": 0.0563, "threshold": 0.08}
+      ],
+      "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"required_metrics": ["top1_area_share", "top3_area_share", "profit_top3_share", "unique_crop_count", "constraint_slack"]}, "condition": "Full correlated optimization has not run; reject settings that collapse onto a few crops."},
+      "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "correlation strength 0.15/0.35/0.55", "metric": "matrix_validity_and_empirical_error", "values": [{"strength": 0.15, "min_eigenvalue": 0.85, "max_error": 0.0563}, {"strength": 0.35, "min_eigenvalue": 0.65, "max_error": 0.0521}, {"strength": 0.55, "min_eigenvalue": 0.45, "max_error": 0.0356}], "condition": "Full solution overlap and profit-direction stability remain mandatory."},
+      "scale_check": {"status": "CONDITIONAL", "estimated_shared_planting_variable_upper_bound": 61992, "condition": "Solve paired independent/correlated settings with common random numbers and record runtime and memory."},
+      "verdict": "CONDITIONAL",
+      "conditions": ["Persist relation matrices, response equations, seeds and strengths.", "Use matched Q2 margins and common random numbers.", "Limit claims to the simulated settings."],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q3-B1",
+      "role": "usable_baseline",
+      "executability": {"status": "PASS", "evidence": {"independent_scenario_seed_count": 5, "representative_solver_status": 0}},
+      "data_coverage": {"status": "PASS", "evidence": {"marginal_parameter_combinations": 125, "missing_combinations": 0}},
+      "assumption_checks": [{"name": "independence_is_observed", "status": "CONDITIONAL", "value": false, "metric": "evidence_status", "threshold": "must remain a comparison convention"}],
+      "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"inherited_representative_top1_area_share": 0.4726, "inherited_representative_top3_area_share": 0.9072}},
+      "perturbation_sensitivity": {"status": "PASS", "perturbation": "five fixed seeds", "metric": "lower_5pct_score_cv_across_seeds", "value": 0.002057},
+      "scale_check": {"status": "CONDITIONAL", "condition": "Benchmark paired independent and correlated runs at the same scenario count."},
+      "verdict": "CONDITIONAL",
+      "conditions": ["Use identical marginal samples and constraints as Q3-M1.", "Apply identical management thresholds."],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q3-F1",
+      "role": "conditional_fallback",
+      "verdict": "CONDITIONAL",
+      "activation_trigger": "Any matrix is non-positive-definite, empirical correlation error exceeds 0.08, cross-strength planting overlap falls below 50%, or the profit direction reverses under a small relation perturbation.",
+      "evidence_refs": ["methods/Q3/q3_method_card.md"]
+    }
+  ]
+}

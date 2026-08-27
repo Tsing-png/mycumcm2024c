@@ -2,17 +2,17 @@
   "schema_version": 1,
   "question_id": "Q2",
   "rigor_profile": "lean",
-  "current_gate": "G1",
-  "status": "data_profiled_waiting_human_conventions",
+  "current_gate": "G2",
+  "status": "method_screened_waiting_human_choice",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
     "framing_decisions": "planning/framing_decisions.jsonl",
     "literature_analysis": "workspace/papers/related_paper_analysis.md",
     "data_profile": "workspace/data_clean/data_profile.json",
-    "method_card": null,
+    "method_card": "methods/Q2/q2_method_card.md",
     "decision_ledger": null,
-    "risk_probe": null,
+    "risk_probe": "methods/Q2/probes/risk_probe_summary.json",
     "latest_run": null
   },
   "allowed": {
@@ -22,14 +22,12 @@
     "final_assembly": false
   },
   "blockers": [
-    "Q2 uncertainty framing unresolved (no distribution data)",
-    "Q2 surplus-sale rule unresolved",
-    "risk tolerance unresolved"
+    "human method choice not recorded"
   ],
   "next_action": {
     "owner": "human",
     "skill": "decision-prompt-builder",
-    "reason": "uncertainty, surplus-sale and risk conventions must be fixed by human before method screening"
+    "reason": "Q2 main, usable baseline and fallback passed screening with stated conditions; human method choice is required for G2.5"
   },
-  "updated_at": "2026-08-27T21:20:00+08:00"
+  "updated_at": "2026-08-27T21:55:00+08:00"
 }

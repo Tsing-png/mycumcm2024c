@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-08-27T21:52:26.860577+08:00",
+  "data_rows": {
+    "plots": 54,
+    "crops": 41,
+    "statistics_observed": 107,
+    "statistics_derived": 18,
+    "planting_2023": 87
+  },
+  "full_horizon_rule_baseline": {
+    "schedule_rows": 574,
+    "violations": [],
+    "status": "PASS",
+    "concentration": {
+      "unique_crop_count": 40,
+      "top1_area_share": 0.1159,
+      "top3_area_share": 0.3126,
+      "gini_simpson": 0.9383
+    }
+  },
+  "management_timing_perturbation": {
+    "bean_years_base": [
+      2024,
+      2027,
+      2030
+    ],
+    "bean_years_perturbed": [
+      2025,
+      2028
+    ],
+    "perturbed_violations": [],
+    "schedule_overlap": 0.4034,
+    "base_concentration": {
+      "unique_crop_count": 40,
+      "top1_area_share": 0.1159,
+      "top3_area_share": 0.3126,
+      "gini_simpson": 0.9383
+    },
+    "perturbed_concentration": {
+      "unique_crop_count": 40,
+      "top1_area_share": 0.1023,
+      "top3_area_share": 0.2803,
+      "gini_simpson": 0.9452
+    },
+    "status": "PASS"
+  },
+  "representative_exact_milp": {
+    "status": "PASS",
+    "solver_status": 0,
+    "representative_plots": 6,
+    "slots": 63,
+    "binary_variables": 868,
+    "constraints": 601,
+    "runtime_seconds": 0.0287,
+    "selected_slots": 63,
+    "output_degeneracy": {
+      "unique_crop_count": 7,
+      "top1_area_share": 0.4726,
+      "top3_area_share": 0.9072,
+      "gini_simpson": 0.64
+    },
+    "profit_coefficient_perturbation": {
+      "magnitude": "+/-5% deterministic crop-wise",
+      "perturbed_solver_status": 0,
+      "assignment_jaccard_overlap": 1.0,
+      "status": "PASS"
+    }
+  },
+  "uncertainty_scenario_probe": {
+    "replications_per_seed": 200,
+    "seeds": [
+      17,
+      29,
+      43,
+      71,
+      101
+    ],
+    "mean_score_cv_across_seeds": 0.000902,
+    "lower_5pct_score_cv_across_seeds": 0.002057,
+    "distribution_status": "CONDITIONAL",
+    "condition": "Uniform draws are a transparent probe convention, not observed probability laws; endpoint and alternative-shape sensitivity remains mandatory."
+  },
+  "correlation_structure_probe": [
+    {
+      "strength": 0.15,
+      "minimum_eigenvalue": 0.85,
+      "max_empirical_correlation_error": 0.0563,
+      "status": "PASS"
+    },
+    {
+      "strength": 0.35,
+      "minimum_eigenvalue": 0.65,
+      "max_empirical_correlation_error": 0.0521,
+      "status": "PASS"
+    },
+    {
+      "strength": 0.55,
+      "minimum_eigenvalue": 0.45,
+      "max_empirical_correlation_error": 0.0356,
+      "status": "PASS"
+    }
+  ],
+  "estimated_full_formulation": {
+    "area_variables_upper_bound": 30996,
+    "binary_variables_upper_bound": 30996,
+    "note": "Actual count is smaller after removing incompatible plot-season-crop combinations; scenario expansion should reuse here-and-now planting variables."
+  },
+  "runtime_seconds": 0.5439
+}

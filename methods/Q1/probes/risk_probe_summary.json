@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "generated_at": "2026-08-27T21:51:47+08:00",
+  "data_refs": [
+    "workspace/data_clean/data_profile.json",
+    "workspace/data_clean/data_report.md",
+    "workspace/papers/related_paper_analysis.md"
+  ],
+  "selection_rule": "Full 54-plot horizon for the rule baseline; one plot from each of six plot types for the exact MILP scale and feasibility probe.",
+  "methods": [
+    {
+      "id": "Q1-M1",
+      "role": "main_candidate",
+      "executability": {
+        "status": "PASS",
+        "evidence": {"solver": "scipy.optimize.milp/HiGHS", "binary_variables": 868, "constraints": 601, "runtime_seconds": 0.0287, "solver_status": 0}
+      },
+      "data_coverage": {
+        "status": "PASS",
+        "evidence": {"plots_total": 54, "plots_in_scale_probe": 6, "plot_types_covered": 6, "crop_parameter_combinations": 125, "missing_after_documented_derivation": 0}
+      },
+      "assumption_checks": [
+        {"name": "constraint_feasibility", "status": "PASS", "value": 63, "metric": "selected_legal_slots", "threshold": 63},
+        {"name": "management_threshold_identification", "status": "CONDITIONAL", "value": null, "metric": "human-approved_threshold", "threshold": "compare minimum-area/share and crop-count settings before implementation"}
+      ],
+      "output_degeneracy": {
+        "status": "CONDITIONAL",
+        "metrics": {"unique_crop_count": 7, "top1_area_share": 0.4726, "top3_area_share": 0.9072, "gini_simpson": 0.64},
+        "interpretation": "High concentration is economically possible but load-bearing management constraints must prevent an impractical solution."
+      },
+      "perturbation_sensitivity": {
+        "status": "PASS",
+        "perturbation": "deterministic crop-wise profit coefficients within +/-5%",
+        "metric": "assignment_jaccard_overlap",
+        "value": 1.0
+      },
+      "scale_check": {
+        "status": "CONDITIONAL",
+        "representative_binary_variables": 868,
+        "runtime_seconds": 0.0287,
+        "estimated_full_area_variable_upper_bound": 30996,
+        "estimated_full_binary_variable_upper_bound": 30996,
+        "condition": "Run the full formulation with a 15-minute limit and report incumbent, bound, gap and memory."
+      },
+      "verdict": "CONDITIONAL",
+      "conditions": ["Screen management thresholds and report concentration.", "Report full-scale optimality gap and feasibility."],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q1-B1",
+      "role": "usable_baseline",
+      "executability": {"status": "PASS", "evidence": {"schedule_rows": 574, "constraint_violations": 0}},
+      "data_coverage": {"status": "PASS", "evidence": {"plots_used": 54, "years": 7, "crops_available": 41}},
+      "assumption_checks": [{"name": "full_horizon_feasibility", "status": "PASS", "value": 0, "metric": "violations", "threshold": 0}],
+      "output_degeneracy": {"status": "PASS", "metrics": {"unique_crop_count": 40, "top1_area_share": 0.1159, "top3_area_share": 0.3126, "gini_simpson": 0.9383}},
+      "perturbation_sensitivity": {"status": "PASS", "perturbation": "shift bean years from 2024/2027/2030 to 2025/2028", "metric": "constraint_violations", "value": 0, "schedule_jaccard_overlap": 0.4034},
+      "scale_check": {"status": "PASS", "representative_n": 574, "runtime_seconds": 0.5439, "note": "Runtime includes every probe, not only the baseline."},
+      "verdict": "PASS",
+      "conditions": [],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q1-F1",
+      "role": "conditional_fallback",
+      "verdict": "CONDITIONAL",
+      "activation_trigger": "Full MILP has no feasible incumbent after 15 minutes, gap exceeds 1%, or projected peak memory exceeds 2 GB.",
+      "evidence_refs": ["methods/Q1/q1_method_card.md"]
+    }
+  ]
+}

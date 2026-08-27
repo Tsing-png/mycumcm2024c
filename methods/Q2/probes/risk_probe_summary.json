@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "generated_at": "2026-08-27T21:51:47+08:00",
+  "data_refs": ["workspace/data_clean/data_profile.json", "workspace/data_clean/data_report.md", "workspace/papers/related_paper_analysis.md"],
+  "selection_rule": "Full parameter coverage for scenario generation; five fixed seeds with 200 scenarios each; six plot types for representative exact optimization.",
+  "methods": [
+    {
+      "id": "Q2-M1",
+      "role": "main_candidate",
+      "executability": {"status": "PASS", "evidence": {"scenario_count_per_seed": 200, "seed_count": 5, "shared_decision_formulation": true}},
+      "data_coverage": {"status": "PASS", "evidence": {"observed_parameter_rows": 107, "documented_derived_rows": 18, "required_combinations": 125, "missing_combinations": 0}},
+      "assumption_checks": [
+        {"name": "probability_law_evidence", "status": "CONDITIONAL", "value": null, "metric": "observed_distribution", "threshold": "not available; label distributions as simulation assumptions"},
+        {"name": "seed_stability", "status": "PASS", "value": 0.002057, "metric": "lower_5pct_score_cv_across_seeds", "threshold": 0.01}
+      ],
+      "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"inherited_representative_top1_area_share": 0.4726, "inherited_representative_top3_area_share": 0.9072}, "condition": "Measure full-solution area and profit concentration under both sale rules."},
+      "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "five seeds over bounded uniform probe draws", "metric": "mean_score_cv_across_seeds", "value": 0.000902, "condition": "Also test endpoints and alternative distribution shapes because no probability law is observed."},
+      "scale_check": {"status": "CONDITIONAL", "representative_binary_variables": 868, "estimated_full_decision_variable_upper_bound": 61992, "condition": "Benchmark 100/200/500 scenarios without duplicating here-and-now planting variables."},
+      "verdict": "CONDITIONAL",
+      "conditions": ["Treat all distributions as scenario assumptions.", "Use endpoint and alternative-shape tests.", "Compare both human-approved sale rules on matched scenarios."],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q2-B1",
+      "role": "usable_baseline",
+      "executability": {"status": "PASS", "evidence": {"representative_solver_status": 0, "selected_legal_slots": 63}},
+      "data_coverage": {"status": "PASS", "evidence": {"required_parameter_combinations": 125, "missing_combinations": 0}},
+      "assumption_checks": [{"name": "center_path_is_observed_forecast", "status": "CONDITIONAL", "value": false, "metric": "evidence_status", "threshold": "must remain labeled as a deterministic convention"}],
+      "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"unique_crop_count": 7, "top1_area_share": 0.4726, "top3_area_share": 0.9072}},
+      "perturbation_sensitivity": {"status": "PASS", "perturbation": "profit coefficients +/-5%", "metric": "assignment_jaccard_overlap", "value": 1.0},
+      "scale_check": {"status": "CONDITIONAL", "representative_binary_variables": 868, "runtime_seconds": 0.0287, "condition": "Confirm full-horizon time, gap and memory."},
+      "verdict": "CONDITIONAL",
+      "conditions": ["Evaluate on the main method's identical out-of-sample scenarios.", "Apply the same management constraints."],
+      "evidence_refs": ["scratch/method_risk_probe_evidence.json"]
+    },
+    {
+      "id": "Q2-F1",
+      "role": "conditional_fallback",
+      "verdict": "CONDITIONAL",
+      "activation_trigger": "The lower-tail result changes by more than 10% under endpoints or alternative distribution shapes, or planting overlap falls below 70%.",
+      "evidence_refs": ["methods/Q2/q2_method_card.md"]
+    }
+  ]
+}

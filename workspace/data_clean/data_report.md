@@ -3,7 +3,7 @@
 原始文件只读未改动，哈希见 `data_profile.json`。清洗产物：
 
 - `plots.csv`：54 个种植单元（名称、类型、面积）
-- `crops.csv`：41 种作物（编号、名称、类别、适宜性原文 suitability_raw 与规范化列 suitability，段间以；连接）
+- `crops.csv`：41 种作物（编号、名称、类别、适宜性 suitability，段间以；连接）
 - `stats_2023.csv`：2023 统计 107 条（亩产量、亩成本、价格区间已解析为 low/high）
 - `stats_2023_derived.csv`：智慧大棚第一季 18 条派生参数（来源：附件2 注(2)）
 - `planting_2023.csv`：2023 年 87 条种植记录（合并单元格已按锚点填充）

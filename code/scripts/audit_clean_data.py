@@ -98,7 +98,6 @@ for r in rows[1:]:
     cid, cname, ccat, suit_raw = int(r[0]), norm(r[1]), norm(r[2]), norm(r[3])
     crops.append({
         "crop_id": cid, "crop_name": cname, "crop_category": ccat,
-        "suitability_raw": suit_raw,
         "suitability": norm_suit(suit_raw),
     })
 if len(crops) != 41:
@@ -266,9 +265,8 @@ def write_csv(name, header, rows_):
 
 write_csv("plots.csv", ["plot_id", "plot_type", "area_mu"],
           [(p["plot_id"], p["plot_type"], p["area_mu"]) for p in plots])
-write_csv("crops.csv", ["crop_id", "crop_name", "crop_category", "suitability_raw", "suitability"],
-          [(c["crop_id"], c["crop_name"], c["crop_category"], c["suitability_raw"], c["suitability"])
-           for c in crops])
+write_csv("crops.csv", ["crop_id", "crop_name", "crop_category", "suitability"],
+          [(c["crop_id"], c["crop_name"], c["crop_category"], c["suitability"]) for c in crops])
 write_csv("stats_2023.csv",
           ["seq", "crop_id", "crop_name", "plot_type", "season", "yield_jin_per_mu",
            "cost_yuan_per_mu", "price_raw", "price_low", "price_high"],
@@ -374,7 +372,7 @@ profile = {
         "planting_2023.csv", "template_structure.json",
     ],
     "cleaning_notes": findings["cleaning_notes"] + [
-        "crops.csv 新增规范化列 suitability（换行分段、段内空白折叠为单空格、段间以；连接），suitability_raw 保留原文",
+        "crops.csv suitability 列为规范化适宜性（换行分段、段内空白折叠为单空格、段间以；连接），不保留原文列",
         "所有字符串字段去首尾空白（普通大棚 /菠菜 /生菜 /说明 等尾随空格）",
         "附件2种植表与附件1作物表合并单元格按锚点值向下填充，未改动数值",
         "智慧大棚第一季参数按附件2注(2)从普通大棚第一季派生，单独文件存放，不并入stats_2023.csv",

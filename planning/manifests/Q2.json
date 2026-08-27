@@ -3,7 +3,7 @@
   "question_id": "Q2",
   "rigor_profile": "lean",
   "current_gate": "G2.5",
-  "status": "method_chosen_waiting_assumptions",
+  "status": "method_chosen_waiting_code_plan",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -14,6 +14,7 @@
     "decision_ledger": "methods/Q2/q2_decisions.jsonl",
     "risk_probe": "methods/Q2/probes/risk_probe_summary.json",
     "symbol_table": "planning/symbol_table.md",
+    "model_assumptions": "planning/model_assumptions.md",
     "latest_run": null
   },
   "allowed": {
@@ -25,8 +26,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "model-assumptions-builder",
-    "reason": "Shared deterministic and scenario symbols are resolved; Q2 uncertainty and risk assumptions must be explicit before implementation planning"
+    "skill": "model-code-analyzer",
+    "reason": "Human-labeled uncertainty assumptions are recorded; translate Q2-M1 and Q2-B1 into a language-neutral implementation and experiment contract"
   },
-  "updated_at": "2026-08-27T22:15:13+08:00"
+  "updated_at": "2026-08-27T22:20:37+08:00"
 }

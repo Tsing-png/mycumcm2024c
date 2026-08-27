@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "rigor_profile": "lean",
+  "current_gate": "G1",
+  "status": "problem_parsed_and_framed_waiting_classification",
+  "artifacts": {
+    "problem_parse": "planning/parse/problem_parse.json",
+    "classification": null,
+    "framing_decisions": "planning/framing_decisions.jsonl",
+    "method_card": null,
+    "decision_ledger": null,
+    "risk_probe": null,
+    "latest_run": null
+  },
+  "allowed": {
+    "code_generation": false,
+    "freeze": false,
+    "paper_writing": false,
+    "final_assembly": false
+  },
+  "blockers": [
+    "subquestion classification missing",
+    "simulation relationships and comparison criteria unresolved"
+  ],
+  "next_action": {
+    "owner": "ai",
+    "skill": "problem-classifier",
+    "reason": "model-neutral Q3 parse is complete; classification must precede downstream screening"
+  },
+  "updated_at": "2026-08-27T20:44:23+08:00"
+}

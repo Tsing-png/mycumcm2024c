@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "parse_status": "PARSED_AND_FRAMING_CONFIRMED",
+  "problem_source": [
+    {
+      "path": "C题.pdf",
+      "role": "problem_statement",
+      "status": "read_and_visually_verified"
+    },
+    {
+      "path": "workspace/data_raw/附件1.xlsx",
+      "role": "land_and_crop_inventory",
+      "status": "read_only_structure_verified"
+    },
+    {
+      "path": "workspace/data_raw/附件2.xlsx",
+      "role": "2023_planting_and_statistics",
+      "status": "read_only_structure_verified"
+    },
+    {
+      "path": "workspace/data_raw/附件3/result1_1.xlsx",
+      "role": "Q1_case_1_output_template",
+      "status": "read_only_structure_verified"
+    },
+    {
+      "path": "workspace/data_raw/附件3/result1_2.xlsx",
+      "role": "Q1_case_2_output_template",
+      "status": "read_only_structure_verified"
+    },
+    {
+      "path": "workspace/data_raw/附件3/result2.xlsx",
+      "role": "Q2_output_template",
+      "status": "read_only_structure_verified"
+    }
+  ],
+  "background": "某华北山区乡村希望在有限且类型多样的耕地上安排2024至2030年的农作物种植，在满足轮作、豆类覆盖、季节与地块适宜性要求的同时，提高生产效益并控制销售、产量、价格和成本不确定性带来的风险。",
+  "global_goal": "形成2024至2030年逐年、逐季、逐地块、逐作物的可执行种植安排，并分别处理稳定参数、参数不确定性以及作物关系与经济变量相关性三类情形。经人工确认，以2024至2030年累计净收益最大为首要成功标准，风险和管理便利作为约束。",
+  "objects": [
+    "乡村及其耕地资源",
+    "34个露天地块",
+    "16个普通大棚",
+    "4个智慧大棚",
+    "41种农作物",
+    "2024至2030年",
+    "单季、第一季和第二季",
+    "种植面积、产量、正常销量、超额产量",
+    "亩产量、种植成本、销售价格和预期销售量",
+    "作物间可替代性、互补性及经济变量相关性"
+  ],
+  "data_inventory": [
+    {
+      "source": "workspace/data_raw/附件1.xlsx",
+      "sheet": "乡村的现有耕地",
+      "content": "54个种植单元的名称、类型、面积和种植说明",
+      "verified_structure": {
+        "columns": [
+          "地块名称",
+          "地块类型",
+          "地块面积/亩",
+          "说明"
+        ],
+        "unit_counts": {
+          "平旱地": 6,
+          "梯田": 14,
+          "山坡地": 6,
+          "水浇地": 8,
+          "普通大棚": 16,
+          "智慧大棚": 4
+        },
+        "area_mu": {
+          "平旱地": 365,
+          "梯田": 619,
+          "山坡地": 108,
+          "水浇地": 109,
+          "普通大棚": 9.6,
+          "智慧大棚": 2.4
+        }
+      }
+    },
+    {
+      "source": "workspace/data_raw/附件1.xlsx",
+      "sheet": "乡村种植的农作物",
+      "content": "41种作物的编号、名称、类别、适宜地块或季次及说明",
+      "verified_structure": {
+        "columns": [
+          "作物编号",
+          "作物名称",
+          "作物类型",
+          "种植耕地",
+          "说明"
+        ],
+        "crop_counts": {
+          "粮食（豆类）": 5,
+          "粮食": 11,
+          "蔬菜（豆类）": 3,
+          "蔬菜": 18,
+          "食用菌": 4
+        }
+      }
+    },
+    {
+      "source": "workspace/data_raw/附件2.xlsx",
+      "sheet": "2023年的农作物种植情况",
+      "content": "2023年各地块的作物、面积和季次，共87条非空种植记录",
+      "verified_structure": {
+        "columns": [
+          "种植地块",
+          "作物编号",
+          "作物名称",
+          "作物类型",
+          "种植面积/亩",
+          "种植季次"
+        ],
+        "season_record_counts": {
+          "单季": 28,
+          "第一季": 29,
+          "第二季": 30
+        },
+        "note": "地块名单元格存在合并，同一地块可对应多条作物记录。"
+      }
+    },
+    {
+      "source": "workspace/data_raw/附件2.xlsx",
+      "sheet": "2023年统计的相关数据",
+      "content": "作物、地块类型和季次组合对应的亩产量、亩成本和销售单价区间，共107条记录",
+      "verified_structure": {
+        "columns": [
+          "序号",
+          "作物编号",
+          "作物名称",
+          "地块类型",
+          "种植季次",
+          "亩产量/斤",
+          "种植成本/(元/亩)",
+          "销售单价/(元/斤)"
+        ],
+        "price_representation": "107条记录均以区间字符串给出销售单价",
+        "expected_sales_field_present": false
+      }
+    },
+    {
+      "source": "workspace/data_raw/附件3",
+      "content": "Q1两种情形和Q2的结果模板",
+      "verified_structure": {
+        "files": [
+          "result1_1.xlsx",
+          "result1_2.xlsx",
+          "result2.xlsx"
+        ],
+        "year_sheets": [
+          2024,
+          2025,
+          2026,
+          2027,
+          2028,
+          2029,
+          2030
+        ],
+        "entry_meaning": "每个地块、季次和作物的种植亩数",
+        "template_rule": "单季作物填入第一季相应单元格，不得改变表格形式"
+      }
+    }
+  ],
+  "global_constraints": [
+    {
+      "type": "hard",
+      "source": "statement_and_attachment_1",
+      "content": "平旱地、梯田和山坡地每年只适宜种植一季非水稻粮食作物。"
+    },
+    {
+      "type": "hard",
+      "source": "statement_and_attachment_1",
+      "content": "水浇地每年选择单季水稻，或选择两季蔬菜；两季蔬菜时，第二季只能种植大白菜、白萝卜和红萝卜中的一种，这三种作物只能出现在水浇地第二季。"
+    },
+    {
+      "type": "hard",
+      "source": "statement_and_attachment_1",
+      "content": "普通大棚第一季种植蔬菜且排除大白菜、白萝卜和红萝卜，第二季只种食用菌。"
+    },
+    {
+      "type": "hard",
+      "source": "statement_and_attachment_1",
+      "content": "智慧大棚两季均种植蔬菜且排除大白菜、白萝卜和红萝卜。"
+    },
+    {
+      "type": "hard",
+      "source": "statement",
+      "content": "同一地块同一季允许合种不同作物，但各作物面积之和不得超过该地块面积。"
+    },
+    {
+      "type": "hard",
+      "source": "statement",
+      "content": "同一种作物不能在同一地块连续重茬种植；跨季与跨年边界的精确定义需确认。"
+    },
+    {
+      "type": "hard",
+      "source": "statement",
+      "content": "从2023年开始，每个地块的全部土地在三年内至少种植一次豆类作物；滚动窗口及合种面积的形式化口径需确认。"
+    },
+    {
+      "type": "soft_unquantified",
+      "source": "statement",
+      "content": "为方便耕作与管理，每种作物每季不应过度分散，且在单个地块上的种植面积不宜过小。"
+    },
+    {
+      "type": "hard",
+      "source": "statement",
+      "content": "每季产出的作物在当季销售。"
+    },
+    {
+      "type": "output",
+      "source": "attachment_3",
+      "content": "Q1和Q2必须按原模板填写2024至2030年种植亩数，不得改变表格形式。"
+    }
+  ],
+  "preliminary_variables": [
+    {
+      "name": "x[year,season,plot,crop]",
+      "meaning": "某年某季某地块分配给某作物的种植面积，单位为亩",
+      "role": "controllable_decision",
+      "status": "preliminary"
+    },
+    {
+      "name": "z[year,season,plot,crop]",
+      "meaning": "某作物是否在某年某季某地块出现",
+      "role": "controllable_indicator_for_management_rules",
+      "status": "preliminary"
+    },
+    {
+      "name": "production[year,season,crop]",
+      "meaning": "按种植面积与相应亩产量汇总的作物产量，单位为斤",
+      "role": "derived_quantity",
+      "status": "proposed_relationship"
+    },
+    {
+      "name": "normal_sales[year,season,crop]",
+      "meaning": "不超过预期销售量的正常销售数量",
+      "role": "derived_quantity",
+      "status": "proposed_relationship"
+    },
+    {
+      "name": "surplus[year,season,crop]",
+      "meaning": "超过预期销售量的产量",
+      "role": "derived_quantity",
+      "status": "proposed_relationship"
+    },
+    {
+      "name": "expected_sales, yield, cost, price",
+      "meaning": "按年份、作物及适用地块或季次定义的经济与生产参数",
+      "role": "observable_or_external_parameter",
+      "status": "partially_observed"
+    },
+    {
+      "name": "substitution, complementarity, correlation",
+      "meaning": "Q3中作物关系以及销售量、价格、成本之间的关系参数",
+      "role": "external_or_simulated_parameter",
+      "status": "missing_definition_and_data"
+    }
+  ],
+  "preliminary_relationships": [
+    {
+      "relationship": "地块季次内的作物面积之和不超过可用面积",
+      "status": "statement_supported"
+    },
+    {
+      "relationship": "作物总产量由各适宜地块的种植面积与对应亩产量汇总得到",
+      "status": "proposed_until_data_contract_verified"
+    },
+    {
+      "relationship": "正常销量不超过总产量与预期销售量二者中的较小值，超出部分按Q1情形浪费或折价销售",
+      "status": "statement_supported_but_expected_sales_source_missing"
+    },
+    {
+      "relationship": "种植收益由销售收入扣除种植成本形成",
+      "status": "proposed_objective_component_not_yet_human_confirmed"
+    },
+    {
+      "relationship": "连续重茬、三年豆类覆盖、种植分散度和最小地块面积将约束跨年跨季安排",
+      "status": "statement_supported_but_thresholds_or_boundary_rules_incomplete"
+    },
+    {
+      "relationship": "Q3中的替代、互补和经济变量相关性会影响模拟需求或收益表现",
+      "status": "problem_requested_but_direction_strength_and_generation_rule_missing"
+    }
+  ],
+  "subquestions": [
+    {
+      "id": "Q1",
+      "statement": "假定预期销售量、种植成本、亩产量和销售价格相对2023年稳定，分别在超额产量浪费和按2023年价格50%出售两种情形下，给出2024至2030年种植方案。",
+      "goal": "形成两套覆盖2024至2030年的可执行种植面积方案，并比较超额产量处置规则对方案的影响。",
+      "inputs": [
+        "附件1中的地块、作物和适宜性规则",
+        "附件2中的2023年种植情况、亩产量、亩成本和价格区间",
+        "尚未明确来源的2023年预期销售量",
+        "附件3中的result1_1.xlsx和result1_2.xlsx"
+      ],
+      "unknowns_or_decisions": [
+        "2024至2030年逐年逐季逐地块逐作物的种植亩数",
+        "合种时各作物在同一地块的面积分配",
+        "题面未明示的最优性目标口径"
+      ],
+      "constraints": [
+        "全局地块适宜性与季次约束",
+        "地块容量约束",
+        "禁止连续重茬",
+        "三年内豆类覆盖",
+        "未量化的分散度与最小种植面积要求",
+        "情形1超额产量不能正常销售且造成浪费",
+        "情形2超额产量按2023年销售价格的50%出售"
+      ],
+      "required_outputs": [
+        "完整填写workspace/data_raw/附件3/result1_1.xlsx对应结构的结果文件",
+        "完整填写workspace/data_raw/附件3/result1_2.xlsx对应结构的结果文件",
+        "每个单元格表示相应年、季、地块、作物的种植亩数"
+      ],
+      "success_criteria": [
+        "两套方案均满足所有已明确的硬约束",
+        "2024至2030年及全部模板单元均有可核验的面积安排",
+        "结果文件不改变模板结构",
+        "在人工确认的目标口径下可证明或验证其优劣",
+        "两种超额产量处置情形分别计算，不混用收入规则"
+      ],
+      "dependencies": [
+        "依赖2023年数据口径和初始轮作状态"
+      ],
+      "proposed_relationships": [
+        "2023年种植记录可能用于构造2024年的重茬初始条件",
+        "若题面未另给预期销量，常见做法是以2023年实际产量近似，但这不是题面明示事实，必须确认"
+      ],
+      "ambiguities": [
+        "“最优”是否以七年累计净收益为唯一目标",
+        "2023年预期销售量的来源",
+        "销售价格区间应取何种代表值",
+        "分散度和单地块最小面积阈值",
+        "重茬约束在两季地块跨年边界上的口径"
+      ]
+    },
+    {
+      "id": "Q2",
+      "statement": "综合考虑2024至2030年预期销售量、亩产量、种植成本和销售价格的不确定性及潜在种植风险，给出种植方案并填写result2.xlsx。",
+      "goal": "形成一套在题定变化范围下兼顾收益与风险的2024至2030年种植安排。",
+      "inputs": [
+        "Q1的土地、作物、轮作和销售约束",
+        "小麦和玉米预期销售量平均年增长率5%至10%",
+        "其他作物未来每年预期销售量相对2023年约有正负5%变化",
+        "亩产量每年约有正负10%变化",
+        "种植成本平均每年增长约5%",
+        "粮食价格基本稳定",
+        "蔬菜价格平均每年增长约5%",
+        "食用菌价格每年下降约1%至5%，羊肚菌每年下降5%",
+        "附件3中的result2.xlsx"
+      ],
+      "unknowns_or_decisions": [
+        "2024至2030年逐年逐季逐地块逐作物的种植亩数",
+        "不确定参数的生成或评估口径",
+        "收益与风险的优先关系",
+        "潜在种植风险的可接受范围"
+      ],
+      "constraints": [
+        "继承Q1的全部物理与管理约束",
+        "参数变化必须保持在题面给出的范围或趋势内",
+        "不得把未给出的概率分布或相关结构当作题面事实"
+      ],
+      "required_outputs": [
+        "完整填写workspace/data_raw/附件3/result2.xlsx对应结构的结果文件",
+        "说明所采用的不确定性口径及种植风险含义",
+        "给出可核验的收益与风险结果"
+      ],
+      "success_criteria": [
+        "方案满足硬约束和模板要求",
+        "不确定性处理覆盖题面列出的销售量、亩产量、成本和价格",
+        "风险结论与实际计算证据对应",
+        "在人工确认的收益风险口径下完成方案比较"
+      ],
+      "dependencies": [
+        "依赖Q1的数据契约、硬约束和2023年基准口径"
+      ],
+      "proposed_relationships": [
+        "不同年份的需求、产量、成本和价格变化将共同影响各作物的净收益与超产风险",
+        "风险评价应来自明确的不确定性实验，而不是仅由平均参数方案代替"
+      ],
+      "ambiguities": [
+        "题给变化范围对应均匀分布、区间扰动、情景集合还是其他口径",
+        "“每年相对2023年正负5%”是否逐年独立且不复利",
+        "成本与蔬菜价格约5%增长应按确定趋势还是带波动趋势处理",
+        "食用菌除羊肚菌外的年降幅如何在1%至5%内取值",
+        "种植风险的首要定义及可接受阈值",
+        "Q2超额产量沿用Q1的哪一种销售规则未明示"
+      ]
+    },
+    {
+      "id": "Q3",
+      "statement": "在Q2基础上考虑作物间替代性和互补性，以及预期销售量与销售价格、种植成本之间的相关性，利用模拟数据求解2024至2030年种植策略，并与Q2比较。",
+      "goal": "在显式关系结构下形成2024至2030年种植策略，并判断这些关系相对Q2独立不确定性设定造成的变化。",
+      "inputs": [
+        "Q2的全部数据、约束和结果",
+        "尚待构造的作物替代与互补关系",
+        "尚待构造的预期销售量、销售价格和种植成本相关关系",
+        "模拟数据与其可复现配置"
+      ],
+      "unknowns_or_decisions": [
+        "2024至2030年种植策略或详细面积安排",
+        "替代与互补作物对及其方向和强度",
+        "经济变量相关结构",
+        "模拟数据生成规则和比较指标"
+      ],
+      "constraints": [
+        "继承Q2的全部硬约束",
+        "模拟数据不得冒充真实观测数据",
+        "关系设定必须有明确依据、范围和敏感性检查"
+      ],
+      "required_outputs": [
+        "2024至2030年种植策略",
+        "模拟数据生成说明和可复现配置",
+        "与Q2使用同一口径的比较分析",
+        "题面未指定Q3专用Excel模板"
+      ],
+      "success_criteria": [
+        "策略满足全部硬约束",
+        "模拟关系与模拟数据均可追溯且不冒充附件事实",
+        "与Q2的比较控制除相关结构外的关键口径",
+        "结论不超出模拟设定所能支持的范围"
+      ],
+      "dependencies": [
+        "依赖Q2的数据契约、风险口径、结果和比较基准"
+      ],
+      "proposed_relationships": [
+        "替代关系可能使相近作物的需求或价格响应方向相反",
+        "互补关系可能使相关作物的需求或收益共同变化",
+        "销售量、价格和成本之间的相关性可能改变组合风险"
+      ],
+      "ambiguities": [
+        "哪些作物构成替代或互补关系",
+        "关系方向、强度及其证据来源",
+        "经济变量相关矩阵或生成机制",
+        "Q3输出是完整逐地块计划还是策略规则加代表性计划",
+        "模拟次数、随机种子和实验预算",
+        "与Q2比较的首要指标"
+      ]
+    }
+  ],
+  "ambiguities": [
+    "全题“最优”的目标函数和收益风险管理权衡未明示",
+    "附件2没有名为预期销售量的字段",
+    "附件2的销售价格均为区间，代表价格口径未明示",
+    "方便管理对应的分散度和最小种植面积没有定量阈值",
+    "重茬与三年豆类覆盖的跨季、跨年和滚动窗口口径需明确",
+    "Q2不确定性只给变化区间或趋势，没有概率分布、依赖结构或风险阈值",
+    "Q2超额产量销售规则未明示",
+    "Q3关系结构、模拟数据规则和专用输出格式未给出"
+  ],
+  "risk_points": [
+    "若错误推断2023年预期销量，所有超产收入与种植结构都会被系统性改变",
+    "若将价格区间端点或均值选择当成题面事实，收益结论会失真",
+    "未量化管理约束可能产生数学上可行但地块过碎的方案",
+    "跨年第二季与下一年第一季的重茬边界若处理错误，会生成违法方案",
+    "不合理的不确定性分布或相关结构会主导Q2和Q3结论",
+    "Q3模拟关系若无依据，只能支持条件性情景结论，不能声称真实预测",
+    "模板填报若改变格式或错置单季和第二季行，将导致提交结果不可用"
+  ],
+  "missing_material": [
+    "明确的2023年预期销售量或其推导规则",
+    "销售价格区间的代表值规则",
+    "最小种植面积与最大分散地块数等管理阈值",
+    "Q2超额产量处置规则",
+    "Q2不确定性分布或情景生成规则与风险容忍度",
+    "Q3作物关系及经济变量相关结构的依据",
+    "Q3专用结果文件格式或是否需要另建结果表"
+  ],
+  "human_decisions_needed": [
+    {
+      "decision_id": "global_optimality_framing",
+      "decision_type": "framing",
+      "question": "全题应以什么作为“最优”种植策略的首要成功标准？",
+      "status": "DECIDED",
+      "choice": "A",
+      "decision_ref": "planning/framing_decisions.jsonl"
+    },
+    {
+      "decision_id": "q3_output_form",
+      "decision_type": "framing",
+      "question": "Q3需要完整逐地块逐季方案，还是策略规则加代表性方案与比较分析？",
+      "status": "DECIDED",
+      "choice": "C",
+      "decision_ref": "planning/framing_decisions.jsonl"
+    }
+  ],
+  "recommended_next_skill": "problem-classifier"
+}

@@ -485,5 +485,5 @@
       "decision_ref": "planning/framing_decisions.jsonl"
     }
   ],
-  "recommended_next_skill": "problem-classifier"
+  "recommended_next_skill": "related-paper-analyzer"
 }

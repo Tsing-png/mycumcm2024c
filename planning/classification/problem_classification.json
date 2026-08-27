@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "classification_status": "COMPLETE",
+  "classification_basis": [
+    "planning/parse/problem_parse.json",
+    "planning/framing_decisions.jsonl"
+  ],
+  "subquestions": [
+    {
+      "id": "Q1",
+      "primary_type": "optimization/decision",
+      "secondary_type": null,
+      "confidence": "high",
+      "evidence": [
+        "required output is two complete 2024-2030 plot-season-crop area allocations",
+        "controllable unknown is planted area under land, season, rotation, legume and management constraints",
+        "human framing sets cumulative net profit as the primary success standard",
+        "the two surplus-sale cases change the decision environment but do not create a separate analytical output type"
+      ],
+      "required_validation": [
+        "decision variables and every physical, seasonal, rotation and management constraint are explicit",
+        "both case-specific plans are feasible for every plot, season and year",
+        "cumulative net profit follows the confirmed objective and the correct surplus-sale rule",
+        "2023 planting supplies a valid initial condition for 2024 rotation checks",
+        "the output workbooks preserve the official template structure and units",
+        "the claimed optimum is assessed only after expected-sales, price-range and management-threshold conventions are fixed"
+      ],
+      "framing_decision_id": "global_optimality_framing",
+      "risks": [
+        "expected 2023 sales volume is not an explicit source field",
+        "all source prices are intervals rather than single values",
+        "management convenience constraints have no numerical thresholds",
+        "rotation boundary conventions can change feasibility"
+      ],
+      "claim_boundary": "May claim an optimal feasible allocation only under the subsequently confirmed data and management conventions."
+    },
+    {
+      "id": "Q2",
+      "primary_type": "optimization/decision",
+      "secondary_type": "simulation/scenario",
+      "confidence": "high",
+      "evidence": [
+        "required output is one complete 2024-2030 plot-season-crop allocation in result2.xlsx",
+        "the plan must optimize the confirmed cumulative economic objective while respecting planting constraints",
+        "sales, yield, cost and price vary over time, so uncertainty outcomes must be evaluated to defend the decision",
+        "the problem explicitly asks that potential planting risk be considered"
+      ],
+      "required_validation": [
+        "all deterministic feasibility and template checks required for Q1",
+        "each uncertainty range and time-evolution interpretation is traceable to the statement or a labeled assumption",
+        "scenario coverage, random seeds and replication counts are recorded when random simulation is used",
+        "risk metrics and unacceptable outcomes are defined before comparing plans",
+        "expected cumulative net profit and adverse-scenario performance are both reported",
+        "the surplus-sale convention is fixed before results are interpreted"
+      ],
+      "framing_decision_id": "global_optimality_framing",
+      "risks": [
+        "the statement gives ranges or approximate trends but not probability distributions",
+        "the surplus-sale convention is not specified for Q2",
+        "risk meaning and tolerance are not yet human-confirmed",
+        "an uncertainty scheme can dominate the resulting allocation if its assumptions are not stress-tested"
+      ],
+      "claim_boundary": "May claim a preferred decision under the tested uncertainty specification, not a universally optimal real-world plan."
+    },
+    {
+      "id": "Q3",
+      "primary_type": "optimization/decision",
+      "secondary_type": "simulation/scenario",
+      "is_mixed": true,
+      "mixed_structure": "A reproducible correlated simulation supplies inputs to the planting decision, and the resulting full allocation and strategy are compared with Q2 on matched metrics.",
+      "confidence": "high",
+      "evidence": [
+        "the human requires a complete yearly, seasonal and plot-level allocation as well as strategy rules",
+        "the statement explicitly requires solution through simulated data",
+        "crop substitution, complementarity and economic-variable correlation are load-bearing scenario structures",
+        "a deep comparison with Q2 is a required deliverable rather than an optional discussion"
+      ],
+      "required_validation": [
+        "the full allocation remains feasible under all inherited constraints",
+        "simulated data, relation direction, strength, seed and replication count are reproducible and clearly labeled as simulated",
+        "substitution, complementarity and economic correlations form a coherent scenario specification",
+        "sensitivity checks show whether conclusions depend on chosen relation strengths",
+        "Q2 and Q3 are compared using matched objective, risk, horizon and reporting units",
+        "the comparison includes allocation changes, cumulative economic effect, risk effect and implementation consequences",
+        "both the detailed allocation and the higher-level strategy rules are delivered"
+      ],
+      "framing_decision_id": "q3_output_form",
+      "additional_framing_decision_ids": [
+        "global_optimality_framing"
+      ],
+      "risks": [
+        "no observed substitution, complementarity or correlation dataset is supplied",
+        "synthetic relationship choices can dominate the comparison",
+        "Q3 has no official dedicated workbook template",
+        "without matched comparison controls, differences from Q2 cannot be attributed to correlation structure"
+      ],
+      "claim_boundary": "May make conditional scenario conclusions under stated simulated relationships, but may not present them as observed causal or forecasting evidence."
+    }
+  ],
+  "unresolved_framing": [
+    "quantitative management convenience thresholds",
+    "Q2 surplus-sale convention",
+    "Q2 unacceptable risk definition and tolerance",
+    "Q3 relationship evidence and simulation budget"
+  ],
+  "method_selection_allowed": false,
+  "recommended_next_skill": "related-paper-analyzer"
+}

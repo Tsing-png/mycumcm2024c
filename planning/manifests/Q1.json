@@ -3,10 +3,10 @@
   "question_id": "Q1",
   "rigor_profile": "lean",
   "current_gate": "G1",
-  "status": "problem_parsed_and_framed_waiting_classification",
+  "status": "classified_waiting_research_and_data_profile",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
-    "classification": null,
+    "classification": "planning/classification/problem_classification.json",
     "framing_decisions": "planning/framing_decisions.jsonl",
     "method_card": null,
     "decision_ledger": null,
@@ -20,13 +20,12 @@
     "final_assembly": false
   },
   "blockers": [
-    "subquestion classification missing",
     "expected sales and management thresholds unresolved"
   ],
   "next_action": {
     "owner": "ai",
-    "skill": "problem-classifier",
-    "reason": "model-neutral Q1 parse is complete; classification must precede downstream screening"
+    "skill": "related-paper-analyzer",
+    "reason": "Q1 classification is complete; relevant sources should inform later screening without selecting a method yet"
   },
-  "updated_at": "2026-08-27T20:44:23+08:00"
+  "updated_at": "2026-08-27T20:46:57+08:00"
 }

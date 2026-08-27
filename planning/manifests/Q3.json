@@ -3,7 +3,7 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G2.5",
-  "status": "method_chosen_waiting_symbol_table",
+  "status": "method_chosen_waiting_assumptions",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -13,6 +13,7 @@
     "method_card": "methods/Q3/q3_method_card.md",
     "decision_ledger": "methods/Q3/q3_decisions.jsonl",
     "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
+    "symbol_table": "planning/symbol_table.md",
     "latest_run": null
   },
   "allowed": {
@@ -24,8 +25,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "symbol-table-builder",
-    "reason": "Q3-M1 is human-approved with Q3-B1 retained; shared symbols and units must be resolved before assumptions and implementation planning"
+    "skill": "model-assumptions-builder",
+    "reason": "Shared symbols and Q2-to-Q3 handoffs are resolved; simulated relationship assumptions must be explicit before implementation planning"
   },
-  "updated_at": "2026-08-27T22:05:55+08:00"
+  "updated_at": "2026-08-27T22:15:13+08:00"
 }

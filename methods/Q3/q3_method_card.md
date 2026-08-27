@@ -41,3 +41,4 @@ Q3-M1 的条件是关系矩阵、方向、强度、种子和响应公式全部�
 ## Compact history
 
 - 2026-08-27: 根据 `q3_output_form`、`q2_q3_risk_simulation_boundary` 和 `global_experiment_budget` 建立首轮筛选；尚无人工作出方法选择。
+- 2026-08-27: 人工通过 `q3_method_choice` 选择 Q3-M1；Q3-B1 保留为必须实现的 baseline，Q3-F1 未激活。

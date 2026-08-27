@@ -41,3 +41,4 @@ Q1-M1 的条件是正式实验必须比较最小面积或占比与每地块作�
 ## Compact history
 
 - 2026-08-27: 根据 `q1_baseline_data_conventions`、`global_optimality_framing` 和 `global_experiment_budget` 建立首轮筛选；尚无人工作出方法选择。
+- 2026-08-27: 人工通过 `q1_method_choice` 选择 Q1-M1；Q1-B1 保留为必须实现的 baseline，Q1-F1 未激活。

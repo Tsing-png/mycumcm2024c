@@ -41,3 +41,4 @@ Q2-M1 和 Q2-B1 均可进入人工选择，但条件是所有随机分布只作�
 ## Compact history
 
 - 2026-08-27: 根据 `q2_q3_risk_simulation_boundary`、`q2_surplus_sale_convention` 和 `global_experiment_budget` 建立首轮筛选；尚无人工作出方法选择。
+- 2026-08-27: 人工通过 `q2_method_choice` 选择 Q2-M1；Q2-B1 保留为必须实现的 baseline，Q2-F1 未激活。

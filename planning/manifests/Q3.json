@@ -3,7 +3,7 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G2.5",
-  "status": "method_chosen_waiting_code_plan",
+  "status": "code_plan_ready_waiting_python_generation",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -15,10 +15,11 @@
     "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
     "symbol_table": "planning/symbol_table.md",
     "model_assumptions": "planning/model_assumptions.md",
+    "code_plan": "code/Q3/q3_code_plan.md",
     "latest_run": null
   },
   "allowed": {
-    "code_generation": false,
+    "code_generation": true,
     "freeze": false,
     "paper_writing": false,
     "final_assembly": false
@@ -26,8 +27,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "model-code-analyzer",
-    "reason": "Human-labeled relationship assumptions are recorded; translate Q3-M1 and Q3-B1 into a language-neutral implementation and paired experiment contract"
+    "skill": "python-model-code-generator",
+    "reason": "The approved Q3-M1 and Q3-B1 Python round1 paired implementation and experiment contract is complete"
   },
-  "updated_at": "2026-08-27T22:20:37+08:00"
+  "updated_at": "2026-08-27T22:33:43+08:00"
 }

@@ -282,6 +282,7 @@ def solve_milp_schedule(
     time_limit: float = 300.0,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     started = time.perf_counter()
+    mip_rel_gap = 0.03 if alpha == 0.0 else 0.01
     slots: list[tuple[int, str, str, str, float]] = []
     for plot in data.plots.itertuples():
         for year in YEARS:
@@ -395,7 +396,7 @@ def solve_milp_schedule(
         integrality=integrality,
         bounds=Bounds(lower_bounds, upper_bounds),
         constraints=LinearConstraint(matrix.tocsr(), np.array(lows), np.array(highs)),
-        options={"time_limit": time_limit, "mip_rel_gap": 0.01, "presolve": True},
+        options={"time_limit": time_limit, "mip_rel_gap": mip_rel_gap, "presolve": True},
     )
     schedule_rows = []
     if result.x is not None:
@@ -410,6 +411,7 @@ def solve_milp_schedule(
         "objective_minimized": None if result.fun is None else float(result.fun),
         "mip_gap": None if getattr(result, "mip_gap", None) is None else float(result.mip_gap),
         "mip_node_count": None if getattr(result, "mip_node_count", None) is None else int(result.mip_node_count),
+        "mip_rel_gap_target": mip_rel_gap,
         "variables": nvar, "area_variables": nx, "constraints": len(rows),
         "execution_time_seconds": time.perf_counter() - started,
     }

@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "method_id": "Q1-B1",
+      "alpha": 0.0,
+      "config": null,
+      "solver": null
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.0,
+      "config": "share0_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -40417243.26956026,
+        "mip_gap": 0.02125639367964373,
+        "mip_node_count": 1060,
+        "mip_rel_gap_target": 0.03,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 20107,
+        "execution_time_seconds": 172.14202160999957
+      }
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.0,
+      "config": "share10_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -40123862.13930663,
+        "mip_gap": 0.028690165587829684,
+        "mip_node_count": 52,
+        "mip_rel_gap_target": 0.03,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 99.99002754399953
+      }
+    },
+    {
+      "method_id": "Q1-B1",
+      "alpha": 0.5,
+      "config": null,
+      "solver": null
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.5,
+      "config": "share0_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63432082.98100814,
+        "mip_gap": 0.008636785601124554,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 20107,
+        "execution_time_seconds": 2.856170098999428
+      }
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.5,
+      "config": "share10_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63510227.938816465,
+        "mip_gap": 0.007394901403221419,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 13.27335522300018
+      }
+    }
+  ]
+}

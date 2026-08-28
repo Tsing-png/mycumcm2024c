@@ -126,7 +126,7 @@
       "strength": "weak",
       "coefficient": 0.15,
       "mip_gap": 0.006428349138824154,
-      "execution_time_seconds": 8.40224039900022,
+      "execution_time_seconds": 8.802684215999761,
       "overlap_with_q2": 0.3857105186055005,
       "overlap_with_medium": 0.362213475950388,
       "clipping_ratio": 0.0,
@@ -140,7 +140,7 @@
       "strength": "medium",
       "coefficient": 0.35,
       "mip_gap": 0.0076800348911269314,
-      "execution_time_seconds": 8.477404223000121,
+      "execution_time_seconds": 8.605804508000801,
       "overlap_with_q2": 0.32133479139740506,
       "overlap_with_medium": 1.0,
       "clipping_ratio": 0.0,
@@ -154,7 +154,7 @@
       "strength": "strong",
       "coefficient": 0.55,
       "mip_gap": 0.009014696415243896,
-      "execution_time_seconds": 5.695458947999214,
+      "execution_time_seconds": 5.841207174998999,
       "overlap_with_q2": 0.27487150218124085,
       "overlap_with_medium": 0.24875866953219752,
       "clipping_ratio": 0.0,
@@ -383,5 +383,39 @@
       "passed": true
     }
   },
-  "medium_area_overlap_with_q2": 0.32133479139740506
+  "medium_area_overlap_with_q2": 0.32133479139740506,
+  "macro_micro_attribution": {
+    "profit_evaluation_scenarios": "medium correlated scenarios",
+    "profit_difference_threshold": 0.01,
+    "crop_area_similarity_threshold": 0.8,
+    "crop_area_similarity_definition": "sum(min(A_j,B_j))/sum(max(A_j,B_j)) over 41 seven-year crop-area totals",
+    "pairwise_checks": [
+      {
+        "left": "weak",
+        "right": "medium",
+        "left_expected_profit": 68881921.89396192,
+        "right_expected_profit": 68840132.01055904,
+        "relative_profit_difference": 0.0006066886964509514,
+        "crop_area_vector_similarity": 0.9663397325943699
+      },
+      {
+        "left": "weak",
+        "right": "strong",
+        "left_expected_profit": 68881921.89396192,
+        "right_expected_profit": 68754024.61372493,
+        "relative_profit_difference": 0.001856761204106306,
+        "crop_area_vector_similarity": 0.9554435899581327
+      },
+      {
+        "left": "medium",
+        "right": "strong",
+        "left_expected_profit": 68840132.01055904,
+        "right_expected_profit": 68754024.61372493,
+        "relative_profit_difference": 0.0012508313729104657,
+        "crop_area_vector_similarity": 0.9472572055375217
+      }
+    ],
+    "verdict": "equivalent_micro_reallocation",
+    "interpretation": "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移"
+  }
 }

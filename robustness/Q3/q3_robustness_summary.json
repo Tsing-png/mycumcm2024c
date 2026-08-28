@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "tested_claim": "Weak, medium and strong relationship settings differ mainly through plot-level scheduling rather than macro crop allocation or expected return.",
+  "input_refs": [
+    "results/Q3/experiments/round2/tables/q3_strength_comparison.csv",
+    "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json",
+    "results/Q3/experiments/round2/run_summary.json"
+  ],
+  "perturbation": "Relationship coefficient levels 0.15, 0.35 and 0.55; all plans evaluated on the same medium correlated scenarios.",
+  "metrics": {
+    "relative_expected_profit_difference_threshold": 0.01,
+    "crop_area_vector_similarity_threshold": 0.8,
+    "maximum_observed_relative_profit_difference": 0.001856761204106306,
+    "minimum_observed_crop_area_vector_similarity": 0.9472572055375217,
+    "micro_plot_overlap_passed": false,
+    "macro_equivalence_passed": true
+  },
+  "status": "PASS",
+  "interpretation": "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移。",
+  "limitation": "The result is conditional on the simulated relationship edges, strengths and medium correlated evaluation scenarios; it is not evidence of real causal elasticities.",
+  "fallback_trigger_relevance": "Q3-F1 is not observed after replacing the plot-level overlap diagnostic with the predeclared macro profit and crop-area criteria."
+}

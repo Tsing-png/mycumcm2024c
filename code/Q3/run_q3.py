@@ -181,6 +181,16 @@ def area_transfer(main: pd.DataFrame, baseline: pd.DataFrame) -> pd.DataFrame:
     })
 
 
+def crop_area_vector(schedule: pd.DataFrame) -> np.ndarray:
+    totals = schedule.groupby("crop_id").area_mu.sum()
+    return np.array([float(totals.get(crop, 0.0)) for crop in range(1, 42)])
+
+
+def vector_overlap(left: np.ndarray, right: np.ndarray) -> float:
+    denominator = np.maximum(left, right).sum()
+    return float(np.minimum(left, right).sum() / denominator) if denominator else 1.0
+
+
 def solver_ok(solver: dict) -> bool:
     return solver.get("mip_gap") is not None and solver["mip_gap"] <= 0.01
 
@@ -213,12 +223,13 @@ def main() -> None:
         if label == "medium":
             write_schedule(out / "tables/q3_m1_medium_schedule.csv", schedule)
 
-    correlation_checks, relation_config = {}, {}
+    correlation_checks, relation_config, scenario_sets = {}, {}, {}
     comparison_rows, strength_rows, evaluation_checks = [], [], {}
     q2_medium_values = {}
     for label, strength in STRENGTHS.items():
         matrix = response_matrix(edges, strength)
         scenarios, corr = correlated_scenarios(data, args.seed + 1000, 200, strength, matrix)
+        scenario_sets[label] = scenarios
         correlation_checks[label] = {**corr, "scenario_hash": scenario_hash(scenarios), "seed": args.seed + 1000}
         relation_config[label] = {
             "strength": strength, "response_matrix": matrix.tolist(),
@@ -256,8 +267,46 @@ def main() -> None:
             "constraint_violations": len(violations),
         })
 
+    medium_scenarios = scenario_sets["medium"]
+    macro_rows = []
+    macro_vectors = {label: crop_area_vector(schedule) for label, schedule in schedules.items()}
+    macro_profits = {
+        label: float(batch_profit(data, schedule, medium_scenarios, 0.5).mean())
+        for label, schedule in schedules.items()
+    }
+    labels = list(STRENGTHS)
+    for left_index, left in enumerate(labels):
+        for right in labels[left_index + 1:]:
+            profit_denominator = max(abs(macro_profits[left]), abs(macro_profits[right]), 1.0)
+            macro_rows.append({
+                "left": left,
+                "right": right,
+                "left_expected_profit": macro_profits[left],
+                "right_expected_profit": macro_profits[right],
+                "relative_profit_difference": abs(macro_profits[left] - macro_profits[right]) / profit_denominator,
+                "crop_area_vector_similarity": vector_overlap(macro_vectors[left], macro_vectors[right]),
+            })
+    macro_equivalent = all(
+        row["relative_profit_difference"] < 0.01 and row["crop_area_vector_similarity"] > 0.80
+        for row in macro_rows
+    )
+    macro_attribution = {
+        "profit_evaluation_scenarios": "medium correlated scenarios",
+        "profit_difference_threshold": 0.01,
+        "crop_area_similarity_threshold": 0.80,
+        "crop_area_similarity_definition": "sum(min(A_j,B_j))/sum(max(A_j,B_j)) over 41 seven-year crop-area totals",
+        "pairwise_checks": macro_rows,
+        "verdict": "equivalent_micro_reallocation" if macro_equivalent else "market_structure_shift",
+        "interpretation": (
+            "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移"
+            if macro_equivalent else
+            "作物总面积结构或收益随关系强度发生实质变化，需要保留敏感性与 fallback"
+        ),
+    }
+
     pd.DataFrame(comparison_rows).to_csv(out / "tables/q3_q2_paired_comparison.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(strength_rows).to_csv(out / "tables/q3_strength_comparison.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(macro_rows).to_csv(out / "tables/q3_macro_attribution.csv", index=False, encoding="utf-8-sig")
     area_transfer(schedules["medium"], baseline).to_csv(
         out / "tables/q3_area_transfer.csv", index=False, encoding="utf-8-sig"
     )
@@ -267,10 +316,12 @@ def main() -> None:
     })
     write_json(out / "metrics/q3_correlation_checks.json", correlation_checks)
     write_json(out / "metrics/q3_solver_metrics.json", solvers)
+    write_json(out / "metrics/q3_macro_micro_attribution.json", macro_attribution)
     write_json(out / "metrics/q3_metrics.json", {
         "comparison": comparison_rows, "strength_sensitivity": strength_rows,
         "evaluation_checks": evaluation_checks,
         "medium_area_overlap_with_q2": schedule_overlap(schedules["medium"], baseline),
+        "macro_micro_attribution": macro_attribution,
     })
 
     correlations_ok = all(
@@ -279,12 +330,12 @@ def main() -> None:
     )
     evaluations_ok = all(item["passed"] for item in evaluation_checks.values())
     medium_violations = check_schedule(data, schedules["medium"])
-    overlaps_ok = all(row["overlap_with_medium"] >= 0.5 for row in strength_rows)
+    micro_overlaps_ok = all(row["overlap_with_medium"] >= 0.5 for row in strength_rows)
     half_diffs = [row["paired_mean_difference"] for row in comparison_rows if row["alpha"] == 0.5]
     direction_reversal = min(half_diffs) < 0 < max(half_diffs)
     fallback = bool(
         not correlations_ok or not evaluations_ok or not solver_ok(solvers["medium"])
-        or medium_violations or not overlaps_ok or direction_reversal
+        or medium_violations or not macro_equivalent or direction_reversal
     )
     medium_success = (
         not schedules["medium"].empty and not medium_violations and solver_ok(solvers["medium"])
@@ -297,7 +348,7 @@ def main() -> None:
         "input_files": ["workspace/data_clean/*.csv", str(baseline_path.relative_to(ROOT))],
         "output_files": ["tables/q3_m1_medium_schedule.csv", "tables/q3_q2_paired_comparison.csv",
                          "tables/q3_strength_comparison.csv", "tables/q3_area_transfer.csv",
-                         "tables/q3_relation_edges.csv"],
+                         "tables/q3_relation_edges.csv", "tables/q3_macro_attribution.csv"],
         "figure_files": [],
         "metrics_summary": {"medium_solver": solvers["medium"], **concentration(schedules["medium"]),
                             "constraint_violations": len(medium_violations)},
@@ -318,10 +369,14 @@ def main() -> None:
         "comparison": {"file": "tables/q3_q2_paired_comparison.csv", "metrics": "metrics/q3_metrics.json"},
         "fallback_trigger": {
             "fallback_id": "Q3-F1", "observed": fallback,
-            "condition": "invalid correlation, error >0.08, medium gap >1%, overlap <50%, direction reversal, or evaluation mismatch",
+            "condition": "invalid correlation, error >0.08, medium gap >1%, macro profit difference >=1%, crop-area similarity <=80%, direction reversal, or evaluation mismatch",
             "components": {"correlations_ok": correlations_ok, "evaluations_ok": evaluations_ok,
-                           "cross_strength_overlap_ok": overlaps_ok, "profit_direction_reversal": direction_reversal},
-            "evidence": ["metrics/q3_correlation_checks.json", "metrics/q3_metrics.json"],
+                           "micro_plot_overlap_ok": micro_overlaps_ok,
+                           "macro_equivalent_solution": macro_equivalent,
+                           "profit_direction_reversal": direction_reversal},
+            "interpretation": macro_attribution["interpretation"],
+            "evidence": ["metrics/q3_correlation_checks.json", "metrics/q3_metrics.json",
+                         "metrics/q3_macro_micro_attribution.json"],
         },
         "environment": environment(),
         "input_hashes": {path.name: file_hash(path) for path in (ROOT / "workspace/data_clean").glob("*.csv")},

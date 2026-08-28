@@ -1,0 +1,34 @@
+{
+  "profit_evaluation_scenarios": "medium correlated scenarios",
+  "profit_difference_threshold": 0.01,
+  "crop_area_similarity_threshold": 0.8,
+  "crop_area_similarity_definition": "sum(min(A_j,B_j))/sum(max(A_j,B_j)) over 41 seven-year crop-area totals",
+  "pairwise_checks": [
+    {
+      "left": "weak",
+      "right": "medium",
+      "left_expected_profit": 68881921.89396192,
+      "right_expected_profit": 68840132.01055904,
+      "relative_profit_difference": 0.0006066886964509514,
+      "crop_area_vector_similarity": 0.9663397325943699
+    },
+    {
+      "left": "weak",
+      "right": "strong",
+      "left_expected_profit": 68881921.89396192,
+      "right_expected_profit": 68754024.61372493,
+      "relative_profit_difference": 0.001856761204106306,
+      "crop_area_vector_similarity": 0.9554435899581327
+    },
+    {
+      "left": "medium",
+      "right": "strong",
+      "left_expected_profit": 68840132.01055904,
+      "right_expected_profit": 68754024.61372493,
+      "relative_profit_difference": 0.0012508313729104657,
+      "crop_area_vector_similarity": 0.9472572055375217
+    }
+  ],
+  "verdict": "equivalent_micro_reallocation",
+  "interpretation": "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移"
+}

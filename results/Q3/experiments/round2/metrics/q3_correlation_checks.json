@@ -1,0 +1,131 @@
+{
+  "weak": {
+    "target_matrix": [
+      [
+        1.0,
+        0.0375,
+        0.0825
+      ],
+      [
+        0.0375,
+        1.0,
+        -0.03
+      ],
+      [
+        0.0825,
+        -0.03,
+        1.0
+      ]
+    ],
+    "empirical_factor_matrix": [
+      [
+        1.0,
+        0.0669971228034901,
+        0.11149418138699548
+      ],
+      [
+        0.06699712280349011,
+        1.0,
+        -0.024330596679895643
+      ],
+      [
+        0.11149418138699548,
+        -0.024330596679895643,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 0.8956391622461259,
+    "positive_definite": true,
+    "maximum_absolute_correlation_error": 0.029497122803490115,
+    "demand_response_clipping_ratio": 0.015749128919860626,
+    "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
+    "scenario_hash": "f98b45f437647b554f9caf9eeb28885b12601ed1725c037964bb639ff4eaa33a",
+    "seed": 3026
+  },
+  "medium": {
+    "target_matrix": [
+      [
+        1.0,
+        0.0875,
+        0.1925
+      ],
+      [
+        0.0875,
+        1.0,
+        -0.06999999999999999
+      ],
+      [
+        0.1925,
+        -0.06999999999999999,
+        1.0
+      ]
+    ],
+    "empirical_factor_matrix": [
+      [
+        1.0,
+        0.11593302067101871,
+        0.21529416735931226
+      ],
+      [
+        0.11593302067101871,
+        1.0,
+        -0.05927212297977276
+      ],
+      [
+        0.21529416735931226,
+        -0.059272122979772766,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 0.7564913785742947,
+    "positive_definite": true,
+    "maximum_absolute_correlation_error": 0.028433020671018716,
+    "demand_response_clipping_ratio": 0.03761324041811847,
+    "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
+    "scenario_hash": "d9b65c1b7fb8800c0ee24a20b13fca0e0408acf38be2c7df1f462f73f227acaa",
+    "seed": 3026
+  },
+  "strong": {
+    "target_matrix": [
+      [
+        1.0,
+        0.1375,
+        0.30250000000000005
+      ],
+      [
+        0.1375,
+        1.0,
+        -0.11000000000000001
+      ],
+      [
+        0.30250000000000005,
+        -0.11000000000000001,
+        1.0
+      ]
+    ],
+    "empirical_factor_matrix": [
+      [
+        1.0,
+        0.16467416469798654,
+        0.31828328846866766
+      ],
+      [
+        0.16467416469798654,
+        0.9999999999999998,
+        -0.09488879263457219
+      ],
+      [
+        0.31828328846866766,
+        -0.09488879263457219,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 0.6173435949024628,
+    "positive_definite": true,
+    "maximum_absolute_correlation_error": 0.02717416469798653,
+    "demand_response_clipping_ratio": 0.06029616724738676,
+    "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
+    "scenario_hash": "4a19588245a0b8bf813db67f9086a2c54f223c917f8dd516d56dc3d95bead02c",
+    "seed": 3026
+  }
+}

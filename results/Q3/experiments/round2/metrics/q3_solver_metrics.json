@@ -1,0 +1,41 @@
+{
+  "weak": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -69435632.34763004,
+    "mip_gap": 0.006428349138824154,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 8.40224039900022
+  },
+  "medium": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -69354660.72197497,
+    "mip_gap": 0.0076800348911269314,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 8.477404223000121
+  },
+  "strong": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -69268395.97940756,
+    "mip_gap": 0.009014696415243896,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 5.695458947999214
+  }
+}

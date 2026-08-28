@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "question": "Q3",
+  "round": "round2",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q3_decoupled_relation_contract",
+  "methods": [
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": 22.575103569999555,
+      "input_files": [
+        "workspace/data_clean/*.csv",
+        "results/Q2/experiments/round3/tables/q2_m1_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_medium_schedule.csv",
+        "tables/q3_q2_paired_comparison.csv",
+        "tables/q3_strength_comparison.csv",
+        "tables/q3_area_transfer.csv",
+        "tables/q3_relation_edges.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "medium_solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -69354660.72197497,
+          "mip_gap": 0.0076800348911269314,
+          "mip_node_count": 1,
+          "mip_rel_gap_target": 0.01,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27541,
+          "execution_time_seconds": 8.477404223000121
+        },
+        "unique_crop_count": 24,
+        "top1_area_share": 0.1708208485020956,
+        "top3_area_share": 0.44032666072312676,
+        "gini_simpson": 0.899350788845338,
+        "constraint_violations": 0
+      },
+      "warnings": [
+        "all relationship and correlation structures are simulated assumptions"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-B1",
+      "role": "usable_baseline",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": 0.0,
+      "input_files": [
+        "results/Q2/experiments/round3/tables/q2_m1_schedule.csv"
+      ],
+      "output_files": [],
+      "figure_files": [],
+      "metrics_summary": {
+        "unique_crop_count": 24,
+        "top1_area_share": 0.1752213950719826,
+        "top3_area_share": 0.44407512476359756,
+        "gini_simpson": 0.8992621220332766,
+        "constraint_violations": 0
+      },
+      "warnings": [
+        "reuses the reviewed Q2 Round 3 main schedule with relationship structure disabled"
+      ],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "file": "tables/q3_q2_paired_comparison.csv",
+    "metrics": "metrics/q3_metrics.json"
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q3-F1",
+    "observed": true,
+    "condition": "invalid correlation, error >0.08, medium gap >1%, overlap <50%, direction reversal, or evaluation mismatch",
+    "components": {
+      "correlations_ok": true,
+      "evaluations_ok": true,
+      "cross_strength_overlap_ok": false,
+      "profit_direction_reversal": false
+    },
+    "evidence": [
+      "metrics/q3_correlation_checks.json",
+      "metrics/q3_metrics.json"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "crops.csv": "206264a732950496562ece5e24bb3a407b68635e13df5d166b1d0bf5fdc1a807",
+    "stats_2023.csv": "fc16e9d374f503454bf169c928eac35cc1d19a6c6f53734192d19292357882c0",
+    "planting_2023.csv": "1703aa965d8bd0f6f3c0d826b972543a96dd2cf84e4bc986c08431b0b5c2078b",
+    "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
+    "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
+  },
+  "q2_baseline_hash": "cefc1ca47ac1792bcd128f9c29c0d2071b2d2c9f5619283780ce5922657d2397",
+  "execution_time_seconds": 30.37159752700063
+}

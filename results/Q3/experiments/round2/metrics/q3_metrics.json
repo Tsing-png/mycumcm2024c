@@ -1,0 +1,387 @@
+{
+  "comparison": [
+    {
+      "strength": "weak",
+      "alpha": 0.5,
+      "q3_mean_profit": 69077697.66576456,
+      "q3_q05_profit": 63321997.98566278,
+      "q3_lower_tail_mean": 62211472.763007306,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 60578004.12625653,
+      "q3_profit_std": 3598591.1857053353,
+      "q2_mean_profit": 68913820.20862319,
+      "q2_q05_profit": 63247983.61545481,
+      "q2_lower_tail_mean": 62094836.4275416,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 60484546.339557424,
+      "q2_profit_std": 3592068.115320713,
+      "paired_mean_difference": 163877.45714139016,
+      "paired_lower_tail_difference": -28641.574067973346,
+      "overlap_with_q2": 0.3857105186055005,
+      "q3_constraint_violations": 0
+    },
+    {
+      "strength": "weak",
+      "alpha": 0.0,
+      "q3_mean_profit": 26356239.11459657,
+      "q3_q05_profit": 24942316.22652602,
+      "q3_lower_tail_mean": 24405599.383235216,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 23936513.241377003,
+      "q3_profit_std": 880258.9999513932,
+      "q2_mean_profit": 25666379.84303235,
+      "q2_q05_profit": 24324938.539918132,
+      "q2_lower_tail_mean": 23909007.683100328,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 23394398.254435048,
+      "q2_profit_std": 822255.1398135824,
+      "paired_mean_difference": 689859.2715642225,
+      "paired_lower_tail_difference": 388634.28346341214,
+      "overlap_with_q2": 0.3857105186055005,
+      "q3_constraint_violations": 0
+    },
+    {
+      "strength": "medium",
+      "alpha": 0.5,
+      "q3_mean_profit": 68840132.01055904,
+      "q3_q05_profit": 61436473.62323593,
+      "q3_lower_tail_mean": 60160610.283159494,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 57338878.88081405,
+      "q3_profit_std": 4514497.371504561,
+      "q2_mean_profit": 68718753.147054,
+      "q2_q05_profit": 61364829.01605366,
+      "q2_lower_tail_mean": 60091699.11071043,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 57380788.42969084,
+      "q2_profit_std": 4486533.8532509655,
+      "paired_mean_difference": 121378.86350502606,
+      "paired_lower_tail_difference": -70882.01488409043,
+      "overlap_with_q2": 0.32133479139740506,
+      "q3_constraint_violations": 0
+    },
+    {
+      "strength": "medium",
+      "alpha": 0.0,
+      "q3_mean_profit": 26241577.411242627,
+      "q3_q05_profit": 24190797.815712906,
+      "q3_lower_tail_mean": 23667682.33117559,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 22787629.367222864,
+      "q3_profit_std": 1178890.3452343326,
+      "q2_mean_profit": 25617431.361016706,
+      "q2_q05_profit": 23747060.20438484,
+      "q2_lower_tail_mean": 23230282.0261527,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 22450444.259081554,
+      "q2_profit_std": 1084306.1632706164,
+      "paired_mean_difference": 624146.0502259225,
+      "paired_lower_tail_difference": 294841.3727921549,
+      "overlap_with_q2": 0.32133479139740506,
+      "q3_constraint_violations": 0
+    },
+    {
+      "strength": "strong",
+      "alpha": 0.5,
+      "q3_mean_profit": 68617835.12568353,
+      "q3_q05_profit": 59758820.24116475,
+      "q3_lower_tail_mean": 58248774.303551,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 54961605.00828984,
+      "q3_profit_std": 5358509.102727844,
+      "q2_mean_profit": 68580505.93951292,
+      "q2_q05_profit": 59771415.82021979,
+      "q2_lower_tail_mean": 58297651.8121474,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 55158479.09434121,
+      "q2_profit_std": 5304186.332580154,
+      "paired_mean_difference": 37329.18617062408,
+      "paired_lower_tail_difference": -183023.5737674795,
+      "overlap_with_q2": 0.27487150218124085,
+      "q3_constraint_violations": 0
+    },
+    {
+      "strength": "strong",
+      "alpha": 0.0,
+      "q3_mean_profit": 25866741.660885405,
+      "q3_q05_profit": 23487965.327848595,
+      "q3_lower_tail_mean": 22755238.2659022,
+      "q3_loss_probability": 0.0,
+      "q3_minimum_profit": 21620515.486016132,
+      "q3_profit_std": 1417770.6320835648,
+      "q2_mean_profit": 25577657.195850812,
+      "q2_q05_profit": 23495241.162148178,
+      "q2_lower_tail_mean": 22709528.866588555,
+      "q2_loss_probability": 0.0,
+      "q2_minimum_profit": 21732777.66390852,
+      "q2_profit_std": 1280515.8060115585,
+      "paired_mean_difference": 289084.4650345979,
+      "paired_lower_tail_difference": -134119.37134684436,
+      "overlap_with_q2": 0.27487150218124085,
+      "q3_constraint_violations": 0
+    }
+  ],
+  "strength_sensitivity": [
+    {
+      "strength": "weak",
+      "coefficient": 0.15,
+      "mip_gap": 0.006428349138824154,
+      "execution_time_seconds": 8.40224039900022,
+      "overlap_with_q2": 0.3857105186055005,
+      "overlap_with_medium": 0.362213475950388,
+      "clipping_ratio": 0.0,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.16983486510864518,
+      "top3_area_share": 0.4366040080118806,
+      "gini_simpson": 0.900141400115489,
+      "constraint_violations": 0
+    },
+    {
+      "strength": "medium",
+      "coefficient": 0.35,
+      "mip_gap": 0.0076800348911269314,
+      "execution_time_seconds": 8.477404223000121,
+      "overlap_with_q2": 0.32133479139740506,
+      "overlap_with_medium": 1.0,
+      "clipping_ratio": 0.0,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1708208485020956,
+      "top3_area_share": 0.44032666072312676,
+      "gini_simpson": 0.899350788845338,
+      "constraint_violations": 0
+    },
+    {
+      "strength": "strong",
+      "coefficient": 0.55,
+      "mip_gap": 0.009014696415243896,
+      "execution_time_seconds": 5.695458947999214,
+      "overlap_with_q2": 0.27487150218124085,
+      "overlap_with_medium": 0.24875866953219752,
+      "clipping_ratio": 0.0,
+      "unique_crop_count": 25,
+      "top1_area_share": 0.1686489481858065,
+      "top3_area_share": 0.44910125133795786,
+      "gini_simpson": 0.8971938910301918,
+      "constraint_violations": 0
+    }
+  ],
+  "evaluation_checks": {
+    "weak_main_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        2.9802322387695312e-08,
+        1.4901161193847656e-08,
+        0.0,
+        -7.450580596923828e-09,
+        1.4901161193847656e-08
+      ],
+      "maximum_absolute_difference": 2.9802322387695312e-08,
+      "passed": true
+    },
+    "weak_q2_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        2.9802322387695312e-08,
+        0.0,
+        0.0,
+        -7.450580596923828e-09,
+        -1.4901161193847656e-08
+      ],
+      "maximum_absolute_difference": 2.9802322387695312e-08,
+      "passed": true
+    },
+    "weak_main_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "weak_q2_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "medium_main_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        1.4901161193847656e-08,
+        1.4901161193847656e-08,
+        1.4901161193847656e-08,
+        7.450580596923828e-09,
+        7.450580596923828e-09
+      ],
+      "maximum_absolute_difference": 1.4901161193847656e-08,
+      "passed": true
+    },
+    "medium_q2_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        1.4901161193847656e-08,
+        2.9802322387695312e-08,
+        0.0,
+        7.450580596923828e-09,
+        0.0
+      ],
+      "maximum_absolute_difference": 2.9802322387695312e-08,
+      "passed": true
+    },
+    "medium_main_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "medium_q2_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "strong_main_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        -1.4901161193847656e-08,
+        2.9802322387695312e-08,
+        1.4901161193847656e-08,
+        -1.4901161193847656e-08,
+        -1.4901161193847656e-08
+      ],
+      "maximum_absolute_difference": 2.9802322387695312e-08,
+      "passed": true
+    },
+    "strong_q2_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        -1.4901161193847656e-08,
+        2.9802322387695312e-08,
+        4.470348358154297e-08,
+        -1.4901161193847656e-08,
+        -2.2351741790771484e-08
+      ],
+      "maximum_absolute_difference": 4.470348358154297e-08,
+      "passed": true
+    },
+    "strong_main_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "strong_q2_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    }
+  },
+  "medium_area_overlap_with_q2": 0.32133479139740506
+}

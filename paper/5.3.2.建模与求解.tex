@@ -1,0 +1,85 @@
+\subsubsection{模型建立}
+
+针对问题三，从销量关系响应、相关情景生成和宏观结构判断三个方面建立模型。
+
+\textbf{步骤1 关系响应}
+
+设行归一化响应矩阵为$B^{(h)}$，弱、中、强档系数$h$分别取0.15、0.35和0.55。若问题二中心销量增长向量为$u_t$，则
+\begin{equation}
+r_t^{(h)}=u_t+B^{(h)}u_t,qquad D_{tj}^{(h)}=D_{t-1,j}^{(h)}\left(1+r_{tj}^{(h)}\right).
+\end{equation}
+增长率超出题目区间时按边界裁剪。三档分别调用与问题二相同的MILP，中档方案作为正式代表。
+
+\textbf{步骤2 相关情景生成}
+
+销量增长、亩产量增长和随机食用菌价格增长的目标相关矩阵为
+\begin{equation}
+\Sigma^{(h)}=\begin{bmatrix}1&0.25h&0.55h\\0.25h&1&-0.20h\\0.55h&-0.20h&1\end{bmatrix}.
+\end{equation}
+对独立标准正态变量作Cholesky变换，再映射到问题二的有界边际区间。经验相关系数直接从最终导出的销量、亩产量和价格增长数组计算。
+
+\textbf{步骤3 宏观结构判据}
+
+两方案的41维累计面积结构相似度定义为
+\begin{equation}
+S_A(x,x')=\frac{\sum_{j=1}^{41}\min(A_j,A'_j)}{\sum_{j=1}^{41}\max(A_j,A'_j)}.
+\end{equation}
+当收益差小于1\%且$S_A\ge80\%$时，判定为宏观等价、微观平移。只有收益差大于1\%且$S_A<80\%$时才触发结构性备用方案。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.25\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
+  \caption{问题三关系与判据参数}\label{tab:q3_setting}\\
+  \toprule
+  参数 & 含义 & 取值 & 作用 \\
+  \midrule
+  \endfirsthead
+  \caption{问题三关系与判据参数（续）}\\
+  \toprule
+  参数 & 含义 & 取值 & 作用 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  $h$ & 模拟关系强度 & 0.15，0.35，0.55 & 敏感性分析 \\
+  $E_{\mathrm{corr}}$ & 相关误差阈值 & 0.08 & 数值核验 \\
+  $S_A$ & 面积相似度阈值 & 80\% & 结构判断 \\
+  $\delta_{\Pi}$ & 收益差阈值 & 1\% & 结构判断 \\
+\end{longtable}
+
+\subsubsection{模型求解}
+
+中档关系方案在半价模式下平均收益为6887.03万元，比问题二基线高12.14万元；滞销压力下平均收益优势为62.41万元。正式200个情景中未出现模拟亏损。三档最大相关误差为0.0353，低于0.08阈值。
+
+图\ref{fig:q3_strength}显示，关系强度增加时平均收益变化较小，但5\%分位数下降、收益标准差上升。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{figures/q3_relationship_strength_sensitivity.png}
+  \caption{问题三模拟关系强度的收益敏感性}
+  \label{fig:q3_strength}
+\end{figure}
+
+三档方案两两收益差为0.061\%至0.186\%，面积结构相似度为94.73\%至96.63\%。图\ref{fig:q3_macro}中三组比较均落入微观等价平移区域。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{figures/q3_macro_structure_stability.png}
+  \caption{问题三宏观面积结构稳定判据}
+  \label{fig:q3_macro}
+\end{figure}
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.13\textwidth}>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.13\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}}
+  \caption{问题三中档方案与问题二基线比较}\label{tab:q3_compare}\\
+  \toprule
+  方法 & 模式 & 均值/万元 & 5\%分位/万元 & 下尾均值/万元 & 最低值/万元 & 亏损比例 \\
+  \midrule
+  \endfirsthead
+  \caption{问题三中档方案与问题二基线比较（续）}\\
+  \toprule
+  方法 & 模式 & 均值/万元 & 5\%分位/万元 & 下尾均值/万元 & 最低值/万元 & 亏损比例 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Q3中档 & 半价 & 6887.03 & 6125.76 & 6014.02 & 5732.33 & 0 \\
+  Q2基线 & 半价 & 6874.89 & 6111.25 & 6009.93 & 5736.55 & 0 \\
+  Q3中档 & 滞销 & 2625.40 & 2425.48 & 2371.49 & 2266.97 & 0 \\
+  Q2基线 & 滞销 & 2562.99 & 2381.07 & 2328.86 & 2233.33 & 0 \\
+\end{longtable}

@@ -1,0 +1,33 @@
+\subsubsection{具体分析}
+
+问题二要求在经济参数波动时给出唯一种植计划，属于不确定环境下的优化与风险评估问题。本问采用期望趋势MILP和样本外蒙特卡洛评估。
+
+首先按题目区间构造中心趋势，接着求解不带情景索引的固定面积方案，然后把主方案与静态基线放入共同随机情景，最后计算平均收益、下尾收益和亏损情景比例。具体流程如图\ref{fig:analysis2_flow}所示。
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[x=1cm, y=0.7cm]
+      \node[box] (n11) at (0, 0) {读取区间};
+      \node[box] (n12) at (5, 0) {构造中心};
+      \node[box] (n13) at (10, 0) {求固定方案};
+      \node[box] (n23) at (10, -3) {生成情景};
+      \node[box] (n22) at (5, -3) {配对评估};
+      \node[box] (n21) at (0, -3) {计算下尾};
+      \node[box] (n31) at (0, -6) {多种子检验};
+      \node[box] (n32) at (5, -6) {端点检验};
+      \node[box] (n33) at (10, -6) {填写表格};
+      \draw[arrow] (n11) -- (n12); \draw[arrow] (n12) -- (n13);
+      \draw[arrow] (n13) -- ++(0,-1.0) -| (n23); \draw[arrow] (n23) -- (n22);
+      \draw[arrow] (n22) -- (n21); \draw[arrow] (n21) -- (n31);
+      \draw[arrow] (n31) -- (n32); \draw[arrow] (n32) -- (n33);
+    \end{tikzpicture}
+    \caption{问题二分析流程图}
+    \label{fig:analysis2_flow}
+  \end{center}
+\end{figure}
+
+\subsubsection{模型准备}
+
+问题二继承问题一的清洗数据和全部土地约束。题目只提供变化区间，没有给出概率分布，因此中心趋势仅用于生成方案，随机分布仅用于样本外评估。采用解耦结构后，整数变量不随200个测试情景复制，且方案不会利用事后情景信息。
+
+主方法使用中心趋势求解，基线把2023年参数保持至2030年。两者均完成完整种植任务，并在相同情景中配对比较。尾部风险采用5\%分位数和最差5\%平均收益，不把样本内风险权重加入求解目标\cite{shi2025cvar}。

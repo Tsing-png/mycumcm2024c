@@ -3,7 +3,7 @@
   "question_id": "Q2",
   "rigor_profile": "submission",
   "current_gate": "G4",
-  "status": "solution_package_signed_and_frozen",
+  "status": "paper_draft_complete",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -26,7 +26,9 @@
     "robustness_report": "robustness/Q2/q2_robustness_report.md",
     "solution_package": "results/Q2/reports/q2_solution_package_for_writer.md",
     "frozen_numbers": "results/Q2/reports/frozen_numbers.json",
-    "official_deliverables": ["results/Q2/deliverables/result2.xlsx"]
+    "official_deliverables": ["results/Q2/deliverables/result2.xlsx"],
+    "paper_draft": "paper/main.tex",
+    "compiled_pdf": "paper/main.pdf"
     ,"paper_figures": ["paper/figures/q2_expected_tail_comparison.svg", "paper/figures/q2_seed_mean_profit_difference.svg"]
     ,"paper_tables": ["paper/tables/q2_risk_metrics.tex"]
   },
@@ -39,8 +41,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "paper-section-writer",
-    "reason": "Q2 writer package is signed and numerical claims are frozen"
+    "skill": "paper-polisher",
+    "reason": "Q2 section draft is compiled from the signed package and frozen numbers"
   },
-  "updated_at": "2026-08-28T15:07:22+08:00"
+  "updated_at": "2026-08-28T15:24:00+08:00"
 }

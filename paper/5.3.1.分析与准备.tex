@@ -1,0 +1,33 @@
+\subsubsection{具体分析}
+
+问题三要求分析作物关系和经济变量相关性对方案的影响，属于受控模拟条件下的优化与机理比较问题。本问采用关系调整趋势MILP和相关蒙特卡洛评估。
+
+首先按作物类别构造替代与互补边，接着设置弱、中、强三档关系强度，然后生成最终经济变量相关情景，最后比较收益、下尾风险和41维作物累计面积结构。具体流程如图\ref{fig:analysis3_flow}所示。
+
+\begin{figure}[H]
+  \begin{center}
+    \begin{tikzpicture}[x=1cm, y=0.7cm]
+      \node[box] (n11) at (0, 0) {构造关系};
+      \node[box] (n12) at (5, 0) {设置强度};
+      \node[box] (n13) at (10, 0) {调整销量};
+      \node[box] (n23) at (10, -3) {三档求解};
+      \node[box] (n22) at (5, -3) {生成相关情景};
+      \node[box] (n21) at (0, -3) {核验相关性};
+      \node[box] (n31) at (0, -6) {配对评价};
+      \node[box] (n32) at (5, -6) {宏观归因};
+      \node[box] (n33) at (10, -6) {判断备用};
+      \draw[arrow] (n11) -- (n12); \draw[arrow] (n12) -- (n13);
+      \draw[arrow] (n13) -- ++(0,-1.0) -| (n23); \draw[arrow] (n23) -- (n22);
+      \draw[arrow] (n22) -- (n21); \draw[arrow] (n21) -- (n31);
+      \draw[arrow] (n31) -- (n32); \draw[arrow] (n32) -- (n33);
+    \end{tikzpicture}
+    \caption{问题三分析流程图}
+    \label{fig:analysis3_flow}
+  \end{center}
+\end{figure}
+
+\subsubsection{模型准备}
+
+附件只有2023年单年截面，不能估计真实的交叉价格弹性。本文只按类别与用途构造模拟关系，并把所有边标记为模拟假设。已有研究曾用横截面相关系数讨论作物关系\cite{zhao2025relation}，但相关性不能推出因果性，因此正文只讨论在这些设定下方案如何变化。
+
+问题三保持问题二的土地约束、管理配置、销售规则和评价函数不变，关闭关系结构的问题二正式方案作为基线。这样两者差异只来自新增关系设置。

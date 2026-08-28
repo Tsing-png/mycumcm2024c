@@ -3,7 +3,7 @@
   "question_id": "Q1",
   "rigor_profile": "submission",
   "current_gate": "G4",
-  "status": "solution_package_signed_and_frozen",
+  "status": "paper_draft_complete",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -26,7 +26,9 @@
     "robustness_report": "robustness/Q1/q1_robustness_report.md",
     "solution_package": "results/Q1/reports/q1_solution_package_for_writer.md",
     "frozen_numbers": "results/Q1/reports/frozen_numbers.json",
-    "official_deliverables": ["results/Q1/deliverables/result1_1.xlsx", "results/Q1/deliverables/result1_2.xlsx"]
+    "official_deliverables": ["results/Q1/deliverables/result1_1.xlsx", "results/Q1/deliverables/result1_2.xlsx"],
+    "paper_draft": "paper/main.tex",
+    "compiled_pdf": "paper/main.pdf"
     ,"paper_figures": ["paper/figures/q1_cumulative_profit_comparison.svg"]
     ,"paper_tables": ["paper/tables/q1_core_results.tex"]
   },
@@ -39,8 +41,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "paper-section-writer",
-    "reason": "Q1 writer package is signed and numerical claims are frozen"
+    "skill": "paper-polisher",
+    "reason": "Q1 section draft is compiled from the signed package and frozen numbers"
   },
-  "updated_at": "2026-08-28T15:07:22+08:00"
+  "updated_at": "2026-08-28T15:24:00+08:00"
 }

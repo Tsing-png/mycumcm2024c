@@ -1,21 +1,45 @@
 \begin{appendices}
 
-  \section{文件列表}
-  \begin{table}[H]
-    \centering
-    \begin{tabularx}{\textwidth}{LL}
-      \toprule
-      文件名   & 功能描述 \\
-      \midrule
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      数据预处理.py & 预处理程序代码 \\
-      q2.py & 问题二程序代码 \\
-      q3.c & 问题三程序代码 \\
-      q4.cpp & 问题四程序代码 \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      \bottomrule
-    \end{tabularx}
-    \label{tab:文件列表}
-  \end{table}
+  \section{提交文件与程序说明}
+  \begin{longtable}{>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.58\textwidth}}
+    \caption{主要提交文件}\label{tab:文件列表}\\
+    \toprule
+    文件名 & 功能描述 \\
+    \midrule
+    \endfirsthead
+    \caption{主要提交文件（续）}\\
+    \toprule
+    文件名 & 功能描述 \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    result1\_1.xlsx & 问题一滞销模式正式种植面积表 \\
+    result1\_2.xlsx & 问题一半价销售模式正式种植面积表 \\
+    result2.xlsx & 问题二正式种植面积表 \\
+    code/Q1/run\_q1.py & 问题一模型求解与结果输出 \\
+    code/Q2/run\_q2.py & 问题二中心趋势求解与随机评估 \\
+    code/Q3/run\_q3.py & 问题三关系情景求解与评价 \\
+    code/run\_robustness.py & 三问稳健性与敏感性检查 \\
+  \end{longtable}
+
+  \section{问题三相关矩阵核验表}
+  \begin{longtable}{>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.24\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}}
+    \caption{三档模拟关系的相关性核验}\label{tab:q3_corr_check}\\
+    \toprule
+    强度 & 最小特征值 & 最大相关误差 & 需求裁剪比例 \\
+    \midrule
+    \endfirsthead
+    \caption{三档模拟关系的相关性核验（续）}\\
+    \toprule
+    强度 & 最小特征值 & 最大相关误差 & 需求裁剪比例 \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    弱 & 0.8956 & 0.0130 & 1.57\% \\
+    中 & 0.7565 & 0.0300 & 3.76\% \\
+    强 & 0.6173 & 0.0353 & 6.03\% \\
+  \end{longtable}
 
 \end{appendices}

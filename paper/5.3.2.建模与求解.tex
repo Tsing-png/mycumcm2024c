@@ -26,28 +26,9 @@ S_A(x,x')=\frac{\sum_{j=1}^{41}\min(A_j,A'_j)}{\sum_{j=1}^{41}\max(A_j,A'_j)}.
 \end{equation}
 当收益差小于1\%且$S_A\ge80\%$时，判定为宏观等价、微观平移。只有收益差大于1\%且$S_A<80\%$时才触发结构性备用方案。
 
-\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.25\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
-  \caption{问题三关系与判据参数}\label{tab:q3_setting}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endfirsthead
-  \caption{问题三关系与判据参数（续）}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  $h$ & 模拟关系强度 & 0.15，0.35，0.55 & 敏感性分析 \\
-  $E_{\mathrm{corr}}$ & 相关误差阈值 & 0.08 & 数值核验 \\
-  $S_A$ & 面积相似度阈值 & 80\% & 结构判断 \\
-  $\delta_{\Pi}$ & 收益差阈值 & 1\% & 结构判断 \\
-\end{longtable}
-
 \subsubsection{模型求解}
 
-中档关系方案在半价模式下平均收益为6887.03万元，比问题二基线高12.14万元；滞销压力下平均收益优势为62.41万元。正式200个情景中未出现模拟亏损。三档最大相关误差为0.0353，低于0.08阈值。需要说明的是，此处问题二基线在问题三的相关情景集下重新评价，其半价均值6874.89万元与问题二自身表格中的6891.51万元不同，差异仅来自情景生成方式，两表口径一致且不影响配对比较。
+中档关系方案在半价模式下平均收益为6887.03万元，比问题二基线高12.14万元；滞销压力下平均收益优势为62.41万元。正式200个情景中未出现模拟亏损。三档最大相关误差为0.0353，低于0.08阈值。需要说明的是，此处问题二基线在问题三的相关情景集下重新评价，其半价均值6874.89万元与问题二自身表格中的6891.51万元不同，差异仅来自情景生成方式，不影响配对比较。
 
 图\ref{fig:q3_strength}显示，关系强度增加时平均收益变化较小，但5\%分位数下降、收益标准差上升。
 \begin{figure}[H]

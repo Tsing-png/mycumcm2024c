@@ -35,27 +35,7 @@ Y_{tisj}=y^0_{g_i s j}x_{tisj}.
 
 \textbf{步骤3 求解设置}
 
-模型使用HiGHS求解，并对两种管理配置进行比较。参数设置见表\ref{tab:q1_solver_setting}。
-
-\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.28\textwidth}>{\centering\arraybackslash}p{0.18\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
-  \caption{问题一求解参数设置}\label{tab:q1_solver_setting}\\
-  \toprule
-  参数 & 含义 & 取值 & 依据 \\
-  \midrule
-  \endfirsthead
-  \caption{问题一求解参数设置（续）}\\
-  \toprule
-  参数 & 含义 & 取值 & 依据 \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  $\alpha$ & 超额销售折价 & 0，0.5 & 题目两种模式 \\
-  $\rho$ & 最小面积占比 & 0，0.1 & 管理敏感性 \\
-  $K$ & 每地块季次作物上限 & 3 & 人工管理配置 \\
-  Gap & 滞销验收线 & 3\% & 人工确认 \\
-  Gap & 半价验收线 & 1\% & 人工确认 \\
-\end{longtable}
+模型使用HiGHS求解，并对两种管理配置进行比较，以Gap达到验收线（滞销3\%、半价1\%）作为求解质量判据。
 
 \subsubsection{模型求解}
 
@@ -69,23 +49,23 @@ Y_{tisj}=y^0_{g_i s j}x_{tisj}.
   \label{fig:q1_profit}
 \end{figure}
 
-\begin{longtable}{>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.16\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}}
+\begin{longtable}{>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.16\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}}
   \caption{问题一核心求解结果}\label{tab:q1_core}\\
   \toprule
-  销售模式 & 配置 & 累计收益/万元 & Gap/\% & 作物数 & $H_3$/\% & 违反数 \\
+  销售模式 & 配置 & 累计收益/万元 & Gap/\% & 作物数 & 违反数 \\
   \midrule
   \endfirsthead
   \caption{问题一核心求解结果（续）}\\
   \toprule
-  销售模式 & 配置 & 累计收益/万元 & Gap/\% & 作物数 & $H_3$/\% & 违反数 \\
+  销售模式 & 配置 & 累计收益/万元 & Gap/\% & 作物数 & 违反数 \\
   \midrule
   \endhead
   \bottomrule
   \endfoot
-  半价销售 & 无最小占比 & 6343.21 & 0.864 & 24 & 44.88 & 0 \\
-  半价销售 & 10\%最小占比 & 6351.02 & 0.739 & 24 & 42.10 & 0 \\
-  滞销 & 无最小占比 & 4041.72 & 2.126 & 41 & 42.47 & 0 \\
-  滞销 & 10\%最小占比 & 4012.39 & 2.869 & 41 & 41.87 & 0 \\
+  半价销售 & 无最小占比 & 6343.21 & 0.864 & 24 & 0 \\
+  半价销售 & 10\%最小占比 & 6351.02 & 0.739 & 24 & 0 \\
+  滞销 & 无最小占比 & 4041.72 & 2.126 & 41 & 0 \\
+  滞销 & 10\%最小占比 & 4012.39 & 2.869 & 41 & 0 \\
 \end{longtable}
 
 滞销正式方案仍保留2.126\%的未闭合最优间隙，因此只能表述为达到验收线的高质量可行解，不能称为精确全局最优。

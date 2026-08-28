@@ -21,7 +21,8 @@
     "decision_report": "results/Q1/experiments/round2/q1_decision_report.md",
     "robustness_summary": "robustness/Q1/q1_robustness_summary.json",
     "final_method_explanation": "methods/Q1/q1_final_method_explanation.md",
-    "final_result_analysis": "results/Q1/reports/q1_final_result_analysis.md"
+    "final_result_analysis": "results/Q1/reports/q1_final_result_analysis.md",
+    "figure_table_plan": "methods/Q1/q1_figure_table_plan.md"
   },
   "allowed": {
     "code_generation": true,
@@ -31,13 +32,12 @@
   },
   "blockers": [
     "Submission robustness report is not yet generated",
-    "Figure and table plan is not yet generated",
     "Solution package, package sign-off and frozen numbers are not yet generated"
   ],
   "next_action": {
     "owner": "ai",
-    "skill": "figure-table-planner",
-    "reason": "Submission profile is active and final method/result evidence exists; plan the minimum evidence-bearing figures and tables before package assembly"
+    "skill": "math-figure-generator",
+    "reason": "The Q1 evidence-bearing figure and table plan is approved by existing human claim-scope decisions; generate and render-verify the planned paper visual"
   },
   "updated_at": "2026-08-28T13:56:00+08:00"
 }

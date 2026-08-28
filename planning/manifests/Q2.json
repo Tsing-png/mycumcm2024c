@@ -3,7 +3,7 @@
   "question_id": "Q2",
   "rigor_profile": "lean",
   "current_gate": "G2.5",
-  "status": "code_plan_ready_waiting_python_generation",
+  "status": "python_review_failed_waiting_method_and_constraint_fix",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -16,7 +16,8 @@
     "symbol_table": "planning/symbol_table.md",
     "model_assumptions": "planning/model_assumptions.md",
     "code_plan": "code/Q2/q2_code_plan.md",
-    "latest_run": null
+    "code_review": "code/Q2/reviews/q2_python_review.json",
+    "latest_run": "results/Q2/experiments/round1/run_summary.json"
   },
   "allowed": {
     "code_generation": true,
@@ -24,11 +25,15 @@
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [],
+  "blockers": [
+    "Q2-M1 currently solves a mean-parameter deterministic MILP rather than the approved scenario stochastic MILP",
+    "Shared water-mode constraints are incomplete and current schedules are invalid",
+    "Endpoint and alternative-distribution fallback evidence is incomplete"
+  ],
   "next_action": {
     "owner": "ai",
     "skill": "python-model-code-generator",
-    "reason": "The approved Q2-M1 and Q2-B1 Python round1 implementation and experiment contract is complete"
+    "reason": "Implement the approved shared-decision scenario formulation after repairing the shared hard constraints, then rerun Q2"
   },
-  "updated_at": "2026-08-27T22:33:43+08:00"
+  "updated_at": "2026-08-28T11:31:52+08:00"
 }

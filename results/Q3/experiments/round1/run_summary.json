@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "question": "Q3",
+  "round": "round1",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q3_method_choice",
+  "methods": [
+    {
+      "method_id": "Q3-B1",
+      "role": "usable_baseline",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_b1_alpha0_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_b1_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 9413269.453429965,
+        "q05_profit": 9059649.013588218,
+        "lower_tail_mean": 8946003.503999997,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.2283925579165779,
+        "top3_area_share": 0.5551532632060909,
+        "gini_simpson": 0.8563637519834443,
+        "constraint_violations": 0,
+        "alpha": 0.0
+      },
+      "warnings": [
+        "solver timing unavailable after interrupted aggregation; schedule file was already completed"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_weak_alpha0_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_weak_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 10203732.56296595,
+        "q05_profit": 9871874.339100078,
+        "lower_tail_mean": 9799304.35342872,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.2152214153888902,
+        "top3_area_share": 0.5480704870436471,
+        "gini_simpson": 0.8617013522424795,
+        "constraint_violations": 0,
+        "alpha": 0.0,
+        "strength": "weak",
+        "clipping_ratio": 0.36898954703832754
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_medium_alpha0_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_medium_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 10009297.775871675,
+        "q05_profit": 9678161.415337913,
+        "lower_tail_mean": 9579256.680734988,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.22121034810758955,
+        "top3_area_share": 0.5558925264715062,
+        "gini_simpson": 0.8594434383202337,
+        "constraint_violations": 0,
+        "alpha": 0.0,
+        "strength": "medium",
+        "clipping_ratio": 0.382404181184669
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_strong_alpha0_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_strong_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 9564361.282288104,
+        "q05_profit": 9270586.756386844,
+        "lower_tail_mean": 9178609.684997914,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.21394083435321157,
+        "top3_area_share": 0.5621730442951252,
+        "gini_simpson": 0.8561975168016153,
+        "constraint_violations": 0,
+        "alpha": 0.0,
+        "strength": "strong",
+        "clipping_ratio": 0.4013937282229965
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-B1",
+      "role": "usable_baseline",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_b1_alpha05_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_b1_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63516301.64285611,
+        "q05_profit": 58262407.084129505,
+        "lower_tail_mean": 57593846.76207147,
+        "loss_probability": 0.0,
+        "unique_crop_count": 29,
+        "top1_area_share": 0.3972562145149797,
+        "top3_area_share": 0.7732726193399033,
+        "gini_simpson": 0.7364734655839871,
+        "constraint_violations": 0,
+        "alpha": 0.5
+      },
+      "warnings": [
+        "solver timing unavailable after interrupted aggregation; schedule file was already completed"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_weak_alpha05_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_weak_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63340746.131074354,
+        "q05_profit": 58045462.00458586,
+        "lower_tail_mean": 57395433.73834534,
+        "loss_probability": 0.0,
+        "unique_crop_count": 31,
+        "top1_area_share": 0.4201839480336919,
+        "top3_area_share": 0.8012217973214313,
+        "gini_simpson": 0.7157107159759516,
+        "constraint_violations": 0,
+        "alpha": 0.5,
+        "strength": "weak",
+        "clipping_ratio": 0.36898954703832754
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_medium_alpha05_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_medium_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63230538.66221571,
+        "q05_profit": 57992326.27972311,
+        "lower_tail_mean": 57290982.22989613,
+        "loss_probability": 0.0,
+        "unique_crop_count": 30,
+        "top1_area_share": 0.4075350438482665,
+        "top3_area_share": 0.7881995033083572,
+        "gini_simpson": 0.7245060654173034,
+        "constraint_violations": 0,
+        "alpha": 0.5,
+        "strength": "medium",
+        "clipping_ratio": 0.382404181184669
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q3-M1",
+      "role": "main_candidate",
+      "script": "code/Q3/run_q3.py",
+      "status": "success",
+      "execution_time_seconds": null,
+      "input_files": [
+        "tables/q3_m1_strong_alpha05_schedule.csv"
+      ],
+      "output_files": [
+        "tables/q3_m1_strong_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63250732.56956547,
+        "q05_profit": 57996028.5456434,
+        "lower_tail_mean": 57330308.17455341,
+        "loss_probability": 0.0,
+        "unique_crop_count": 31,
+        "top1_area_share": 0.4100355740199358,
+        "top3_area_share": 0.7900703421687971,
+        "gini_simpson": 0.7232627702358605,
+        "constraint_violations": 0,
+        "alpha": 0.5,
+        "strength": "strong",
+        "clipping_ratio": 0.4013937282229965
+      },
+      "warnings": [
+        "relationships are simulated assumptions",
+        "solver timing and gap unavailable after interrupted aggregation"
+      ],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "file": "tables/q3_q2_paired_comparison.json",
+    "values": [
+      {
+        "alpha": 0.0,
+        "strength": "weak",
+        "overlap_with_independent": 0.5735406184060485,
+        "main": {
+          "mean_profit": 10203732.56296595,
+          "q05_profit": 9871874.339100078,
+          "lower_tail_mean": 9799304.35342872,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 9413269.453429965,
+          "q05_profit": 9059649.013588218,
+          "lower_tail_mean": 8946003.503999997,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.36898954703832754
+      },
+      {
+        "alpha": 0.0,
+        "strength": "medium",
+        "overlap_with_independent": 0.6420339757845996,
+        "main": {
+          "mean_profit": 10009297.775871675,
+          "q05_profit": 9678161.415337913,
+          "lower_tail_mean": 9579256.680734988,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 9413269.453429965,
+          "q05_profit": 9059649.013588218,
+          "lower_tail_mean": 8946003.503999997,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.382404181184669
+      },
+      {
+        "alpha": 0.0,
+        "strength": "strong",
+        "overlap_with_independent": 0.5933968633536884,
+        "main": {
+          "mean_profit": 9564361.282288104,
+          "q05_profit": 9270586.756386844,
+          "lower_tail_mean": 9178609.684997914,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 9413269.453429965,
+          "q05_profit": 9059649.013588218,
+          "lower_tail_mean": 8946003.503999997,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.4013937282229965
+      },
+      {
+        "alpha": 0.5,
+        "strength": "weak",
+        "overlap_with_independent": 0.5424521318174433,
+        "main": {
+          "mean_profit": 63340746.131074354,
+          "q05_profit": 58045462.00458586,
+          "lower_tail_mean": 57395433.73834534,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 63516301.64285611,
+          "q05_profit": 58262407.084129505,
+          "lower_tail_mean": 57593846.76207147,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.36898954703832754
+      },
+      {
+        "alpha": 0.5,
+        "strength": "medium",
+        "overlap_with_independent": 0.5623822697561162,
+        "main": {
+          "mean_profit": 63230538.66221571,
+          "q05_profit": 57992326.27972311,
+          "lower_tail_mean": 57290982.22989613,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 63516301.64285611,
+          "q05_profit": 58262407.084129505,
+          "lower_tail_mean": 57593846.76207147,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.382404181184669
+      },
+      {
+        "alpha": 0.5,
+        "strength": "strong",
+        "overlap_with_independent": 0.49315386904474123,
+        "main": {
+          "mean_profit": 63250732.56956547,
+          "q05_profit": 57996028.5456434,
+          "lower_tail_mean": 57330308.17455341,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 63516301.64285611,
+          "q05_profit": 58262407.084129505,
+          "lower_tail_mean": 57593846.76207147,
+          "loss_probability": 0.0
+        },
+        "clipping_ratio": 0.4013937282229965
+      }
+    ],
+    "strength_sensitivity_file": "tables/q3_strength_sensitivity.csv"
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q3-F1",
+    "condition": "matrix invalid, empirical error >0.08, cross-strength overlap <50%, or profit direction reversal",
+    "observed": true,
+    "evidence": "metrics/q3_metrics.json",
+    "components": {
+      "matrix_invalid": false,
+      "empirical_error_above_008": false,
+      "overlap_below_050": false,
+      "profit_direction_reversal": false
+    }
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "execution_time_seconds": 203.460030361,
+  "warnings": [
+    "summary recovered from completed schedule CSVs after aggregation was interrupted",
+    "solver timing and gap are unavailable for Q3 recovered schedules",
+    "relationship response is a simulated assumption and is clipped to Q2 demand bounds"
+  ]
+}

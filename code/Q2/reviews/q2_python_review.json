@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "language": "python",
+  "reviewed_files": ["code/model_common.py", "code/Q2/q2_scenarios.py", "code/Q2/run_q2.py", "results/Q2/experiments/round1/run_summary.json"],
+  "decision_id": "q2_method_choice",
+  "checks": {
+    "syntax": {"status": "PASS", "evidence": ["uv run python -m py_compile completed"]},
+    "input_contract": {"status": "PASS", "evidence": ["Clean data only; approved bounded yearly changes are generated with fixed seeds"]},
+    "method_alignment": {
+      "status": "FAIL",
+      "evidence": [
+        "Q2-M1 averages 20 scenario parameters and solves one deterministic MILP; it is not the approved shared-decision scenario stochastic MILP",
+        "The objective therefore is not the scenario average of piecewise surplus-sale profit",
+        "Endpoint stress scenarios required by the code plan are absent",
+        "The water-mode hard-constraint defect is inherited"
+      ]
+    },
+    "reproducibility": {"status": "PASS", "evidence": ["Optimization and test seeds are explicit", "Environment versions are recorded"]},
+    "output_contract": {
+      "status": "FAIL",
+      "evidence": ["No endpoint-stress table, seed-stability file, distribution-sensitivity file or solver-metrics file", "Fallback tail-change test subtracts a value from itself and can never detect tail sensitivity", "All Q2 schedules have 8-13 water-mode violations under the missing check"]
+    },
+    "constraint_feasibility": {"status": "FAIL", "evidence": ["Independent water-mode audit found violations in every Q2 schedule"]},
+    "scale": {"status": "FAIL", "evidence": ["Zero-surplus main and baseline hit 40 seconds with gaps of 6.25% and 4.35%"]}
+  },
+  "findings": [
+    {
+      "id": "Q2-F01",
+      "priority": "P0",
+      "category": "method_alignment",
+      "finding": "Mean-parameter optimization is mislabeled as scenario stochastic MILP.",
+      "recommended_action": "Build scenario-specific production, normal-sales and profit variables while retaining shared x/z decisions, or explicitly change the approved method through a new human decision."
+    },
+    {
+      "id": "Q2-F02",
+      "priority": "P0",
+      "category": "hard_constraint",
+      "finding": "The inherited water-mode formulation and verifier accept illegal schedules.",
+      "recommended_action": "Fix the shared formulation and verifier before any Q2 performance comparison."
+    },
+    {
+      "id": "Q2-F03",
+      "priority": "P1",
+      "category": "performance",
+      "finding": "Evaluation repeatedly filters pandas frames inside year-crop-scenario loops, causing most of the long aggregation time.",
+      "recommended_action": "Precompute sparse area matrices and vectorize scenario profit evaluation with NumPy; cache production and weighted prices once per schedule."
+    },
+    {
+      "id": "Q2-F04",
+      "priority": "P1",
+      "category": "performance",
+      "finding": "The model is rebuilt four times from scratch and does not reuse the constraint matrix or incumbents.",
+      "recommended_action": "Build the structural matrix once, change objective/right-hand sides per sale rule, warm-start from baseline where supported, and solve the easier half-price case first."
+    }
+  ],
+  "verdict": "FAILED",
+  "reviewed_at": "2026-08-28T11:30:27+08:00"
+}

@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "round": "round1",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q1_method_choice",
+  "methods": [
+    {
+      "method_id": "Q1-B1",
+      "role": "usable_baseline",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.0,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_b1_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 2477003.3163776295,
+          "2025": 3639212.75,
+          "2026": 3438350.25,
+          "2027": 2523451.25,
+          "2028": 3379799.0,
+          "2029": 3386777.25,
+          "2030": 2527131.25
+        },
+        "cumulative_profit": 21371725.06637763,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.11587063611051616,
+        "top3_area_share": 0.31259370314842577,
+        "gini_simpson": 0.9385159627755807,
+        "constraint_violations": 0,
+        "alpha": 0.0
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "Q1-M1",
+      "role": "main_candidate",
+      "script": "code/Q1/q1_main.py",
+      "status": "failed",
+      "execution_time_seconds": 58.20774317199994,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_m1_alpha0_share0_k3_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 1452450.7671717112,
+          "2025": 1396246.2100249268,
+          "2026": 1519197.3365517906,
+          "2027": 1295975.9317669347,
+          "2028": 1487957.825589792,
+          "2029": 1482694.497181107,
+          "2030": 1296670.3610719931
+        },
+        "cumulative_profit": 9931192.929358255,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.198401708082523,
+        "top3_area_share": 0.5371256832207596,
+        "gini_simpson": 0.8575170011928974,
+        "constraint_violations": 15,
+        "alpha": 0.0,
+        "config": "share0_k3",
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -2290649.1106824325,
+          "mip_gap": 0.004046605404514794,
+          "mip_node_count": 432,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 58.20774317199994
+        }
+      },
+      "warnings": [],
+      "errors": [
+        "rotation:D1:2027:1:16",
+        "rotation:D1:2030:1:16",
+        "rotation:D2:2025:1:16",
+        "rotation:D2:2028:1:16",
+        "rotation:D3:2025:1:16",
+        "rotation:D3:2028:1:16",
+        "rotation:D4:2027:1:16",
+        "rotation:D4:2030:1:16",
+        "rotation:D5:2025:1:16",
+        "rotation:D5:2030:1:16",
+        "rotation:D6:2027:1:16",
+        "rotation:D6:2030:1:16",
+        "rotation:D7:2026:1:16",
+        "rotation:D7:2029:1:16",
+        "rotation:D8:2028:1:16"
+      ]
+    },
+    {
+      "method_id": "Q1-M1",
+      "role": "main_candidate",
+      "script": "code/Q1/q1_main.py",
+      "status": "failed",
+      "execution_time_seconds": 60.782689796,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_m1_alpha0_share10_k3_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 1381880.4148506902,
+          "2025": 1393559.9143308764,
+          "2026": 1460845.1953802295,
+          "2027": 1327323.026026794,
+          "2028": 1398438.0929145915,
+          "2029": 1284555.6575407535,
+          "2030": 1383808.253187277
+        },
+        "cumulative_profit": 9630410.554231212,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.2225450610113285,
+        "top3_area_share": 0.5288128158540095,
+        "gini_simpson": 0.8597958667952048,
+        "constraint_violations": 16,
+        "alpha": 0.0,
+        "config": "share10_k3",
+        "solver": {
+          "success": false,
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "objective_minimized": -2254991.1472628405,
+          "mip_gap": 0.03728331795347929,
+          "mip_node_count": 602,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27487,
+          "execution_time_seconds": 60.782689796
+        }
+      },
+      "warnings": [
+        "mip_gap_above_1pct"
+      ],
+      "errors": [
+        "rotation:D1:2025:1:16",
+        "rotation:D1:2028:1:16",
+        "rotation:D2:2025:1:16",
+        "rotation:D2:2028:1:16",
+        "rotation:D3:2027:1:16",
+        "rotation:D3:2030:1:16",
+        "rotation:D4:2025:1:16",
+        "rotation:D4:2030:1:16",
+        "rotation:D5:2025:1:16",
+        "rotation:D5:2028:1:16",
+        "rotation:D6:2027:1:16",
+        "rotation:D6:2030:1:16",
+        "rotation:D7:2026:1:16",
+        "rotation:D7:2029:1:16",
+        "rotation:D8:2026:1:16",
+        "rotation:D8:2029:1:16"
+      ]
+    },
+    {
+      "method_id": "Q1-B1",
+      "role": "usable_baseline",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.0,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_b1_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 4838261.833118764,
+          "2025": 5899467.75,
+          "2026": 5961367.625,
+          "2027": 4860903.125,
+          "2028": 6243557.75,
+          "2029": 5937875.25,
+          "2030": 4951328.75
+        },
+        "cumulative_profit": 38692762.08311877,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.11587063611051616,
+        "top3_area_share": 0.31259370314842577,
+        "gini_simpson": 0.9385159627755807,
+        "constraint_violations": 0,
+        "alpha": 0.5
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "Q1-M1",
+      "role": "main_candidate",
+      "script": "code/Q1/q1_main.py",
+      "status": "success",
+      "execution_time_seconds": 4.96744015999991,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_m1_alpha05_share0_k3_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 9376876.891812278,
+          "2025": 8977526.73509878,
+          "2026": 6081404.345997354,
+          "2027": 9109237.931559818,
+          "2028": 8499851.470574887,
+          "2029": 6615986.416015671,
+          "2030": 9315214.588445172
+        },
+        "cumulative_profit": 57976098.37950396,
+        "unique_crop_count": 29,
+        "top1_area_share": 0.41828935357099856,
+        "top3_area_share": 0.795333412696705,
+        "gini_simpson": 0.7184780580091907,
+        "constraint_violations": 0,
+        "alpha": 0.5,
+        "config": "share0_k3",
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -54309601.310922295,
+          "mip_gap": 0.0016582343771756763,
+          "mip_node_count": 1,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 4.96744015999991
+        }
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "Q1-M1",
+      "role": "main_candidate",
+      "script": "code/Q1/q1_main.py",
+      "status": "success",
+      "execution_time_seconds": 12.621565280000027,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q1_m1_alpha05_share10_k3_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_by_year": {
+          "2024": 9423108.293779947,
+          "2025": 8892965.25983439,
+          "2026": 6154574.257043954,
+          "2027": 9040377.195811251,
+          "2028": 7903098.662939033,
+          "2029": 7221436.628452894,
+          "2030": 9291329.779201798
+        },
+        "cumulative_profit": 57926890.07706327,
+        "unique_crop_count": 25,
+        "top1_area_share": 0.4312083634127182,
+        "top3_area_share": 0.8347463375334272,
+        "gini_simpson": 0.6931607356658194,
+        "constraint_violations": 0,
+        "alpha": 0.5,
+        "config": "share10_k3",
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -54240943.73206499,
+          "mip_gap": 0.0026647494013023673,
+          "mip_node_count": 1,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27487,
+          "execution_time_seconds": 12.621565280000027
+        }
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "management_grid_file": "tables/q1_management_grid.csv",
+    "metrics_file": "metrics/q1_metrics.json"
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q1-F1",
+    "condition": "no feasible incumbent after time limit, gap >1%, or memory >2GB",
+    "observed": true,
+    "evidence": "tables/q1_management_grid.csv"
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "crops.csv": "206264a732950496562ece5e24bb3a407b68635e13df5d166b1d0bf5fdc1a807",
+    "stats_2023.csv": "fc16e9d374f503454bf169c928eac35cc1d19a6c6f53734192d19292357882c0",
+    "planting_2023.csv": "1703aa965d8bd0f6f3c0d826b972543a96dd2cf84e4bc986c08431b0b5c2078b",
+    "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
+    "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
+  },
+  "execution_time_seconds": 139.096894474
+}

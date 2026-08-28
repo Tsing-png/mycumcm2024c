@@ -1,0 +1,150 @@
+{
+  "comparison": [
+    {
+      "alpha": 0.0,
+      "strength": "weak",
+      "overlap_with_independent": 0.5735406184060485,
+      "main": {
+        "mean_profit": 10203732.56296595,
+        "q05_profit": 9871874.339100078,
+        "lower_tail_mean": 9799304.35342872,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 9413269.453429965,
+        "q05_profit": 9059649.013588218,
+        "lower_tail_mean": 8946003.503999997,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.36898954703832754
+    },
+    {
+      "alpha": 0.0,
+      "strength": "medium",
+      "overlap_with_independent": 0.6420339757845996,
+      "main": {
+        "mean_profit": 10009297.775871675,
+        "q05_profit": 9678161.415337913,
+        "lower_tail_mean": 9579256.680734988,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 9413269.453429965,
+        "q05_profit": 9059649.013588218,
+        "lower_tail_mean": 8946003.503999997,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.382404181184669
+    },
+    {
+      "alpha": 0.0,
+      "strength": "strong",
+      "overlap_with_independent": 0.5933968633536884,
+      "main": {
+        "mean_profit": 9564361.282288104,
+        "q05_profit": 9270586.756386844,
+        "lower_tail_mean": 9178609.684997914,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 9413269.453429965,
+        "q05_profit": 9059649.013588218,
+        "lower_tail_mean": 8946003.503999997,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.4013937282229965
+    },
+    {
+      "alpha": 0.5,
+      "strength": "weak",
+      "overlap_with_independent": 0.5424521318174433,
+      "main": {
+        "mean_profit": 63340746.131074354,
+        "q05_profit": 58045462.00458586,
+        "lower_tail_mean": 57395433.73834534,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 63516301.64285611,
+        "q05_profit": 58262407.084129505,
+        "lower_tail_mean": 57593846.76207147,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.36898954703832754
+    },
+    {
+      "alpha": 0.5,
+      "strength": "medium",
+      "overlap_with_independent": 0.5623822697561162,
+      "main": {
+        "mean_profit": 63230538.66221571,
+        "q05_profit": 57992326.27972311,
+        "lower_tail_mean": 57290982.22989613,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 63516301.64285611,
+        "q05_profit": 58262407.084129505,
+        "lower_tail_mean": 57593846.76207147,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.382404181184669
+    },
+    {
+      "alpha": 0.5,
+      "strength": "strong",
+      "overlap_with_independent": 0.49315386904474123,
+      "main": {
+        "mean_profit": 63250732.56956547,
+        "q05_profit": 57996028.5456434,
+        "lower_tail_mean": 57330308.17455341,
+        "loss_probability": 0.0
+      },
+      "baseline": {
+        "mean_profit": 63516301.64285611,
+        "q05_profit": 58262407.084129505,
+        "lower_tail_mean": 57593846.76207147,
+        "loss_probability": 0.0
+      },
+      "clipping_ratio": 0.4013937282229965
+    }
+  ],
+  "strength_overlap": [
+    {
+      "alpha": 0.0,
+      "left": "weak",
+      "right": "medium",
+      "overlap": 0.5487875385796767
+    },
+    {
+      "alpha": 0.0,
+      "left": "medium",
+      "right": "strong",
+      "overlap": 0.608192939921889
+    },
+    {
+      "alpha": 0.0,
+      "left": "weak",
+      "right": "strong",
+      "overlap": 0.5992439172657279
+    },
+    {
+      "alpha": 0.5,
+      "left": "weak",
+      "right": "medium",
+      "overlap": 0.5995986252194027
+    },
+    {
+      "alpha": 0.5,
+      "left": "medium",
+      "right": "strong",
+      "overlap": 0.6710483275119878
+    },
+    {
+      "alpha": 0.5,
+      "left": "weak",
+      "right": "strong",
+      "overlap": 0.6482035371486905
+    }
+  ]
+}

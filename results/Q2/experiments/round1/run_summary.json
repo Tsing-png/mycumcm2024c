@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "round": "round1",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q2_method_choice",
+  "methods": [
+    {
+      "method_id": "Q2-M1",
+      "role": "main_candidate",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 40.66327578000005,
+      "input_files": [
+        "workspace/data_clean/*.csv"
+      ],
+      "output_files": [
+        "tables/q2_m1_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 9413269.453429965,
+        "q05_profit": 9059649.013588218,
+        "lower_tail_mean": 8946003.503999997,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.2283925579165779,
+        "top3_area_share": 0.5551532632060909,
+        "gini_simpson": 0.8563637519834443,
+        "constraint_violations": 0,
+        "solver": {
+          "success": false,
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "objective_minimized": -1700174.3794525475,
+          "mip_gap": 0.06252870448214007,
+          "mip_node_count": 326,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 40.66327578000005
+        },
+        "alpha": 0.0,
+        "triangular": {
+          "mean_profit": 9401233.296046581,
+          "q05_profit": 9193009.516103838,
+          "lower_tail_mean": 9131197.624406671,
+          "loss_probability": 0.0
+        }
+      },
+      "warnings": [
+        "optimization_uses_20_scenario_mean_parameter_SAA_due_scale; 200 scenarios reserved for out-of-sample evaluation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q2-B1",
+      "role": "usable_baseline",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 40.508968753999966,
+      "input_files": [
+        "workspace/data_clean/*.csv"
+      ],
+      "output_files": [
+        "tables/q2_b1_alpha0_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 9705176.322171563,
+        "q05_profit": 9358519.572966749,
+        "lower_tail_mean": 9235771.710164214,
+        "loss_probability": 0.0,
+        "unique_crop_count": 41,
+        "top1_area_share": 0.19984493360943328,
+        "top3_area_share": 0.5360875304099698,
+        "gini_simpson": 0.8602245841603494,
+        "constraint_violations": 0,
+        "solver": {
+          "success": false,
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "objective_minimized": -1730733.6087359346,
+          "mip_gap": 0.043518737805040744,
+          "mip_node_count": 106,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 40.508968753999966
+        },
+        "alpha": 0.0,
+        "triangular": {
+          "mean_profit": 9701960.562776294,
+          "q05_profit": 9483112.492740653,
+          "lower_tail_mean": 9418280.768093478,
+          "loss_probability": 0.0
+        }
+      },
+      "warnings": [
+        "optimization_uses_20_scenario_mean_parameter_SAA_due_scale; 200 scenarios reserved for out-of-sample evaluation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q2-M1",
+      "role": "main_candidate",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 6.561871897999936,
+      "input_files": [
+        "workspace/data_clean/*.csv"
+      ],
+      "output_files": [
+        "tables/q2_m1_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63516301.64285611,
+        "q05_profit": 58262407.08412953,
+        "lower_tail_mean": 57593846.76207147,
+        "loss_probability": 0.0,
+        "unique_crop_count": 29,
+        "top1_area_share": 0.3972562145149797,
+        "top3_area_share": 0.7732726193399033,
+        "gini_simpson": 0.7364734655839871,
+        "constraint_violations": 0,
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -59558187.38272543,
+          "mip_gap": 0.004268189680528112,
+          "mip_node_count": 1,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 6.561871897999936
+        },
+        "alpha": 0.5,
+        "triangular": {
+          "mean_profit": 63711981.84272668,
+          "q05_profit": 60262511.04068698,
+          "lower_tail_mean": 59383258.56445154,
+          "loss_probability": 0.0
+        }
+      },
+      "warnings": [
+        "optimization_uses_20_scenario_mean_parameter_SAA_due_scale; 200 scenarios reserved for out-of-sample evaluation"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q2-B1",
+      "role": "usable_baseline",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 9.212935342000037,
+      "input_files": [
+        "workspace/data_clean/*.csv"
+      ],
+      "output_files": [
+        "tables/q2_b1_alpha05_schedule.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "mean_profit": 63389061.93309178,
+        "q05_profit": 58109363.56553832,
+        "lower_tail_mean": 57457374.99432566,
+        "loss_probability": 0.0,
+        "unique_crop_count": 29,
+        "top1_area_share": 0.41905839717166593,
+        "top3_area_share": 0.805910203579125,
+        "gini_simpson": 0.7139398415567617,
+        "constraint_violations": 0,
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -59651931.109833054,
+          "mip_gap": 0.00318108959416765,
+          "mip_node_count": 1,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 20053,
+          "execution_time_seconds": 9.212935342000037
+        },
+        "alpha": 0.5,
+        "triangular": {
+          "mean_profit": 63572767.21471443,
+          "q05_profit": 60221454.61764602,
+          "lower_tail_mean": 59222102.38519125,
+          "loss_probability": 0.0
+        }
+      },
+      "warnings": [
+        "optimization_uses_20_scenario_mean_parameter_SAA_due_scale; 200 scenarios reserved for out-of-sample evaluation"
+      ],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "file": "tables/q2_paired_comparison.json",
+    "values": [
+      {
+        "alpha": 0.0,
+        "schedule_overlap": 0.6058560368953834,
+        "main": {
+          "mean_profit": 9413269.453429965,
+          "q05_profit": 9059649.013588218,
+          "lower_tail_mean": 8946003.503999997,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 9705176.322171563,
+          "q05_profit": 9358519.572966749,
+          "lower_tail_mean": 9235771.710164214,
+          "loss_probability": 0.0
+        }
+      },
+      {
+        "alpha": 0.5,
+        "schedule_overlap": 0.5415479202174229,
+        "main": {
+          "mean_profit": 63516301.64285611,
+          "q05_profit": 58262407.08412953,
+          "lower_tail_mean": 57593846.76207147,
+          "loss_probability": 0.0
+        },
+        "baseline": {
+          "mean_profit": 63389061.93309178,
+          "q05_profit": 58109363.56553832,
+          "lower_tail_mean": 57457374.99432566,
+          "loss_probability": 0.0
+        }
+      }
+    ]
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q2-F1",
+    "condition": "tail changes >10% or overlap <70%",
+    "observed": true,
+    "evidence": "metrics/q2_metrics.json"
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "execution_time_seconds": 388.77945741100007,
+  "warnings": [
+    "20-scenario optimization approximation; full 200-scenario extensive form deferred to scale review"
+  ]
+}

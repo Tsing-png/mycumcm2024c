@@ -1,0 +1,34 @@
+[
+  {
+    "alpha":0.0,
+    "schedule_overlap":0.6058560369,
+    "main":{
+      "mean_profit":9413269.4534299653,
+      "q05_profit":9059649.013588218,
+      "lower_tail_mean":8946003.5039999969,
+      "loss_probability":0.0
+    },
+    "baseline":{
+      "mean_profit":9705176.3221715633,
+      "q05_profit":9358519.5729667488,
+      "lower_tail_mean":9235771.7101642136,
+      "loss_probability":0.0
+    }
+  },
+  {
+    "alpha":0.5,
+    "schedule_overlap":0.5415479202,
+    "main":{
+      "mean_profit":63516301.6428561136,
+      "q05_profit":58262407.0841295272,
+      "lower_tail_mean":57593846.7620714679,
+      "loss_probability":0.0
+    },
+    "baseline":{
+      "mean_profit":63389061.933091782,
+      "q05_profit":58109363.565538317,
+      "lower_tail_mean":57457374.9943256602,
+      "loss_probability":0.0
+    }
+  }
+]

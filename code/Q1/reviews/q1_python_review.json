@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "reviewed_files": [
+    "code/model_common.py",
+    "code/Q1/q1_main.py",
+    "code/Q1/q1_baseline.py",
+    "code/Q1/run_q1.py",
+    "results/Q1/experiments/round1/run_summary.json"
+  ],
+  "decision_id": "q1_method_choice",
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": ["uv run python -m py_compile completed for the shared and Q1 modules"]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": ["Only workspace/data_clean CSV files are read", "read_data verifies 54 plots, 41 crops and 125 parameter combinations"]
+    },
+    "method_alignment": {
+      "status": "FAIL",
+      "evidence": [
+        "The water-mode constraints permit multiple second-season crops although the statement requires exactly one of crops 35-37 when vegetables are selected",
+        "All four Q1-M1 schedules contain 7-12 water-mode violations under the missing exact-one check",
+        "Both Q1-B1 schedules plant rice and a second-season crop together once"
+      ]
+    },
+    "reproducibility": {
+      "status": "FAIL",
+      "evidence": ["The shared verifier was changed after the Q1 run summary, so the summary is stale relative to the reviewed code"]
+    },
+    "output_contract": {
+      "status": "FAIL",
+      "evidence": ["run_summary reports 15 and 16 violations for two schedules although the newer verifier reports zero", "The newer verifier itself omits the water-mode exact-one rule", "Required solver metrics file and official workbook copies are absent"]
+    },
+    "constraint_feasibility": {
+      "status": "FAIL",
+      "evidence": ["Independent water-mode audit found violations in every Q1 schedule"]
+    },
+    "scale": {
+      "status": "FAIL",
+      "evidence": ["The same binary z and sales q variables are created for every legal slot even where they can be eliminated", "The zero-surplus 10% share run reached the limit with a 3.73% gap"]
+    }
+  },
+  "findings": [
+    {
+      "id": "Q1-F01",
+      "priority": "P0",
+      "category": "hard_constraint",
+      "finding": "Watered-land mode is incomplete. Vegetable mode allows up to max_crops second-season crops instead of exactly one, and the rule baseline can combine rice with a second season.",
+      "recommended_action": "Introduce an exact-one second-season constraint tied to the vegetable mode, forbid all second-season area in rice mode, repair the rule baseline, extend check_schedule, and rerun Q1."
+    },
+    {
+      "id": "Q1-F02",
+      "priority": "P1",
+      "category": "performance",
+      "finding": "The formulation carries one sales variable q per plot-slot-crop, although the sales cap is crop-year aggregate.",
+      "recommended_action": "Use one normal-sales variable per year-crop and aggregate production coefficients directly. This removes roughly one third of continuous variables and many linking constraints."
+    },
+    {
+      "id": "Q1-F03",
+      "priority": "P1",
+      "category": "performance",
+      "finding": "z is created even when min_share is zero and crop-count/rotation structure may permit tighter formulations.",
+      "recommended_action": "Keep z only where required by rotation or management, fix impossible variables at construction, add symmetry breaking for identical plots, and provide the rule baseline as a MIP start if the solver interface supports it."
+    }
+  ],
+  "verdict": "FAILED",
+  "reviewed_at": "2026-08-28T11:30:27+08:00"
+}

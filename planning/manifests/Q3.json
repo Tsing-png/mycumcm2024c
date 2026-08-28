@@ -3,7 +3,7 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "code_and_experiment_reviewed",
+  "status": "result_decision_pending",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -17,7 +17,8 @@
     "model_assumptions": "planning/model_assumptions.md",
     "code_plan": "code/Q3/q3_code_plan.md",
     "code_review": "code/Q3/reviews/q3_python_review.json",
-    "latest_run": "results/Q3/experiments/round2/run_summary.json"
+    "latest_run": "results/Q3/experiments/round2/run_summary.json",
+    "decision_report": "results/Q3/experiments/round2/q3_decision_report.md"
   },
   "allowed": {
     "code_generation": true,

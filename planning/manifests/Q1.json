@@ -3,7 +3,7 @@
   "question_id": "Q1",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "code_and_experiment_reviewed_waiting_result_judgment",
+  "status": "result_accepted_waiting_robustness",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -17,7 +17,8 @@
     "model_assumptions": "planning/model_assumptions.md",
     "code_plan": "code/Q1/q1_code_plan.md",
     "code_review": "code/Q1/reviews/q1_python_review.json",
-    "latest_run": "results/Q1/experiments/round1/run_summary.json"
+    "latest_run": "results/Q1/experiments/round2/run_summary.json",
+    "decision_report": "results/Q1/experiments/round2/q1_decision_report.md"
   },
   "allowed": {
     "code_generation": true,
@@ -28,8 +29,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "result-report-generator",
-    "reason": "Q1 main and baseline have rerun and passed Python review; judge feasible incumbents, solver gaps, management settings and fallback trigger"
+    "skill": "robustness-checker",
+    "reason": "The human accepted a 3% zero-surplus gap threshold; all Round 2 configurations meet their formal thresholds and fallback is unobserved"
   },
-  "updated_at": "2026-08-28T11:45:00+08:00"
+  "updated_at": "2026-08-28T13:56:00+08:00"
 }

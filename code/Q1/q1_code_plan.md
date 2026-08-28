@@ -2,10 +2,10 @@
 
 ## 目标与边界
 
-- 实现目标：Python，`round1`。
+- 实现目标：Python，当前正式实验为 `round2`。
 - 批准决策：`q1_method_choice`，主方法 `Q1-M1`，baseline `Q1-B1`。
 - 只实现上述两种方法及共享校验、比较、模板写出逻辑。
-- `Q1-F1` 不实现。仅在完整 MILP 运行 15 分钟仍无可行解、gap 超过 1%，或预计峰值内存超过 2 GB 时记录触发。
+- `Q1-F1` 不实现。仅在完整 MILP 运行 15 分钟仍无可行解、滞销模式 gap 超过 3%、半价模式 gap 超过 1%，或预计峰值内存超过 2 GB 时记录触发。
 
 ## 输入契约
 
@@ -48,20 +48,20 @@
 
 ## 输出契约
 
-目录为 `results/Q1/experiments/round1/`，包含：
+当前正式目录为 `results/Q1/experiments/round2/`，包含：
 
 - `tables/q1_m1_alpha0_schedule.csv`、`q1_m1_alpha05_schedule.csv` 及 baseline 对应文件；阈值候选结果加配置 ID。
 - `tables/q1_management_grid.csv`、`q1_feasibility_checks.csv`、`q1_profit_by_year.csv`。
 - `metrics/q1_metrics.json`、`q1_solver_metrics.json`。
 - `figures/` 只保存本轮必要的阈值收益-集中度比较图；无图时目录仍可为空。
 - `run_summary.json`，符合统一 contract，并列出所有实际文件路径。
-- 官方 Excel 结果先写入 round1 的 `tables/` 副本，禁止修改 `workspace/data_raw/` 模板。
+- 官方 Excel 结果先写入正式轮次的 `tables/` 副本，禁止修改 `workspace/data_raw/` 模板。
 
 主方法与 baseline 的共同指标为累计净收益、逐年净收益、$H_1$、$H_3$、非零作物数、管理复杂度、`N_viol`、运行时间和主方法 gap。所有数值从正式输出计算，不写死在脚本中。
 
 ## 运行与复现
 
-- 入口：`uv run code/Q1/run_q1.py --round round1 --seed 2026`。
+- 入口：`uv run python code/Q1/run_q1.py --round round2 --seed 2026 --time-limit 300`。
 - 共享模块建议放在 `code/Q1/`，不创建重复 README。
 - 预期 full run 上限 15 分钟；失败或异常才创建 `logs/`。
 - `run_summary.json` 的 `approved_decision_id` 为 `q1_method_choice`，同时记录假设决策 ID。

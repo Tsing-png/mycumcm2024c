@@ -2,7 +2,7 @@
   "schema_version": 1,
   "question_id": "Q1",
   "language": "python",
-  "reviewed_files": ["code/model_common.py", "code/Q1/q1_main.py", "code/Q1/q1_baseline.py", "code/Q1/run_q1.py", "code/tests/test_water_mode.py", "results/Q1/experiments/round1/run_summary.json"],
+  "reviewed_files": ["code/model_common.py", "code/Q1/q1_main.py", "code/Q1/q1_baseline.py", "code/Q1/run_q1.py", "code/tests/test_water_mode.py", "results/Q1/experiments/round2/run_summary.json"],
   "decision_id": "q1_method_choice",
   "checks": {
     "syntax": {
@@ -19,11 +19,11 @@
     },
     "reproducibility": {
       "status": "PASS",
-      "evidence": ["Seed, environment versions and input hashes are stored", "The run summary was regenerated after the reviewed code changes"]
+      "evidence": ["Seed, environment versions and input hashes are stored", "The latest reviewed run is Q1 Round 2 with the configured zero-surplus 3% target"]
     },
     "output_contract": {
       "status": "PASS",
-      "evidence": ["Six schedule CSVs, management grid, annual profit, feasibility, solver metrics and run summary exist", "All six schedules have zero independently checked hard-constraint violations"]
+      "evidence": ["Round 2 contains six schedule CSVs, management grid, annual profit, feasibility, solver metrics and run summary", "All six schedules have zero independently checked hard-constraint violations"]
     },
     "constraint_feasibility": {
       "status": "PASS",
@@ -31,25 +31,18 @@
     },
     "scale": {
       "status": "PASS",
-      "evidence": ["All four main configurations returned feasible incumbents", "Solver gaps and time-limit warnings are explicitly stored"]
+      "evidence": ["All four main configurations returned feasible incumbents", "The zero-surplus configurations terminated at 2.126% and 2.869%, within their configured 3% target"]
     }
   },
   "findings": [
-    {
-      "id": "Q1-W01",
-      "priority": "P1",
-      "category": "solver_quality",
-      "finding": "The two zero-surplus configurations reached the 60-second limit with gaps of 7.86% and 3.74%.",
-      "recommended_action": "Treat them as feasible incumbents rather than proven near-optima and decide whether to activate Q1-F1 or allow a longer rerun."
-    },
     {
       "id": "Q1-W02",
       "priority": "P2",
       "category": "submission_output",
       "finding": "Official workbook copies have not yet been generated.",
-      "recommended_action": "Generate template-preserving Excel outputs before submission handoff; this does not block lean round1 review."
+      "recommended_action": "Generate template-preserving Excel outputs before submission handoff; this does not block lean Round 2 review."
     }
   ],
   "verdict": "PASSED",
-  "reviewed_at": "2026-08-28T11:45:00+08:00"
+  "reviewed_at": "2026-08-28T13:56:00+08:00"
 }

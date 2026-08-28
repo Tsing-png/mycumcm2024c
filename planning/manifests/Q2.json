@@ -3,7 +3,7 @@
   "question_id": "Q2",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "code_and_experiment_reviewed",
+  "status": "result_decision_pending",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -17,7 +17,8 @@
     "model_assumptions": "planning/model_assumptions.md",
     "code_plan": "code/Q2/q2_code_plan.md",
     "code_review": "code/Q2/reviews/q2_python_review.json",
-    "latest_run": "results/Q2/experiments/round3/run_summary.json"
+    "latest_run": "results/Q2/experiments/round3/run_summary.json",
+    "decision_report": "results/Q2/experiments/round3/q2_decision_report.md"
   },
   "allowed": {
     "code_generation": true,
@@ -27,9 +28,9 @@
   },
   "blockers": [],
   "next_action": {
-    "owner": "ai",
-    "skill": "result-report-generator",
-    "reason": "Round 3 main and baseline passed Python review; summarize paired 200-scenario evidence for human result judgment"
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "Judge whether the current main method should proceed to robustness checking"
   },
   "updated_at": "2026-08-28T13:09:45+08:00"
 }

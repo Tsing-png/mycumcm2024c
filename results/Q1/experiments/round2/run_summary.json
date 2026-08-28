@@ -49,7 +49,7 @@
       "role": "main_candidate",
       "script": "code/Q1/q1_main.py",
       "status": "success",
-      "execution_time_seconds": 172.14202160999957,
+      "execution_time_seconds": 179.0789811499999,
       "input_files": [
         "workspace/data_clean/plots.csv",
         "workspace/data_clean/crops.csv",
@@ -90,12 +90,10 @@
           "variables": 22358,
           "area_variables": 7434,
           "constraints": 20107,
-          "execution_time_seconds": 172.14202160999957
+          "execution_time_seconds": 179.0789811499999
         }
       },
-      "warnings": [
-        "mip_gap_above_1pct"
-      ],
+      "warnings": [],
       "errors": []
     },
     {
@@ -103,7 +101,7 @@
       "role": "main_candidate",
       "script": "code/Q1/q1_main.py",
       "status": "success",
-      "execution_time_seconds": 99.99002754399953,
+      "execution_time_seconds": 99.50592513499942,
       "input_files": [
         "workspace/data_clean/plots.csv",
         "workspace/data_clean/crops.csv",
@@ -144,12 +142,10 @@
           "variables": 22358,
           "area_variables": 7434,
           "constraints": 27541,
-          "execution_time_seconds": 99.99002754399953
+          "execution_time_seconds": 99.50592513499942
         }
       },
-      "warnings": [
-        "mip_gap_above_1pct"
-      ],
+      "warnings": [],
       "errors": []
     },
     {
@@ -195,7 +191,7 @@
       "role": "main_candidate",
       "script": "code/Q1/q1_main.py",
       "status": "success",
-      "execution_time_seconds": 2.856170098999428,
+      "execution_time_seconds": 3.049844725001094,
       "input_files": [
         "workspace/data_clean/plots.csv",
         "workspace/data_clean/crops.csv",
@@ -236,7 +232,7 @@
           "variables": 22358,
           "area_variables": 7434,
           "constraints": 20107,
-          "execution_time_seconds": 2.856170098999428
+          "execution_time_seconds": 3.049844725001094
         }
       },
       "warnings": [],
@@ -247,7 +243,7 @@
       "role": "main_candidate",
       "script": "code/Q1/q1_main.py",
       "status": "success",
-      "execution_time_seconds": 13.27335522300018,
+      "execution_time_seconds": 13.925316070999543,
       "input_files": [
         "workspace/data_clean/plots.csv",
         "workspace/data_clean/crops.csv",
@@ -288,7 +284,7 @@
           "variables": 22358,
           "area_variables": 7434,
           "constraints": 27541,
-          "execution_time_seconds": 13.27335522300018
+          "execution_time_seconds": 13.925316070999543
         }
       },
       "warnings": [],
@@ -301,8 +297,8 @@
   },
   "fallback_trigger": {
     "fallback_id": "Q1-F1",
-    "condition": "no feasible incumbent after time limit, gap >1%, or memory >2GB",
-    "observed": true,
+    "condition": "no feasible incumbent after time limit, alpha=0 gap >3%, alpha=0.5 gap >1%, or memory >2GB",
+    "observed": false,
     "evidence": "tables/q1_management_grid.csv"
   },
   "environment": {
@@ -319,5 +315,5 @@
     "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
     "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
   },
-  "execution_time_seconds": 290.596809181
+  "execution_time_seconds": 298.2373202020008
 }

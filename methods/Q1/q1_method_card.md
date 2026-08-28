@@ -35,10 +35,11 @@ Q1-M1 的条件是正式实验必须比较最小面积或占比与每地块作�
 
 ## Fallback trigger
 
-- Trigger: 完整 Q1-M1 在既定计算环境运行 15 分钟后仍无可行解，或最优间隙超过 1%，或估计峰值内存超过 2 GB。
+- Trigger: 完整 Q1-M1 在既定计算环境运行 15 分钟后仍无可行解，或滞销模式 $\alpha=0$ 的最优间隙超过 3%，或半价模式 $\alpha=0.5$ 的最优间隙超过 1%，或估计峰值内存超过 2 GB。
 - Evidence to evaluate: 求解器状态、首个可行解时间、15 分钟间隙、峰值内存、滚动方案与全局上界的差距。
 
 ## Compact history
 
 - 2026-08-27: 根据 `q1_baseline_data_conventions`、`global_optimality_framing` 和 `global_experiment_budget` 建立首轮筛选；尚无人工作出方法选择。
 - 2026-08-27: 人工通过 `q1_method_choice` 选择 Q1-M1；Q1-B1 保留为必须实现的 baseline，Q1-F1 未激活。
+- 2026-08-28: 人工确认滞销模式正式验收 Gap 为 3%，半价模式继续使用 1%；Round 2 两种滞销配置均达到该阈值。

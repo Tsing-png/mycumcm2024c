@@ -21,7 +21,7 @@
         "variables": 22358,
         "area_variables": 7434,
         "constraints": 20107,
-        "execution_time_seconds": 172.14202160999957
+        "execution_time_seconds": 179.0789811499999
       }
     },
     {
@@ -39,7 +39,7 @@
         "variables": 22358,
         "area_variables": 7434,
         "constraints": 27541,
-        "execution_time_seconds": 99.99002754399953
+        "execution_time_seconds": 99.50592513499942
       }
     },
     {
@@ -63,7 +63,7 @@
         "variables": 22358,
         "area_variables": 7434,
         "constraints": 20107,
-        "execution_time_seconds": 2.856170098999428
+        "execution_time_seconds": 3.049844725001094
       }
     },
     {
@@ -81,7 +81,7 @@
         "variables": 22358,
         "area_variables": 7434,
         "constraints": 27541,
-        "execution_time_seconds": 13.27335522300018
+        "execution_time_seconds": 13.925316070999543
       }
     }
   ]

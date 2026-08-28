@@ -33,6 +33,7 @@ def main() -> None:
     grid_rows, method_records = [], []
     schedules = {}
     for alpha in [0.0, 0.5]:
+        accepted_gap = 0.03 if alpha == 0.0 else 0.01
         base_eval = evaluate_schedule(data, baseline, alpha)
         base_name = f"q1_b1_alpha{'0' if alpha == 0 else '05'}_schedule.csv"
         write_schedule(out / "tables" / base_name, baseline)
@@ -61,7 +62,10 @@ def main() -> None:
                 "execution_time_seconds": solver["execution_time_seconds"], "input_files": method_records[0]["input_files"],
                 "output_files": [f"tables/{name}"], "figure_files": [],
                 "metrics_summary": {**evals, **conc, "constraint_violations": len(violations), "alpha": alpha, "config": config, "solver": solver},
-                "warnings": [] if solver["mip_gap"] is None or solver["mip_gap"] <= 0.01 else ["mip_gap_above_1pct"],
+                "warnings": (
+                    [] if solver["mip_gap"] is None or solver["mip_gap"] <= accepted_gap
+                    else [f"mip_gap_above_{int(accepted_gap * 100)}pct"]
+                ),
                 "errors": violations[:20],
             })
     pd.DataFrame(grid_rows).to_csv(out / "tables/q1_management_grid.csv", index=False, encoding="utf-8-sig")
@@ -80,12 +84,21 @@ def main() -> None:
     metrics = {"management_grid": grid_rows, "baseline_concentration": concentration(baseline),
                "baseline_violations": base_viol, "main_baseline_overlap": {str(k): schedule_overlap(v, baseline) for k, v in schedules.items()}}
     write_json(out / "metrics/q1_metrics.json", metrics)
-    fallback_observed = any((r.get("mip_gap") or 0) > 0.01 or r["execution_time_seconds"] >= args.time_limit for r in grid_rows)
+    fallback_observed = any(
+        (r.get("mip_gap") or 0) > (0.03 if r["alpha"] == 0.0 else 0.01)
+        or r["execution_time_seconds"] >= args.time_limit
+        for r in grid_rows
+    )
     summary = {
         "schema_version": 1, "question": "Q1", "round": args.round, "implementation_target": "python",
         "random_seed": args.seed, "approved_decision_id": "q1_method_choice", "methods": method_records,
         "comparison": {"management_grid_file": "tables/q1_management_grid.csv", "metrics_file": "metrics/q1_metrics.json"},
-        "fallback_trigger": {"fallback_id": "Q1-F1", "condition": "no feasible incumbent after time limit, gap >1%, or memory >2GB", "observed": fallback_observed, "evidence": "tables/q1_management_grid.csv"},
+        "fallback_trigger": {
+            "fallback_id": "Q1-F1",
+            "condition": "no feasible incumbent after time limit, alpha=0 gap >3%, alpha=0.5 gap >1%, or memory >2GB",
+            "observed": fallback_observed,
+            "evidence": "tables/q1_management_grid.csv",
+        },
         "environment": environment(), "input_hashes": {p.name: file_hash(p) for p in (ROOT / "workspace/data_clean").glob("*.csv")},
         "execution_time_seconds": time.perf_counter() - started,
     }

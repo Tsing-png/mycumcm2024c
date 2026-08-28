@@ -46,6 +46,7 @@ Read legacy candidate pools only during migration.
 - Do not finalize necessary/simplifying or impact judgments for the human.
 - Do not leave many repeated sentinels in the final file; collect missing judgments through a choice card and stop finalization until answered.
 - Revisit an assumption only when its method, evidence, or downstream use materially changes.
+- 模型假设仅收录「对现实的理想化简化前提」：题目硬性约束、数据预处理/计算口径、实验与仿真约定（随机种子、公平对比、免责声明）均不属于模型假设，分别归入模型约束、模型准备、实验设置；写作时遵循 paper-section-writer 的《模型假设章节写作规约》。
 
 # Verification
 

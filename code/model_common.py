@@ -280,6 +280,8 @@ def solve_milp_schedule(
     min_share: float = 0.0,
     max_crops: int = 3,
     time_limit: float = 300.0,
+    grain_min_fraction: float = 0.0,
+    bean_land_value: float = 0.0,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     started = time.perf_counter()
     mip_rel_gap = 0.03 if alpha == 0.0 else 0.01
@@ -314,6 +316,8 @@ def solve_milp_schedule(
         key = (year, crop, ptype, pseason)
         yld, cost, price = yield_map[key], cost_map[key], price_map[key]
         objective[xidx[v]] = cost - alpha * yld * price
+        if crop in BEANS:
+            objective[xidx[v]] -= bean_land_value
         objective[qidx[v]] = -(1 - alpha) * price
         upper_bounds[xidx[v]] = area
         upper_bounds[zidx[v]] = 1
@@ -387,6 +391,11 @@ def solve_milp_schedule(
                     for crop in set(allowed(slots[si][2], slots[si][3])) & BEANS:
                         entries.append((xidx[(si, crop)], 1.0))
             add(entries, area, np.inf)
+    if grain_min_fraction > 0:
+        total_area = sum(slot[4] for slot in slots)
+        grain_crops = set(range(6, 17))
+        grain_entries = [(xidx[(si, crop)], 1.0) for (si, crop) in vars_x if crop in grain_crops]
+        add(grain_entries, grain_min_fraction * total_area, np.inf)
     matrix = lil_matrix((len(rows), nvar))
     for ri, entries in enumerate(rows):
         for ci, val in entries:

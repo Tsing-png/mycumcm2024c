@@ -2,8 +2,8 @@
   "schema_version": 1,
   "question_id": "Q3",
   "rigor_profile": "lean",
-  "current_gate": "G2.5",
-  "status": "python_review_failed_waiting_correlated_model_fix",
+  "current_gate": "G3",
+  "status": "code_and_experiment_reviewed",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -17,7 +17,7 @@
     "model_assumptions": "planning/model_assumptions.md",
     "code_plan": "code/Q3/q3_code_plan.md",
     "code_review": "code/Q3/reviews/q3_python_review.json",
-    "latest_run": "results/Q3/experiments/round1/run_summary.json"
+    "latest_run": "results/Q3/experiments/round2/run_summary.json"
   },
   "allowed": {
     "code_generation": true,
@@ -25,15 +25,11 @@
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [
-    "Approved Gaussian-copula correlated scenario model is not implemented",
-    "Shared water-mode constraints are incomplete and current schedules are invalid",
-    "Recovered run summary lacks solver timing/gap and contains inconsistent fallback components"
-  ],
+  "blockers": [],
   "next_action": {
-    "owner": "ai",
-    "skill": "python-model-code-generator",
-    "reason": "After Q2 and shared constraints are corrected, implement matched independent/correlated scenarios and rerun Q3"
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "Review the corrected Q3 experiment evidence and decide whether to proceed to robustness and final result analysis"
   },
-  "updated_at": "2026-08-28T11:31:52+08:00"
+  "updated_at": "2026-08-28T13:42:19+08:00"
 }

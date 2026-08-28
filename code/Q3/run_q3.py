@@ -100,13 +100,43 @@ def target_factor_matrix(strength: float) -> np.ndarray:
     ])
 
 
+def realized_economic_correlation(data, scenarios: list[dict]) -> np.ndarray:
+    """Correlate final annual demand, yield and realized price growth arrays."""
+    observations = []
+    for scenario in scenarios:
+        previous_demand = np.array([data.demand0[crop] for crop in range(1, 42)], dtype=float)
+        previous_yield = {key: value["yield"] for key, value in data.params.items()}
+        previous_price = {key: value["price"] for key, value in data.params.items()}
+        for year in YEARS:
+            current_demand = np.array(
+                [scenario["demand"][(year, crop)] for crop in range(1, 42)], dtype=float
+            )
+            demand_growth = float(np.mean(current_demand / previous_demand - 1.0))
+            previous_demand = current_demand
+            yield_growth = []
+            price_growth = []
+            for key0 in data.params:
+                crop, ptype, season = key0
+                key = (year, crop, ptype, season)
+                current_yield = scenario["yield"][key]
+                yield_growth.append(current_yield / previous_yield[key0] - 1.0)
+                previous_yield[key0] = current_yield
+                current_price = scenario["price"][key]
+                if crop in {38, 39, 40}:
+                    price_growth.append(current_price / previous_price[key0] - 1.0)
+                previous_price[key0] = current_price
+            observations.append(
+                (demand_growth, float(np.mean(yield_growth)), float(np.mean(price_growth)))
+            )
+    return np.corrcoef(np.asarray(observations), rowvar=False)
+
+
 def correlated_scenarios(data, seed: int, count: int, strength: float, matrix: np.ndarray):
     rng = np.random.default_rng(seed)
     target = target_factor_matrix(strength)
     chol = np.linalg.cholesky(target)
     raw_factors = rng.standard_normal((count * len(YEARS), 3))
     correlated_factors = raw_factors @ chol.T
-    empirical = np.corrcoef(correlated_factors, rowvar=False)
     scenarios = [{"demand": {}, "yield": {}, "cost": {}, "price": {}} for _ in range(count)]
     categories = data.crops.set_index("crop_id").crop_category.to_dict()
     demand_levels = [dict(data.demand0) for _ in range(count)]
@@ -152,14 +182,21 @@ def correlated_scenarios(data, seed: int, count: int, strength: float, matrix: n
                         decline = 0.05
                     else:
                         price_latent = np.sqrt(strength) * price_factor[scenario_id] + np.sqrt(1 - strength) * rng.standard_normal()
-                        decline = 0.01 + 0.04 * ndtr(price_latent)
+                        # Higher price latent means a smaller decline and therefore higher realized price growth.
+                        decline = 0.05 - 0.04 * ndtr(price_latent)
                     price_levels[scenario_id][key0] *= 1 - decline
                 else:
                     price_levels[scenario_id][key0] = base["price"]
                 scenario["price"][key] = price_levels[scenario_id][key0]
+    empirical = realized_economic_correlation(data, scenarios)
     check = {
         "target_matrix": target.tolist(),
-        "empirical_factor_matrix": empirical.tolist(),
+        "empirical_realized_economic_matrix": empirical.tolist(),
+        "correlation_variables": [
+            "mean annual demand growth across 41 crops",
+            "mean annual yield growth across parameter rows",
+            "mean annual realized price growth for stochastic fungi crops 38-40"
+        ],
         "minimum_eigenvalue": float(np.linalg.eigvalsh(target).min()),
         "positive_definite": bool(np.linalg.eigvalsh(target).min() > 0),
         "maximum_absolute_correlation_error": float(np.max(np.abs(empirical - target))),
@@ -287,7 +324,11 @@ def main() -> None:
                 "crop_area_vector_similarity": vector_overlap(macro_vectors[left], macro_vectors[right]),
             })
     macro_equivalent = all(
-        row["relative_profit_difference"] < 0.01 and row["crop_area_vector_similarity"] > 0.80
+        row["relative_profit_difference"] < 0.01 and row["crop_area_vector_similarity"] >= 0.80
+        for row in macro_rows
+    )
+    structural_jump = any(
+        row["relative_profit_difference"] > 0.01 and row["crop_area_vector_similarity"] < 0.80
         for row in macro_rows
     )
     macro_attribution = {
@@ -296,11 +337,16 @@ def main() -> None:
         "crop_area_similarity_threshold": 0.80,
         "crop_area_similarity_definition": "sum(min(A_j,B_j))/sum(max(A_j,B_j)) over 41 seven-year crop-area totals",
         "pairwise_checks": macro_rows,
-        "verdict": "equivalent_micro_reallocation" if macro_equivalent else "market_structure_shift",
+        "verdict": (
+            "equivalent_micro_reallocation" if macro_equivalent else
+            "market_structure_shift" if structural_jump else
+            "mixed_or_boundary_case"
+        ),
+        "structural_jump_triggered": structural_jump,
         "interpretation": (
             "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移"
             if macro_equivalent else
-            "作物总面积结构或收益随关系强度发生实质变化，需要保留敏感性与 fallback"
+            "收益偏差与面积相似度未同时满足等价或结构跳变判据，需要保留敏感性分析"
         ),
     }
 
@@ -335,7 +381,7 @@ def main() -> None:
     direction_reversal = min(half_diffs) < 0 < max(half_diffs)
     fallback = bool(
         not correlations_ok or not evaluations_ok or not solver_ok(solvers["medium"])
-        or medium_violations or not macro_equivalent or direction_reversal
+        or medium_violations or structural_jump or direction_reversal
     )
     medium_success = (
         not schedules["medium"].empty and not medium_violations and solver_ok(solvers["medium"])
@@ -369,10 +415,11 @@ def main() -> None:
         "comparison": {"file": "tables/q3_q2_paired_comparison.csv", "metrics": "metrics/q3_metrics.json"},
         "fallback_trigger": {
             "fallback_id": "Q3-F1", "observed": fallback,
-            "condition": "invalid correlation, error >0.08, medium gap >1%, macro profit difference >=1%, crop-area similarity <=80%, direction reversal, or evaluation mismatch",
+            "condition": "invalid correlation, error >0.08, medium gap >1%, (macro profit difference >1% and crop-area similarity <80%), direction reversal, or evaluation mismatch",
             "components": {"correlations_ok": correlations_ok, "evaluations_ok": evaluations_ok,
                            "micro_plot_overlap_ok": micro_overlaps_ok,
                            "macro_equivalent_solution": macro_equivalent,
+                           "structural_jump_triggered": structural_jump,
                            "profit_direction_reversal": direction_reversal},
             "interpretation": macro_attribution["interpretation"],
             "evidence": ["metrics/q3_correlation_checks.json", "metrics/q3_metrics.json",

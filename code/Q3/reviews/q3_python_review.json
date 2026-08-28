@@ -2,61 +2,72 @@
   "schema_version": 1,
   "question_id": "Q3",
   "language": "python",
-  "reviewed_files": ["code/model_common.py", "code/Q3/run_q3.py", "code/Q3/summarize_q3.py", "results/Q3/experiments/round1/run_summary.json"],
-  "decision_id": "q3_method_choice",
+  "reviewed_files": [
+    "code/model_common.py",
+    "code/Q2/run_q2.py",
+    "code/Q3/run_q3.py",
+    "code/Q3/q3_code_plan.md",
+    "methods/Q3/q3_method_card.md",
+    "methods/Q3/q3_decisions.jsonl",
+    "results/Q3/experiments/round2/run_summary.json",
+    "results/Q3/experiments/round2/metrics/q3_correlation_checks.json",
+    "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json"
+  ],
+  "decision_id": "q3_decoupled_relation_contract",
   "checks": {
-    "syntax": {"status": "PASS", "evidence": ["uv run python -m py_compile completed"]},
-    "input_contract": {"status": "PASS", "evidence": ["Q3 reuses cleaned Q2 inputs and labels relationship edges as simulated assumptions"]},
-    "method_alignment": {
-      "status": "FAIL",
+    "syntax": {
+      "status": "PASS",
       "evidence": [
-        "The approved Gaussian-copula correlated scenario generator is not implemented",
-        "STRENGTHS are used as demand-response coefficients rather than a saved economic-variable correlation matrix",
-        "Q3-B1 reuses Q2 output rather than being solved in a fully matched Q3 paired run",
-        "The inherited Q2 mean-parameter approximation and water-mode defect remain"
+        "uv run python -m py_compile completed",
+        "The formal Round 2 run exited successfully"
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "The formal entry point reads cleaned inputs and the reviewed Q2 Round 3 schedule",
+        "Relationship edges are persisted and labeled simulated_assumption",
+        "Raw input files are not modified"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "Price latent values now map to smaller fungi price declines, so higher substitute-price movement aligns with higher demand movement",
+        "Empirical correlations are calculated after marginal mapping and clipping from final scenario demand, yield and realized price arrays",
+        "Method card, code plan and implementation use the same macro profit and 41-crop area fallback rule"
       ]
     },
     "reproducibility": {
-      "status": "FAIL",
-      "evidence": ["Recovered Q3 summary has no solver time or gap for six main runs", "The aggregation process was interrupted and later reconstructed from CSV schedules"]
+      "status": "PASS",
+      "evidence": [
+        "Seed 2026, scenario seed 3026, Q2 baseline hash, input hashes and environment versions are recorded",
+        "Three deterministic MILPs have saved solver time and gap",
+        "Batch profit checks match exact evaluation"
+      ]
     },
     "output_contract": {
-      "status": "FAIL",
-      "evidence": ["run_summary marks fallback observed true while all listed component flags are false", "It omits the independent-overlap below 0.5 component that caused the trigger", "All Q3 schedules have 7-14 water-mode violations under the missing check"]
+      "status": "PASS",
+      "evidence": [
+        "Final-variable maximum correlation errors are 0.0130, 0.0300 and 0.0353 for weak, medium and strong settings, all below 0.08",
+        "All target matrices are positive definite and realized demand-price correlations have the intended positive sign",
+        "The macro attribution artifact classifies all three pairwise comparisons as equivalent micro reallocations and fallback is not triggered"
+      ]
     },
-    "constraint_feasibility": {"status": "FAIL", "evidence": ["Independent water-mode audit found violations in every Q3 schedule"]},
-    "scale": {"status": "FAIL", "evidence": ["Scenario assessment is dominated by repeated DataFrame filtering and took minutes after the MILP schedules were already written"]}
-  },
-  "findings": [
-    {
-      "id": "Q3-F01",
-      "priority": "P0",
-      "category": "method_alignment",
-      "finding": "Q3 does not implement the approved correlated-scenario stochastic MILP or its copula correlation checks.",
-      "recommended_action": "Generate matched independent/correlated marginal samples, persist the actual target and empirical correlation matrices, and optimize shared decisions against those scenarios."
+    "constraint_feasibility": {
+      "status": "PASS",
+      "evidence": [
+        "Weak, medium and strong schedules have zero independently checked hard-constraint violations"
+      ]
     },
-    {
-      "id": "Q3-F02",
-      "priority": "P0",
-      "category": "hard_constraint",
-      "finding": "All recovered Q3 schedules inherit illegal water-mode configurations.",
-      "recommended_action": "Invalidate the current Q3 result claims, fix the shared formulation, and rerun after Q2 is corrected."
-    },
-    {
-      "id": "Q3-F03",
-      "priority": "P1",
-      "category": "performance",
-      "finding": "Pure evaluation is unnecessarily slow because each scenario repeatedly performs pandas filters and loops over every year and crop.",
-      "recommended_action": "Convert each schedule to fixed sparse crop-year production and cost matrices, then evaluate all 200 scenarios in one vectorized batch."
-    },
-    {
-      "id": "Q3-F04",
-      "priority": "P1",
-      "category": "output_consistency",
-      "finding": "Fallback evidence and component flags disagree.",
-      "recommended_action": "Use one canonical trigger evaluator and serialize every component, including overlap with the independent baseline."
+    "scale": {
+      "status": "PASS",
+      "evidence": [
+        "The medium MILP reached a 0.768% gap and the complete run finished in about 32.5 seconds"
+      ]
     }
-  ],
-  "verdict": "FAILED",
-  "reviewed_at": "2026-08-28T11:30:27+08:00"
+  },
+  "findings": [],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-08-28T13:42:19+08:00"
 }

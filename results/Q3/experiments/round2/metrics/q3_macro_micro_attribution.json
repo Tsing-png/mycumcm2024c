@@ -7,28 +7,29 @@
     {
       "left": "weak",
       "right": "medium",
-      "left_expected_profit": 68881921.89396192,
-      "right_expected_profit": 68840132.01055904,
-      "relative_profit_difference": 0.0006066886964509514,
+      "left_expected_profit": 68912062.52751032,
+      "right_expected_profit": 68870310.31387357,
+      "relative_profit_difference": 0.0006058767087412771,
       "crop_area_vector_similarity": 0.9663397325943699
     },
     {
       "left": "weak",
       "right": "strong",
-      "left_expected_profit": 68881921.89396192,
-      "right_expected_profit": 68754024.61372493,
-      "relative_profit_difference": 0.001856761204106306,
+      "left_expected_profit": 68912062.52751032,
+      "right_expected_profit": 68784202.91703948,
+      "relative_profit_difference": 0.0018554024619389195,
       "crop_area_vector_similarity": 0.9554435899581327
     },
     {
       "left": "medium",
       "right": "strong",
-      "left_expected_profit": 68840132.01055904,
-      "right_expected_profit": 68754024.61372493,
-      "relative_profit_difference": 0.0012508313729104657,
+      "left_expected_profit": 68870310.31387357,
+      "right_expected_profit": 68784202.91703948,
+      "relative_profit_difference": 0.0012502832707106948,
       "crop_area_vector_similarity": 0.9472572055375217
     }
   ],
   "verdict": "equivalent_micro_reallocation",
+  "structural_jump_triggered": false,
   "interpretation": "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移"
 }

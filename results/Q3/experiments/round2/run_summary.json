@@ -11,7 +11,7 @@
       "role": "main_candidate",
       "script": "code/Q3/run_q3.py",
       "status": "success",
-      "execution_time_seconds": 23.249695898999562,
+      "execution_time_seconds": 23.18825863500024,
       "input_files": [
         "workspace/data_clean/*.csv",
         "results/Q2/experiments/round3/tables/q2_m1_schedule.csv"
@@ -37,7 +37,7 @@
           "variables": 22358,
           "area_variables": 7434,
           "constraints": 27541,
-          "execution_time_seconds": 8.605804508000801
+          "execution_time_seconds": 8.522638020000159
         },
         "unique_crop_count": 24,
         "top1_area_share": 0.1708208485020956,
@@ -81,12 +81,13 @@
   "fallback_trigger": {
     "fallback_id": "Q3-F1",
     "observed": false,
-    "condition": "invalid correlation, error >0.08, medium gap >1%, macro profit difference >=1%, crop-area similarity <=80%, direction reversal, or evaluation mismatch",
+    "condition": "invalid correlation, error >0.08, medium gap >1%, (macro profit difference >1% and crop-area similarity <80%), direction reversal, or evaluation mismatch",
     "components": {
       "correlations_ok": true,
       "evaluations_ok": true,
       "micro_plot_overlap_ok": false,
       "macro_equivalent_solution": true,
+      "structural_jump_triggered": false,
       "profit_direction_reversal": false
     },
     "interpretation": "宏观策略稳健、地块调度灵活；低逐地块重合度主要来自等价解的微观平移",
@@ -111,5 +112,5 @@
     "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
   },
   "q2_baseline_hash": "cefc1ca47ac1792bcd128f9c29c0d2071b2d2c9f5619283780ce5922657d2397",
-  "execution_time_seconds": 32.21850496800107
+  "execution_time_seconds": 32.4529033380004
 }

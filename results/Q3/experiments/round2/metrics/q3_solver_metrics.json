@@ -10,7 +10,7 @@
     "variables": 22358,
     "area_variables": 7434,
     "constraints": 27541,
-    "execution_time_seconds": 8.802684215999761
+    "execution_time_seconds": 8.883927560998927
   },
   "medium": {
     "success": true,
@@ -23,7 +23,7 @@
     "variables": 22358,
     "area_variables": 7434,
     "constraints": 27541,
-    "execution_time_seconds": 8.605804508000801
+    "execution_time_seconds": 8.522638020000159
   },
   "strong": {
     "success": true,
@@ -36,6 +36,6 @@
     "variables": 22358,
     "area_variables": 7434,
     "constraints": 27541,
-    "execution_time_seconds": 5.841207174998999
+    "execution_time_seconds": 5.781693054001153
   }
 }

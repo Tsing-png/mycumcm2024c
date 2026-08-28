@@ -17,29 +17,34 @@
         1.0
       ]
     ],
-    "empirical_factor_matrix": [
+    "empirical_realized_economic_matrix": [
       [
-        1.0,
-        0.0669971228034901,
-        0.11149418138699548
+        0.9999999999999999,
+        0.049555653716084086,
+        0.06946913731385135
       ],
       [
-        0.06699712280349011,
-        1.0,
-        -0.024330596679895643
+        0.049555653716084086,
+        0.9999999999999999,
+        -0.018060633634041104
       ],
       [
-        0.11149418138699548,
-        -0.024330596679895643,
+        0.06946913731385135,
+        -0.018060633634041104,
         1.0
       ]
     ],
+    "correlation_variables": [
+      "mean annual demand growth across 41 crops",
+      "mean annual yield growth across parameter rows",
+      "mean annual realized price growth for stochastic fungi crops 38-40"
+    ],
     "minimum_eigenvalue": 0.8956391622461259,
     "positive_definite": true,
-    "maximum_absolute_correlation_error": 0.029497122803490115,
+    "maximum_absolute_correlation_error": 0.013030862686148656,
     "demand_response_clipping_ratio": 0.015749128919860626,
     "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
-    "scenario_hash": "f98b45f437647b554f9caf9eeb28885b12601ed1725c037964bb639ff4eaa33a",
+    "scenario_hash": "31e620961cb63cc64ca9693c169807fec2ed5ae2b90f5d7a8a07ad11f33d578f",
     "seed": 3026
   },
   "medium": {
@@ -60,29 +65,34 @@
         1.0
       ]
     ],
-    "empirical_factor_matrix": [
+    "empirical_realized_economic_matrix": [
       [
         1.0,
-        0.11593302067101871,
-        0.21529416735931226
+        0.10629203388385368,
+        0.1624899908436841
       ],
       [
-        0.11593302067101871,
+        0.10629203388385368,
         1.0,
-        -0.05927212297977276
+        -0.04729673836630177
       ],
       [
-        0.21529416735931226,
-        -0.059272122979772766,
-        1.0
+        0.16248999084368407,
+        -0.047296738366301765,
+        0.9999999999999998
       ]
+    ],
+    "correlation_variables": [
+      "mean annual demand growth across 41 crops",
+      "mean annual yield growth across parameter rows",
+      "mean annual realized price growth for stochastic fungi crops 38-40"
     ],
     "minimum_eigenvalue": 0.7564913785742947,
     "positive_definite": true,
-    "maximum_absolute_correlation_error": 0.028433020671018716,
+    "maximum_absolute_correlation_error": 0.030010009156315937,
     "demand_response_clipping_ratio": 0.03761324041811847,
     "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
-    "scenario_hash": "d9b65c1b7fb8800c0ee24a20b13fca0e0408acf38be2c7df1f462f73f227acaa",
+    "scenario_hash": "2419ab2930550de78f06fda6c6df52bf1a69315d05722c4836fb0cb8bea1fe4d",
     "seed": 3026
   },
   "strong": {
@@ -103,29 +113,34 @@
         1.0
       ]
     ],
-    "empirical_factor_matrix": [
+    "empirical_realized_economic_matrix": [
       [
         1.0,
-        0.16467416469798654,
-        0.31828328846866766
+        0.1577984950359219,
+        0.2671633288349413
       ],
       [
-        0.16467416469798654,
-        0.9999999999999998,
-        -0.09488879263457219
+        0.1577984950359219,
+        0.9999999999999999,
+        -0.0836459861145077
       ],
       [
-        0.31828328846866766,
-        -0.09488879263457219,
-        1.0
+        0.26716332883494137,
+        -0.08364598611450771,
+        0.9999999999999998
       ]
+    ],
+    "correlation_variables": [
+      "mean annual demand growth across 41 crops",
+      "mean annual yield growth across parameter rows",
+      "mean annual realized price growth for stochastic fungi crops 38-40"
     ],
     "minimum_eigenvalue": 0.6173435949024628,
     "positive_definite": true,
-    "maximum_absolute_correlation_error": 0.02717416469798653,
+    "maximum_absolute_correlation_error": 0.03533667116505873,
     "demand_response_clipping_ratio": 0.06029616724738676,
     "cost_driver": "deterministic 5% annual growth; no empirical cost correlation is claimed",
-    "scenario_hash": "4a19588245a0b8bf813db67f9086a2c54f223c917f8dd516d56dc3d95bead02c",
+    "scenario_hash": "869fc44cfaf1345598951e6e5e03d43aaf603eaf1a36eec79d08d007603474f0",
     "seed": 3026
   }
 }

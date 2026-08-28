@@ -3,7 +3,7 @@
   "question_id": "Q3",
   "rigor_profile": "submission",
   "current_gate": "G4",
-  "status": "final_analysis_complete_submission_artifacts_pending",
+  "status": "solution_package_signed_and_frozen",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -22,24 +22,24 @@
     "robustness_summary": "robustness/Q3/q3_robustness_summary.json",
     "final_method_explanation": "methods/Q3/q3_final_method_explanation.md",
     "final_result_analysis": "results/Q3/reports/q3_final_result_analysis.md",
-    "figure_table_plan": "methods/Q3/q3_figure_table_plan.md"
+    "figure_table_plan": "methods/Q3/q3_figure_table_plan.md",
+    "robustness_report": "robustness/Q3/q3_robustness_report.md",
+    "solution_package": "results/Q3/reports/q3_solution_package_for_writer.md",
+    "frozen_numbers": "results/Q3/reports/frozen_numbers.json"
     ,"paper_figures": ["paper/figures/q3_relationship_strength_sensitivity.svg", "paper/figures/q3_macro_structure_stability.svg", "paper/figures/q3_correlation_matrix_validation.svg"]
     ,"paper_tables": ["paper/tables/q3_medium_q2_comparison.tex", "paper/tables/q3_correlation_checks.tex"]
   },
   "allowed": {
     "code_generation": true,
-    "freeze": false,
-    "paper_writing": false,
+    "freeze": true,
+    "paper_writing": true,
     "final_assembly": false
   },
-  "blockers": [
-    "Submission robustness report is not yet generated",
-    "Solution package, package sign-off and frozen numbers are not yet generated"
-  ],
+  "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "robustness-checker",
-    "reason": "Planned Q3 submission visuals are generated and render-verified; generate the submission robustness report"
+    "skill": "paper-section-writer",
+    "reason": "Q3 writer package is signed and numerical claims are frozen"
   },
-  "updated_at": "2026-08-28T13:42:19+08:00"
+  "updated_at": "2026-08-28T15:07:22+08:00"
 }

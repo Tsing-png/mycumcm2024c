@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "frozen_at": "2026-08-28T15:07:22+08:00",
+  "frozen_by_skill": "solution-package-builder",
+  "package_signoff_decision_id": "q1_solution_package_signoff",
+  "claims": [
+    {
+      "claim_id": "q1_unsold_official_profit",
+      "value": 40417243.26956025,
+      "unit": "CNY",
+      "source_file": "results/Q1/experiments/round2/metrics/q1_metrics.json",
+      "source_locator": "$.management_grid[?(@.alpha==0.0 && @.config=='share0_k3')].cumulative_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_solution_package_signoff"
+    },
+    {
+      "claim_id": "q1_unsold_official_gap",
+      "value": 0.02125639367964373,
+      "unit": "fraction",
+      "source_file": "results/Q1/experiments/round2/metrics/q1_metrics.json",
+      "source_locator": "$.management_grid[?(@.alpha==0.0 && @.config=='share0_k3')].mip_gap",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_solution_package_signoff"
+    },
+    {
+      "claim_id": "q1_half_official_profit",
+      "value": 63510227.938816465,
+      "unit": "CNY",
+      "source_file": "results/Q1/experiments/round2/metrics/q1_metrics.json",
+      "source_locator": "$.management_grid[?(@.alpha==0.5 && @.config=='share10_k3')].cumulative_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_solution_package_signoff"
+    },
+    {
+      "claim_id": "q1_half_official_gap",
+      "value": 0.007394901403221419,
+      "unit": "fraction",
+      "source_file": "results/Q1/experiments/round2/metrics/q1_metrics.json",
+      "source_locator": "$.management_grid[?(@.alpha==0.5 && @.config=='share10_k3')].mip_gap",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_solution_package_signoff"
+    },
+    {
+      "claim_id": "q1_all_hard_violations",
+      "value": 0,
+      "unit": "count",
+      "source_file": "results/Q1/experiments/round2/metrics/q1_metrics.json",
+      "source_locator": "max($.management_grid[*].violations)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_solution_package_signoff"
+    }
+  ]
+}

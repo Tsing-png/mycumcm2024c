@@ -19,4 +19,4 @@ Q3 图表必须区分经济结果、宏观结构和相关性验证。关系强�
 
 ## 结论与决策来源
 
-Type 3 核心结论由 `q3_stability_verdict` 支持，宏观判据由方法卡及 Round 2 的正式归因证据支持。允许陈述跨种子平均收益和宏观结构稳定，不允许暗示下尾全面占优或关系具有真实因果含义。正式数字冻结前，图表状态保持“待生成/待绑定 frozen claim”。
+Type 3 核心结论由 `q3_stability_verdict` 支持，宏观判据由方法卡及 Round 2 的正式归因证据支持。允许陈述跨种子平均收益和宏观结构稳定，不允许暗示下尾全面占优或关系具有真实因果含义。材料包已通过 `q3_solution_package_signoff` 签署，正文数字绑定 `results/Q3/reports/frozen_numbers.json`。

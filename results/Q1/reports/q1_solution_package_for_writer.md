@@ -1,6 +1,6 @@
 # Q1 论文写作材料包
 
-状态为 `PENDING_PACKAGE_SIGNOFF`。论文手在签署并生成 `frozen_numbers.json` 后使用本文件，不从零散实验目录推断数字。
+状态为 `SIGNED_AND_FROZEN`，冻结时间为 2026-08-28T15:07:22+08:00。论文手使用本文件及同目录 `frozen_numbers.json`，不从零散实验目录推断数字。
 
 ## 方法与交付
 

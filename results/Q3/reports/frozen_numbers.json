@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "question": "Q3",
+  "frozen_at": "2026-08-28T15:07:22+08:00",
+  "frozen_by_skill": "solution-package-builder",
+  "package_signoff_decision_id": "q3_solution_package_signoff",
+  "claims": [
+    {
+      "claim_id": "q3_medium_half_mean_profit",
+      "value": 68870310.31387357,
+      "unit": "CNY",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_metrics.json",
+      "source_locator": "$.comparison[?(@.strength=='medium' && @.alpha==0.5)].q3_mean_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_medium_half_mean_advantage",
+      "value": 121367.31099716913,
+      "unit": "CNY",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_metrics.json",
+      "source_locator": "$.comparison[?(@.strength=='medium' && @.alpha==0.5)].paired_mean_difference",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_medium_unsold_mean_advantage",
+      "value": 624098.3505393018,
+      "unit": "CNY",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_metrics.json",
+      "source_locator": "$.comparison[?(@.strength=='medium' && @.alpha==0.0)].paired_mean_difference",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_medium_simulated_loss_probability",
+      "value": 0.0,
+      "unit": "fraction over 200 scenarios",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_metrics.json",
+      "source_locator": "max(medium q3_loss_probability for alpha in [0.5,0.0])",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_correlation_error_max",
+      "value": 0.03533667116505873,
+      "unit": "correlation coefficient",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_correlation_checks.json",
+      "source_locator": "max($.*.maximum_absolute_correlation_error)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_macro_profit_difference_min",
+      "value": 0.0006058767087412771,
+      "unit": "fraction",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json",
+      "source_locator": "min($.pairwise_checks[*].relative_profit_difference)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_macro_profit_difference_max",
+      "value": 0.0018554024619389195,
+      "unit": "fraction",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json",
+      "source_locator": "max($.pairwise_checks[*].relative_profit_difference)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_macro_area_similarity_min",
+      "value": 0.9472572055375217,
+      "unit": "fraction",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json",
+      "source_locator": "min($.pairwise_checks[*].crop_area_vector_similarity)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    },
+    {
+      "claim_id": "q3_macro_area_similarity_max",
+      "value": 0.9663397325943699,
+      "unit": "fraction",
+      "source_file": "results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json",
+      "source_locator": "max($.pairwise_checks[*].crop_area_vector_similarity)",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_solution_package_signoff"
+    }
+  ]
+}

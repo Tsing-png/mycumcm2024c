@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "frozen_at": "2026-08-28T15:07:22+08:00",
+  "frozen_by_skill": "solution-package-builder",
+  "package_signoff_decision_id": "q2_solution_package_signoff",
+  "claims": [
+    {
+      "claim_id": "q2_half_main_mean_profit",
+      "value": 68971922.82293294,
+      "unit": "CNY",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "$.paired_test[?(@.method=='Main' && @.alpha==0.5)].mean_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    },
+    {
+      "claim_id": "q2_half_mean_advantage",
+      "value": 56788.38332627714,
+      "unit": "CNY",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "difference(Main,Baseline) at alpha=0.5 mean_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    },
+    {
+      "claim_id": "q2_half_lower_tail_mean",
+      "value": 63177995.23653789,
+      "unit": "CNY",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "$.paired_test[?(@.method=='Main' && @.alpha==0.5)].lower_tail_mean",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    },
+    {
+      "claim_id": "q2_unsold_main_mean_profit",
+      "value": 25784546.493063074,
+      "unit": "CNY",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "$.paired_test[?(@.method=='Main' && @.alpha==0.0)].mean_profit",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    },
+    {
+      "claim_id": "q2_simulated_loss_probability",
+      "value": 0.0,
+      "unit": "fraction over 200 scenarios",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "max(Main loss_probability for alpha in [0.5,0.0])",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    },
+    {
+      "claim_id": "q2_hard_constraint_violations",
+      "value": 0,
+      "unit": "count",
+      "source_file": "results/Q2/experiments/round3/metrics/q2_metrics.json",
+      "source_locator": "max(Main constraint_violations for alpha in [0.5,0.0])",
+      "frozen_at": "2026-08-28T15:07:22+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q2_solution_package_signoff"
+    }
+  ]
+}

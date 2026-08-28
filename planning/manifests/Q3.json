@@ -3,7 +3,7 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "result_decision_pending",
+  "status": "robustness_conditional_waiting_stability_verdict",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -18,7 +18,8 @@
     "code_plan": "code/Q3/q3_code_plan.md",
     "code_review": "code/Q3/reviews/q3_python_review.json",
     "latest_run": "results/Q3/experiments/round2/run_summary.json",
-    "decision_report": "results/Q3/experiments/round2/q3_decision_report.md"
+    "decision_report": "results/Q3/experiments/round2/q3_decision_report.md",
+    "robustness_summary": "robustness/Q3/q3_robustness_summary.json"
   },
   "allowed": {
     "code_generation": true,
@@ -30,7 +31,7 @@
   "next_action": {
     "owner": "human",
     "skill": "decision-prompt-builder",
-    "reason": "Review the corrected Q3 experiment evidence and decide whether to proceed to robustness and final result analysis"
+    "reason": "Q3 is macro-stable and mean-stable but its half-price lower-tail advantage over Q2 is not stable; choose a bounded claim or adjust the model"
   },
   "updated_at": "2026-08-28T13:42:19+08:00"
 }

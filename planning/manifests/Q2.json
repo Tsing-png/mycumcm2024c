@@ -3,7 +3,7 @@
   "question_id": "Q2",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "result_decision_pending",
+  "status": "robustness_conditional_waiting_stability_verdict",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -18,7 +18,8 @@
     "code_plan": "code/Q2/q2_code_plan.md",
     "code_review": "code/Q2/reviews/q2_python_review.json",
     "latest_run": "results/Q2/experiments/round3/run_summary.json",
-    "decision_report": "results/Q2/experiments/round3/q2_decision_report.md"
+    "decision_report": "results/Q2/experiments/round3/q2_decision_report.md",
+    "robustness_summary": "robustness/Q2/q2_robustness_summary.json"
   },
   "allowed": {
     "code_generation": true,
@@ -30,7 +31,7 @@
   "next_action": {
     "owner": "human",
     "skill": "decision-prompt-builder",
-    "reason": "Judge whether the current main method should proceed to robustness checking"
+    "reason": "Q2 is profitable and mean-stable but does not dominate the baseline in every lower-tail or endpoint test; choose a bounded claim or adjust the model"
   },
   "updated_at": "2026-08-28T13:09:45+08:00"
 }

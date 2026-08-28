@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "checks": [
+    {
+      "tested_claim": "Q1 solutions remain feasible and economically similar across the two approved management settings for alpha=0.0",
+      "input_refs": [
+        "results/Q1/experiments/round2/metrics/q1_metrics.json"
+      ],
+      "perturbation": "Minimum planted share changes from 0 to 0.1 while max crops per plot-season remains 3.",
+      "metric_threshold": {
+        "mip_gap_max": 0.03,
+        "hard_constraint_violations": 0
+      },
+      "observed": {
+        "relative_profit_range": 0.007258811005415214,
+        "top3_area_share_range": [
+          0.41867836723143115,
+          0.4246697231152749
+        ],
+        "maximum_mip_gap": 0.028690165587829684,
+        "constraint_violations": [
+          0,
+          0
+        ]
+      },
+      "status": "PASS",
+      "limitation": "Only the approved two-point management grid is tested; this is not a continuous threshold sweep.",
+      "fallback_trigger_relevance": "Directly tests the formal alpha-specific gap thresholds and feasibility trigger."
+    },
+    {
+      "tested_claim": "Q1 solutions remain feasible and economically similar across the two approved management settings for alpha=0.5",
+      "input_refs": [
+        "results/Q1/experiments/round2/metrics/q1_metrics.json"
+      ],
+      "perturbation": "Minimum planted share changes from 0 to 0.1 while max crops per plot-season remains 3.",
+      "metric_threshold": {
+        "mip_gap_max": 0.01,
+        "hard_constraint_violations": 0
+      },
+      "observed": {
+        "relative_profit_range": 0.0012304310714110155,
+        "top3_area_share_range": [
+          0.4209519367341314,
+          0.44882685109939907
+        ],
+        "maximum_mip_gap": 0.008636785601124554,
+        "constraint_violations": [
+          0,
+          0
+        ]
+      },
+      "status": "PASS",
+      "limitation": "Only the approved two-point management grid is tested; this is not a continuous threshold sweep.",
+      "fallback_trigger_relevance": "Directly tests the formal alpha-specific gap thresholds and feasibility trigger."
+    }
+  ],
+  "overall_status": "PASS"
+}

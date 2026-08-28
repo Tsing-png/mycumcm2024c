@@ -3,7 +3,7 @@
   "question_id": "Q1",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "result_accepted_waiting_robustness",
+  "status": "robustness_checked_waiting_stability_verdict",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -18,7 +18,8 @@
     "code_plan": "code/Q1/q1_code_plan.md",
     "code_review": "code/Q1/reviews/q1_python_review.json",
     "latest_run": "results/Q1/experiments/round2/run_summary.json",
-    "decision_report": "results/Q1/experiments/round2/q1_decision_report.md"
+    "decision_report": "results/Q1/experiments/round2/q1_decision_report.md",
+    "robustness_summary": "robustness/Q1/q1_robustness_summary.json"
   },
   "allowed": {
     "code_generation": true,
@@ -28,9 +29,9 @@
   },
   "blockers": [],
   "next_action": {
-    "owner": "ai",
-    "skill": "robustness-checker",
-    "reason": "The human accepted a 3% zero-surplus gap threshold; all Round 2 configurations meet their formal thresholds and fallback is unobserved"
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "Q1 management-threshold robustness passed; record the stability verdict and claim scope"
   },
   "updated_at": "2026-08-28T13:56:00+08:00"
 }

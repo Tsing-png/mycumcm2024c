@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "tested_claim": "The fixed expected-trend plan remains profitable and avoids excessive half-price lower-tail deterioration under resampling and alternate bounded distributions.",
+  "input_refs": [
+    "results/Q2/experiments/round3/tables/q2_m1_schedule.csv",
+    "results/Q2/experiments/round3/tables/q2_b1_schedule.csv",
+    "results/Q2/experiments/round3/run_summary.json"
+  ],
+  "perturbations": {
+    "uniform_seed_stability": [
+      3026,
+      4026,
+      5026,
+      6026,
+      7026
+    ],
+    "alternate_distribution": "triangular with midpoint mode and seed 8026",
+    "endpoint_stress": [
+      "adverse",
+      "demand_adverse",
+      "favorable"
+    ]
+  },
+  "predeclared_thresholds": {
+    "loss_probability": 0.0,
+    "half_price_lower_tail_drop_max": 0.1,
+    "hard_constraint_violations": 0
+  },
+  "seed_results": [
+    {
+      "seed": 3026,
+      "scenario_hash": "7d2857684aafebc91529083d196a8564dd8f80f49897d3eaacbb43e919216398",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 68971922.82293294,
+            "q05_profit": 64100025.97372572,
+            "lower_tail_mean": 63177995.23653789,
+            "loss_probability": 0.0,
+            "minimum_profit": 61924174.36154214,
+            "profit_std": 3158945.104345806
+          },
+          "baseline": {
+            "mean_profit": 68915134.43960668,
+            "q05_profit": 64138688.34846697,
+            "lower_tail_mean": 63102550.3847387,
+            "loss_probability": 0.0,
+            "minimum_profit": 61846281.012956694,
+            "profit_std": 3145160.93326567
+          },
+          "paired_mean_difference": 56788.383326259216,
+          "paired_lower_tail_difference": -342671.25306452735,
+          "main_tail_drop_ratio": 0.08400414761916124
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25784546.493063077,
+            "q05_profit": 24894897.677639827,
+            "lower_tail_mean": 24684627.21162314,
+            "loss_probability": 0.0,
+            "minimum_profit": 24352230.116122566,
+            "profit_std": 487445.53507671604
+          },
+          "baseline": {
+            "mean_profit": 25247135.829561587,
+            "q05_profit": 24265242.477386482,
+            "lower_tail_mean": 24052006.115464475,
+            "loss_probability": 0.0,
+            "minimum_profit": 23753244.342932682,
+            "profit_std": 558990.2093388484
+          },
+          "paired_mean_difference": 537410.6635014883,
+          "paired_lower_tail_difference": 49158.22911896184,
+          "main_tail_drop_ratio": 0.04265808133316804
+        }
+      ]
+    },
+    {
+      "seed": 4026,
+      "scenario_hash": "e0bfa348872d3c006f1648c104e306c8f68db6e5df485a7d9a845174fc94aae6",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 69145316.66307333,
+            "q05_profit": 64287263.923831224,
+            "lower_tail_mean": 63395772.957713805,
+            "loss_probability": 0.0,
+            "minimum_profit": 61886005.72310652,
+            "profit_std": 3087947.693237419
+          },
+          "baseline": {
+            "mean_profit": 69065215.6583189,
+            "q05_profit": 64236886.60347328,
+            "lower_tail_mean": 63319119.92112751,
+            "loss_probability": 0.0,
+            "minimum_profit": 61872864.41927103,
+            "profit_std": 3080276.5786908264
+          },
+          "paired_mean_difference": 80101.00475442997,
+          "paired_lower_tail_difference": -243517.8176078178,
+          "main_tail_drop_ratio": 0.08315159988890523
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25738640.010895137,
+            "q05_profit": 24920327.19899706,
+            "lower_tail_mean": 24716195.64253256,
+            "loss_probability": 0.0,
+            "minimum_profit": 24427605.281114202,
+            "profit_std": 473666.05602750083
+          },
+          "baseline": {
+            "mean_profit": 25157580.60976655,
+            "q05_profit": 24313218.25647933,
+            "lower_tail_mean": 24087069.124893535,
+            "loss_probability": 0.0,
+            "minimum_profit": 23609424.3541935,
+            "profit_std": 516856.02595028374
+          },
+          "paired_mean_difference": 581059.4011285857,
+          "paired_lower_tail_difference": 118542.33604656607,
+          "main_tail_drop_ratio": 0.0397241022808422
+        }
+      ]
+    },
+    {
+      "seed": 5026,
+      "scenario_hash": "9f85dad1fbfca97859509c525e8bc8b3bcc40a41be14391eedc30fbfd7e2a113",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 69230786.4339893,
+            "q05_profit": 63512934.249028064,
+            "lower_tail_mean": 62663561.05252926,
+            "loss_probability": 0.0,
+            "minimum_profit": 61899492.54063584,
+            "profit_std": 3366511.8178228657
+          },
+          "baseline": {
+            "mean_profit": 69151736.6690611,
+            "q05_profit": 63466882.972813375,
+            "lower_tail_mean": 62664787.19894049,
+            "loss_probability": 0.0,
+            "minimum_profit": 61872537.20963988,
+            "profit_std": 3347651.4475973356
+          },
+          "paired_mean_difference": 79049.76492820501,
+          "paired_lower_tail_difference": -252277.5917889312,
+          "main_tail_drop_ratio": 0.09485989860481808
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25757545.257544573,
+            "q05_profit": 24907388.774928123,
+            "lower_tail_mean": 24649454.779927798,
+            "loss_probability": 0.0,
+            "minimum_profit": 23762103.243170403,
+            "profit_std": 530663.831659218
+          },
+          "baseline": {
+            "mean_profit": 25172476.764700226,
+            "q05_profit": 24214638.957387563,
+            "lower_tail_mean": 23936953.31798198,
+            "loss_probability": 0.0,
+            "minimum_profit": 22966300.116648972,
+            "profit_std": 589324.0467936059
+          },
+          "paired_mean_difference": 585068.4928443467,
+          "paired_lower_tail_difference": 44535.76583371088,
+          "main_tail_drop_ratio": 0.04302003418948504
+        }
+      ]
+    },
+    {
+      "seed": 6026,
+      "scenario_hash": "fd521f2538435cfda7d9783694c6ee50aed45d4d0c2e475b126022d41d856de8",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 69141316.17361048,
+            "q05_profit": 64631435.37757127,
+            "lower_tail_mean": 63388267.3647004,
+            "loss_probability": 0.0,
+            "minimum_profit": 59311242.66942265,
+            "profit_std": 2992315.1891616033
+          },
+          "baseline": {
+            "mean_profit": 69050609.90617609,
+            "q05_profit": 64383205.198221825,
+            "lower_tail_mean": 63341482.93804214,
+            "loss_probability": 0.0,
+            "minimum_profit": 59203248.903145045,
+            "profit_std": 2964063.71300833
+          },
+          "paired_mean_difference": 90706.2674343852,
+          "paired_lower_tail_difference": -245025.98830289542,
+          "main_tail_drop_ratio": 0.08320710578410821
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25711776.741234094,
+            "q05_profit": 24949374.050148517,
+            "lower_tail_mean": 24733632.62866308,
+            "loss_probability": 0.0,
+            "minimum_profit": 24457976.17464865,
+            "profit_std": 532287.3283665
+          },
+          "baseline": {
+            "mean_profit": 25120180.63125466,
+            "q05_profit": 24240887.57253522,
+            "lower_tail_mean": 24054029.136311643,
+            "loss_probability": 0.0,
+            "minimum_profit": 23812315.088991527,
+            "profit_std": 583417.1117060113
+          },
+          "paired_mean_difference": 591596.1099794328,
+          "paired_lower_tail_difference": 106238.37487054057,
+          "main_tail_drop_ratio": 0.03804264957708497
+        }
+      ]
+    },
+    {
+      "seed": 7026,
+      "scenario_hash": "050ad4b7539cb62551857639476a68d7d3398b51725f244c50162adead3881da",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 69132950.81821755,
+            "q05_profit": 64503860.98344248,
+            "lower_tail_mean": 62925649.645666644,
+            "loss_probability": 0.0,
+            "minimum_profit": 61588654.63825583,
+            "profit_std": 2946479.2325480077
+          },
+          "baseline": {
+            "mean_profit": 69064865.47649239,
+            "q05_profit": 64528025.20973886,
+            "lower_tail_mean": 62870003.2079197,
+            "loss_probability": 0.0,
+            "minimum_profit": 61405441.40938337,
+            "profit_std": 2932950.5458930703
+          },
+          "paired_mean_difference": 68085.3417251543,
+          "paired_lower_tail_difference": -318781.3055049464,
+          "main_tail_drop_ratio": 0.08978788116353897
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25739603.76552861,
+            "q05_profit": 24916499.51126286,
+            "lower_tail_mean": 24807792.065641657,
+            "loss_probability": 0.0,
+            "minimum_profit": 24600932.504988194,
+            "profit_std": 460618.46049879317
+          },
+          "baseline": {
+            "mean_profit": 25181770.09179378,
+            "q05_profit": 24210770.93613297,
+            "lower_tail_mean": 24069616.55523338,
+            "loss_probability": 0.0,
+            "minimum_profit": 23647870.47658737,
+            "profit_std": 536107.292005143
+          },
+          "paired_mean_difference": 557833.6737348317,
+          "paired_lower_tail_difference": 17970.958595935626,
+          "main_tail_drop_ratio": 0.036201478017111925
+        }
+      ]
+    }
+  ],
+  "distribution_results": [
+    {
+      "shape": "triangular",
+      "seed": 8026,
+      "scenario_hash": "14d9f498d287c0cbd125a69c8360539532518b57246e534a8886d1b0bdde699b",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 68938111.20279197,
+            "q05_profit": 65527069.10449746,
+            "lower_tail_mean": 65017148.18847035,
+            "loss_probability": 0.0,
+            "minimum_profit": 64084945.19148667,
+            "profit_std": 2118692.3379942942
+          },
+          "baseline": {
+            "mean_profit": 68856922.59963726,
+            "q05_profit": 65515416.23605146,
+            "lower_tail_mean": 64924337.32618912,
+            "loss_probability": 0.0,
+            "minimum_profit": 64064524.937471256,
+            "profit_std": 2115544.9946361957
+          },
+          "paired_mean_difference": 81188.60315474242,
+          "paired_lower_tail_difference": -191895.69547653868,
+          "main_tail_drop_ratio": 0.056876565747319564
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 25970791.508082975,
+            "q05_profit": 25390193.57412107,
+            "lower_tail_mean": 25222912.6723474,
+            "loss_probability": 0.0,
+            "minimum_profit": 25081673.837744053,
+            "profit_std": 365687.58478437935
+          },
+          "baseline": {
+            "mean_profit": 25367250.00303706,
+            "q05_profit": 24696019.47411121,
+            "lower_tail_mean": 24510284.638340026,
+            "loss_probability": 0.0,
+            "minimum_profit": 24286209.809723236,
+            "profit_std": 416435.1111053544
+          },
+          "paired_mean_difference": 603541.5050459183,
+          "paired_lower_tail_difference": 196769.86762202755,
+          "main_tail_drop_ratio": 0.02879692116825972
+        }
+      ]
+    }
+  ],
+  "endpoint_results": [
+    {
+      "kind": "adverse",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 43454579.09100243,
+            "q05_profit": 43454579.09100243,
+            "lower_tail_mean": 43454579.09100243,
+            "loss_probability": 0.0,
+            "minimum_profit": 43454579.09100243,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 43324580.01870906,
+            "q05_profit": 43324580.01870906,
+            "lower_tail_mean": 43324580.01870906,
+            "loss_probability": 0.0,
+            "minimum_profit": 43324580.01870906,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": 129999.07229336351,
+          "paired_lower_tail_difference": 129999.07229336351,
+          "main_tail_drop_ratio": 0.0
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 16526745.714752177,
+            "q05_profit": 16526745.714752177,
+            "lower_tail_mean": 16526745.714752177,
+            "loss_probability": 0.0,
+            "minimum_profit": 16526745.714752177,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 15874654.297803259,
+            "q05_profit": 15874654.297803259,
+            "lower_tail_mean": 15874654.297803259,
+            "loss_probability": 0.0,
+            "minimum_profit": 15874654.297803259,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": 652091.4169489183,
+          "paired_lower_tail_difference": 652091.4169489183,
+          "main_tail_drop_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "demand_adverse",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 67633381.42706,
+            "q05_profit": 67633381.42706,
+            "lower_tail_mean": 67633381.42706,
+            "loss_probability": 0.0,
+            "minimum_profit": 67633381.42706,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 67669190.12423624,
+            "q05_profit": 67669190.12423624,
+            "lower_tail_mean": 67669190.12423624,
+            "loss_probability": 0.0,
+            "minimum_profit": 67669190.12423624,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": -35808.697176247835,
+          "paired_lower_tail_difference": -35808.697176247835,
+          "main_tail_drop_ratio": 0.0
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 21920310.34132866,
+            "q05_profit": 21920310.34132866,
+            "lower_tail_mean": 21920310.34132866,
+            "loss_probability": 0.0,
+            "minimum_profit": 21920310.34132866,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 21543232.834592097,
+            "q05_profit": 21543232.834592097,
+            "lower_tail_mean": 21543232.834592097,
+            "loss_probability": 0.0,
+            "minimum_profit": 21543232.834592097,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": 377077.50673656166,
+          "paired_lower_tail_difference": 377077.50673656166,
+          "main_tail_drop_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "favorable",
+      "evaluations": [
+        {
+          "alpha": 0.5,
+          "main": {
+            "mean_profit": 105870964.11577466,
+            "q05_profit": 105870964.11577466,
+            "lower_tail_mean": 105870964.11577466,
+            "loss_probability": 0.0,
+            "minimum_profit": 105870964.11577466,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 106530403.34800634,
+            "q05_profit": 106530403.34800634,
+            "lower_tail_mean": 106530403.34800634,
+            "loss_probability": 0.0,
+            "minimum_profit": 106530403.34800634,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": -659439.2322316766,
+          "paired_lower_tail_difference": -659439.2322316766,
+          "main_tail_drop_ratio": 0.0
+        },
+        {
+          "alpha": 0.0,
+          "main": {
+            "mean_profit": 35493139.64832391,
+            "q05_profit": 35493139.64832391,
+            "lower_tail_mean": 35493139.64832391,
+            "loss_probability": 0.0,
+            "minimum_profit": 35493139.64832391,
+            "profit_std": 0.0
+          },
+          "baseline": {
+            "mean_profit": 36398089.18508359,
+            "q05_profit": 36398089.18508359,
+            "lower_tail_mean": 36398089.18508359,
+            "loss_probability": 0.0,
+            "minimum_profit": 36398089.18508359,
+            "profit_std": 0.0
+          },
+          "paired_mean_difference": -904949.536759682,
+          "paired_lower_tail_difference": -904949.536759682,
+          "main_tail_drop_ratio": 0.0
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "no_simulated_loss": true,
+    "half_price_tail_drop_within_10pct": true,
+    "hard_constraints_pass": true,
+    "mean_advantage_across_uniform_seeds": true,
+    "half_price_lower_tail_advantage_across_uniform_seeds": false,
+    "advantage_across_all_endpoint_stresses": false
+  },
+  "concentration": {
+    "main": {
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1752213950719826,
+      "top3_area_share": 0.44407512476359756,
+      "gini_simpson": 0.8992621220332766
+    },
+    "baseline": {
+      "unique_crop_count": 24,
+      "top1_area_share": 0.16028153472819298,
+      "top3_area_share": 0.4209519367341314,
+      "gini_simpson": 0.9105850968308083
+    },
+    "schedule_overlap": 0.28634606632904125
+  },
+  "overall_status": "CONDITIONAL",
+  "claim_scope": "The plan is robustly profitable and has a stable small mean advantage under uniform resampling, but it does not robustly dominate the baseline in the half-price lower tail or at every deterministic endpoint.",
+  "limitation": "The stress set follows the problem's bounded uncertainty intervals and does not cover shocks outside those intervals.",
+  "fallback_trigger_relevance": "Directly tests Q2-F1 loss, lower-tail and feasibility conditions without re-optimizing the plan."
+}

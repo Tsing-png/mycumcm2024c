@@ -1,0 +1,15 @@
+{
+  "training": {
+    "count": 20,
+    "seed": 2026,
+    "shape": "uniform",
+    "hash": "03e7fe103ce04cb7aa28f4ba4d595fbff700ac7b0b15467cbcfa17e44ae73fae"
+  },
+  "testing": {
+    "count": 200,
+    "seed": 3026,
+    "shape": "uniform",
+    "hash": "7d2857684aafebc91529083d196a8564dd8f80f49897d3eaacbb43e919216398"
+  },
+  "yearly_changes_are_compounded": true
+}

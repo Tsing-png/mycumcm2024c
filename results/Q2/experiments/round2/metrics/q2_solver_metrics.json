@@ -1,0 +1,33 @@
+{
+  "Main": {
+    "success": false,
+    "status": 1,
+    "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+    "objective_minimized": -43497696.442504495,
+    "sample_mean_objective": 43497696.442504495,
+    "mip_gap": 0.5993632659500137,
+    "mip_node_count": 0,
+    "mip_rel_gap_target": 0.03,
+    "scenario_count": 20,
+    "variables": 163604,
+    "shared_area_variables": 7434,
+    "shared_binary_variables": 7490,
+    "scenario_normal_sale_variables": 148680,
+    "constraints": 174240,
+    "matrix_nonzeros": 502530,
+    "execution_time_seconds": 301.0129587070005
+  },
+  "Baseline": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -69224840.74325295,
+    "mip_gap": 0.009437300602349149,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 7.411176016000354
+  }
+}

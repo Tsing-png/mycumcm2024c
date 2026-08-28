@@ -61,7 +61,7 @@
 
 - `tables/q2_m1_schedule.csv`：正式主方案；
 - `tables/q2_b1_schedule.csv`：baseline 比较方案；
-- `tables/result2.xlsx`：从只读原模板复制并填入主方案，不改变格式；
+- `tables/result2.xlsx`：暂缓到最终交付阶段；届时从只读原模板复制并以 `q2_m1_schedule.csv` 为唯一填表来源，不改变格式；
 - `tables/q2_paired_comparison.csv`：两种销售规则下的配对指标；
 - `tables/q2_endpoint_stress.csv`：少量端点压力结果；
 - `metrics/q2_metrics.json`：200 情景评价与集中度；

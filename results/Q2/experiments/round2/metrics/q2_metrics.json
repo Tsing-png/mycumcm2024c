@@ -1,0 +1,75 @@
+{
+  "paired_test": [
+    {
+      "method": "Main",
+      "method_id": "Q2-M1",
+      "alpha": 0.5,
+      "mean_profit": 43702807.08796737,
+      "q05_profit": 42160765.33626996,
+      "lower_tail_mean": 41761384.53609896,
+      "loss_probability": 0.0,
+      "minimum_profit": 41283878.73447469,
+      "profit_std": 977178.2657043355,
+      "unique_crop_count": 38,
+      "top1_area_share": 0.14810451916898695,
+      "top3_area_share": 0.30606125508674237,
+      "gini_simpson": 0.935154309324097,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Baseline",
+      "method_id": "Q2-B1",
+      "alpha": 0.5,
+      "mean_profit": 68971922.82293294,
+      "q05_profit": 64100025.97372572,
+      "lower_tail_mean": 63177995.236537896,
+      "loss_probability": 0.0,
+      "minimum_profit": 61924174.36154216,
+      "profit_std": 3158945.104345806,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1752213950719826,
+      "top3_area_share": 0.44407512476359756,
+      "gini_simpson": 0.8992621220332766,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Main",
+      "method_id": "Q2-M1",
+      "alpha": 0.0,
+      "mean_profit": 22184441.259686876,
+      "q05_profit": 21579675.648331236,
+      "lower_tail_mean": 21389697.973621987,
+      "loss_probability": 0.0,
+      "minimum_profit": 21220661.994987912,
+      "profit_std": 397717.4840957059,
+      "unique_crop_count": 38,
+      "top1_area_share": 0.14810451916898695,
+      "top3_area_share": 0.30606125508674237,
+      "gini_simpson": 0.935154309324097,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Baseline",
+      "method_id": "Q2-B1",
+      "alpha": 0.0,
+      "mean_profit": 25784546.493063074,
+      "q05_profit": 24894897.677639827,
+      "lower_tail_mean": 24684627.21162314,
+      "loss_probability": 0.0,
+      "minimum_profit": 24352230.116122566,
+      "profit_std": 487445.53507671604,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1752213950719826,
+      "top3_area_share": 0.44407512476359756,
+      "gini_simpson": 0.8992621220332766,
+      "constraint_violations": 0
+    }
+  ],
+  "training_objective_verification": {
+    "independent_mean_profit": 43497696.44250449,
+    "solver_mean_objective": 43497696.442504495,
+    "difference": -7.450580596923828e-09,
+    "passed": true
+  },
+  "schedule_overlap": 0.0359773186118743
+}

@@ -1,0 +1,13 @@
+﻿endpoint,alpha,method,profit
+adverse,0.5,Main,27145853.086990513
+adverse,0.5,Baseline,43454579.09100242
+adverse,0.0,Main,14556884.909422392
+adverse,0.0,Baseline,16526745.714752175
+favorable,0.5,Main,67993168.31194425
+favorable,0.5,Baseline,105870964.11577463
+favorable,0.0,Main,31916469.24449137
+favorable,0.0,Baseline,35493139.64832391
+demand_adverse,0.5,Main,42445650.51306308
+demand_adverse,0.5,Baseline,67633381.42705998
+demand_adverse,0.0,Main,18487480.141313504
+demand_adverse,0.0,Baseline,21920310.34132866

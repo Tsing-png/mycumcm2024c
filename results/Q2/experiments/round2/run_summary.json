@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "round": "round2",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q2_simplified_delivery_contract",
+  "methods": [
+    {
+      "method_id": "Q2-M1",
+      "role": "main_candidate",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 301.0129587070005,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q2_m1_schedule.csv",
+        "tables/q2_paired_comparison.csv",
+        "tables/q2_endpoint_stress.csv"
+      ],
+      "figure_files": [
+        "figures/q2_expected_tail_comparison.png",
+        "figures/q2_loss_risk_comparison.png"
+      ],
+      "metrics_summary": {
+        "solver": {
+          "success": false,
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "objective_minimized": -43497696.442504495,
+          "sample_mean_objective": 43497696.442504495,
+          "mip_gap": 0.5993632659500137,
+          "mip_node_count": 0,
+          "mip_rel_gap_target": 0.03,
+          "scenario_count": 20,
+          "variables": 163604,
+          "shared_area_variables": 7434,
+          "shared_binary_variables": 7490,
+          "scenario_normal_sale_variables": 148680,
+          "constraints": 174240,
+          "matrix_nonzeros": 502530,
+          "execution_time_seconds": 301.0129587070005
+        },
+        "constraint_violations": 0,
+        "unique_crop_count": 38,
+        "top1_area_share": 0.14810451916898695,
+        "top3_area_share": 0.30606125508674237,
+        "gini_simpson": 0.935154309324097
+      },
+      "warnings": [
+        "Time limit reached. (HiGHS Status 13: Time limit reached)"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "Q2-B1",
+      "role": "usable_baseline",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 7.411176016000354,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q2_b1_schedule.csv",
+        "tables/q2_paired_comparison.csv",
+        "tables/q2_endpoint_stress.csv"
+      ],
+      "figure_files": [
+        "figures/q2_expected_tail_comparison.png",
+        "figures/q2_loss_risk_comparison.png"
+      ],
+      "metrics_summary": {
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -69224840.74325295,
+          "mip_gap": 0.009437300602349149,
+          "mip_node_count": 1,
+          "mip_rel_gap_target": 0.01,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27541,
+          "execution_time_seconds": 7.411176016000354
+        },
+        "constraint_violations": 0,
+        "unique_crop_count": 24,
+        "top1_area_share": 0.1752213950719826,
+        "top3_area_share": 0.44407512476359756,
+        "gini_simpson": 0.8992621220332766
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "file": "tables/q2_paired_comparison.csv",
+    "metrics": "metrics/q2_metrics.json"
+  },
+  "official_template_status": "deferred; main schedule CSV is the canonical fill source",
+  "fallback_trigger": {
+    "fallback_id": "Q2-F1",
+    "observed": false,
+    "condition": "loss under unsold/endpoint stress or half-price lower-tail drop >10%",
+    "evidence": [
+      "tables/q2_paired_comparison.csv",
+      "tables/q2_endpoint_stress.csv"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "crops.csv": "206264a732950496562ece5e24bb3a407b68635e13df5d166b1d0bf5fdc1a807",
+    "stats_2023.csv": "fc16e9d374f503454bf169c928eac35cc1d19a6c6f53734192d19292357882c0",
+    "planting_2023.csv": "1703aa965d8bd0f6f3c0d826b972543a96dd2cf84e4bc986c08431b0b5c2078b",
+    "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
+    "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
+  },
+  "execution_time_seconds": 311.68928346399935
+}

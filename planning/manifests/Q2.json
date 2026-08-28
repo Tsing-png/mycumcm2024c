@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "question_id": "Q2",
-  "rigor_profile": "lean",
-  "current_gate": "G3",
-  "status": "robustness_conditional_waiting_stability_verdict",
+  "rigor_profile": "submission",
+  "current_gate": "G4",
+  "status": "final_analysis_complete_submission_artifacts_pending",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -19,7 +19,9 @@
     "code_review": "code/Q2/reviews/q2_python_review.json",
     "latest_run": "results/Q2/experiments/round3/run_summary.json",
     "decision_report": "results/Q2/experiments/round3/q2_decision_report.md",
-    "robustness_summary": "robustness/Q2/q2_robustness_summary.json"
+    "robustness_summary": "robustness/Q2/q2_robustness_summary.json",
+    "final_method_explanation": "methods/Q2/q2_final_method_explanation.md",
+    "final_result_analysis": "results/Q2/reports/q2_final_result_analysis.md"
   },
   "allowed": {
     "code_generation": true,
@@ -27,11 +29,15 @@
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [],
+  "blockers": [
+    "Submission robustness report is not yet generated",
+    "Figure and table plan is not yet generated",
+    "Solution package, package sign-off and frozen numbers are not yet generated"
+  ],
   "next_action": {
-    "owner": "human",
-    "skill": "decision-prompt-builder",
-    "reason": "Q2 is profitable and mean-stable but does not dominate the baseline in every lower-tail or endpoint test; choose a bounded claim or adjust the model"
+    "owner": "ai",
+    "skill": "figure-table-planner",
+    "reason": "Submission profile is active and final method/result evidence exists; plan the minimum evidence-bearing figures and tables before package assembly"
   },
   "updated_at": "2026-08-28T13:09:45+08:00"
 }

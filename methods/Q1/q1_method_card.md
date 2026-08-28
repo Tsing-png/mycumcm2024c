@@ -43,3 +43,4 @@ Q1-M1 的条件是正式实验必须比较最小面积或占比与每地块作�
 - 2026-08-27: 根据 `q1_baseline_data_conventions`、`global_optimality_framing` 和 `global_experiment_budget` 建立首轮筛选；尚无人工作出方法选择。
 - 2026-08-27: 人工通过 `q1_method_choice` 选择 Q1-M1；Q1-B1 保留为必须实现的 baseline，Q1-F1 未激活。
 - 2026-08-28: 人工确认滞销模式正式验收 Gap 为 3%，半价模式继续使用 1%；Round 2 两种滞销配置均达到该阈值。
+- 2026-08-28: 人工接受 Q1 稳健性结果，结论限定为已测试管理阈值下的可行性、收益和求解精度稳定。

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "round": "round_shared20",
+  "implementation_target": "python",
+  "diagnostic_scope": "20-scenario shared-decision extensive-form MILP; one sale rule and one management configuration",
+  "random_seed": 2026,
+  "approved_decision_id": "q2_method_choice",
+  "scenario_config": {
+    "count": 20,
+    "shape": "uniform",
+    "hash": "5f258f1115834ee974c67684eaf364266573bd7978a5d62ead38d7c911f9d666"
+  },
+  "methods": [
+    {
+      "method_id": "Q2-M1",
+      "role": "main_candidate",
+      "script": "code/Q2/run_q2_shared_diagnostic.py",
+      "status": "success",
+      "configuration": {
+        "alpha": 0.5,
+        "min_share": 0.1,
+        "max_crops": 3
+      },
+      "execution_time_seconds": 113.11371291700016,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q2_m1_shared20_alpha05_share10_k3_schedule.csv",
+        "metrics/q2_shared20_verification.json",
+        "metrics/q2_shared20_solver_metrics.json"
+      ],
+      "metrics_summary": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -69149853.05707459,
+        "sample_mean_objective": 69149853.05707459,
+        "mip_gap": 0.006407660136216984,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.03,
+        "scenario_count": 20,
+        "variables": 163604,
+        "shared_area_variables": 7434,
+        "shared_binary_variables": 7490,
+        "scenario_normal_sale_variables": 148680,
+        "constraints": 174240,
+        "matrix_nonzeros": 502530,
+        "execution_time_seconds": 113.11371291700016,
+        "hard_constraint_violations": [],
+        "hard_constraint_check": true,
+        "independent_sample_mean_profit": 69149853.05707459,
+        "solver_sample_mean_objective": 69149853.05707459,
+        "objective_difference": 0.0,
+        "objective_recomputation_check": true,
+        "scenario_profit_min": 62873253.20470665,
+        "scenario_profit_max": 75393008.55189118,
+        "scenario_profit_std": 3432078.1159220804,
+        "unique_crop_count": 24,
+        "top1_area_share": 0.18240355031767908,
+        "top3_area_share": 0.44608604442783356,
+        "gini_simpson": 0.9003257479095105
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "fallback_trigger": {
+    "fallback_id": "Q2-F1",
+    "observed": false,
+    "reason": "not evaluated in this structural diagnostic"
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "crops.csv": "206264a732950496562ece5e24bb3a407b68635e13df5d166b1d0bf5fdc1a807",
+    "stats_2023.csv": "fc16e9d374f503454bf169c928eac35cc1d19a6c6f53734192d19292357882c0",
+    "planting_2023.csv": "1703aa965d8bd0f6f3c0d826b972543a96dd2cf84e4bc986c08431b0b5c2078b",
+    "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
+    "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
+  },
+  "execution_time_seconds": 113.74565412900029
+}

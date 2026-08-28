@@ -1,0 +1,11 @@
+{
+  "hard_constraint_violations": [],
+  "hard_constraint_check": true,
+  "independent_sample_mean_profit": 69149853.05707459,
+  "solver_sample_mean_objective": 69149853.05707459,
+  "objective_difference": 0.0,
+  "objective_recomputation_check": true,
+  "scenario_profit_min": 62873253.20470665,
+  "scenario_profit_max": 75393008.55189118,
+  "scenario_profit_std": 3432078.1159220804
+}

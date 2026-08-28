@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "status": 0,
+  "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "objective_minimized": -69149853.05707459,
+  "sample_mean_objective": 69149853.05707459,
+  "mip_gap": 0.006407660136216984,
+  "mip_node_count": 1,
+  "mip_rel_gap_target": 0.03,
+  "scenario_count": 20,
+  "variables": 163604,
+  "shared_area_variables": 7434,
+  "shared_binary_variables": 7490,
+  "scenario_normal_sale_variables": 148680,
+  "constraints": 174240,
+  "matrix_nonzeros": 502530,
+  "execution_time_seconds": 113.11371291700016
+}

@@ -23,6 +23,8 @@
     "final_method_explanation": "methods/Q3/q3_final_method_explanation.md",
     "final_result_analysis": "results/Q3/reports/q3_final_result_analysis.md",
     "figure_table_plan": "methods/Q3/q3_figure_table_plan.md"
+    ,"paper_figures": ["paper/figures/q3_relationship_strength_sensitivity.svg", "paper/figures/q3_macro_structure_stability.svg", "paper/figures/q3_correlation_matrix_validation.svg"]
+    ,"paper_tables": ["paper/tables/q3_medium_q2_comparison.tex", "paper/tables/q3_correlation_checks.tex"]
   },
   "allowed": {
     "code_generation": true,
@@ -36,8 +38,8 @@
   ],
   "next_action": {
     "owner": "ai",
-    "skill": "math-figure-generator",
-    "reason": "The Q3 evidence-bearing figure and table plan is approved by q3_stability_verdict; generate and render-verify the planned paper visuals"
+    "skill": "robustness-checker",
+    "reason": "Planned Q3 submission visuals are generated and render-verified; generate the submission robustness report"
   },
   "updated_at": "2026-08-28T13:42:19+08:00"
 }

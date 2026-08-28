@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="443.123381pt" height="559.859053pt" viewBox="0 0 443.123381 559.859053" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-28T14:51:14.378835</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 559.859053 
+L 443.123381 559.859053 
+L 443.123381 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g clip-path="url(#p7f6a35fc32)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACQ0lEQVR4nO3UMU0EYRhF0R2Cge3otqFbCQjCxnhADQ0aaOgQsAUJAigGE+T/kss5Cl5x87af99fj9I98XZ6mJyy1n6/TE5a6mx4Af0nQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAialPvj4XF6w1L7+To9Yan9+2N6wlIemhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUrbn0+WYHrHSy+1tesJS2+1zesJSHpoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFJ+AfA4EKxXs/9dAAAAAElFTkSuQmCC" id="image30c100e1dd" transform="scale(1 -1) translate(0 -129.6)" x="54.986787" y="-24.525417" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mb4bdb3918a" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="76.512367" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(46.726561 179.810624) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="119.563527" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(89.777721 179.825352) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="162.614686" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(132.82888 179.818555) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_4">
+      <defs>
+       <path id="m0e127c1fee" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="46.497518" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="49.345018" transform="rotate(-0 47.986787 49.345018)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="89.548678" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="92.404303" transform="rotate(-0 47.986787 92.404303)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="132.599837" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="135.451712" transform="rotate(-0 47.986787 135.451712)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle" x="119.563527" y="13.348125" transform="rotate(-0 119.563527 13.348125)">目标</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(13.238438 99.379068) rotate(-90)">weak</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="76.512367" y="48.253768" transform="rotate(-0 76.512367 48.253768)">1.00</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="48.253768" transform="rotate(-0 119.563527 48.253768)">0.04</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="162.614686" y="48.253768" transform="rotate(-0 162.614686 48.253768)">0.08</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="76.512367" y="91.304928" transform="rotate(-0 76.512367 91.304928)">0.04</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="119.563527" y="91.304928" transform="rotate(-0 119.563527 91.304928)">1.00</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="162.614686" y="91.304928" transform="rotate(-0 162.614686 91.304928)">-0.03</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="76.512367" y="134.356087" transform="rotate(-0 76.512367 134.356087)">0.08</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="134.356087" transform="rotate(-0 119.563527 134.356087)">-0.03</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="162.614686" y="134.356087" transform="rotate(-0 162.614686 134.356087)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g clip-path="url(#pd9faeffbbc)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACQ0lEQVR4nO3UoU0DYBhF0bYhQVGLxFewFjt0ACZglc7ABjV1TEBAIaAsQf4vuZwzwRM3b/t9eb1u/pH3+8fpCUsd94fpCUvtpgfAXxI0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYIm5ebn9m56w1LH/WF6wlLPH+fpCUt5aFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSdk+bR6u0yNWenk7TU9Yavf1OT1hKQ9NiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpv3muEJ55/x07AAAAAElFTkSuQmCC" id="image967f162f63" transform="scale(1 -1) translate(0 -129.6)" x="233.218588" y="-24.525417" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="254.744168" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(224.958362 179.810624) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="297.795328" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(268.009522 179.825352) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="340.846487" y="154.125417" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(311.060681 179.818555) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="46.497518" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="49.345018" transform="rotate(-0 226.218588 49.345018)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="89.548678" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="92.404303" transform="rotate(-0 226.218588 92.404303)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="132.599837" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="135.451712" transform="rotate(-0 226.218588 135.451712)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle" x="297.795328" y="13.348125" transform="rotate(-0 297.795328 13.348125)">经验</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="254.744168" y="48.253768" transform="rotate(-0 254.744168 48.253768)">1.00</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="48.253768" transform="rotate(-0 297.795328 48.253768)">0.05</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="340.846487" y="48.253768" transform="rotate(-0 340.846487 48.253768)">0.07</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="254.744168" y="91.304928" transform="rotate(-0 254.744168 91.304928)">0.05</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="297.795328" y="91.304928" transform="rotate(-0 297.795328 91.304928)">1.00</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="340.846487" y="91.304928" transform="rotate(-0 340.846487 91.304928)">-0.02</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="254.744168" y="134.356087" transform="rotate(-0 254.744168 134.356087)">0.07</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="134.356087" transform="rotate(-0 297.795328 134.356087)">-0.02</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="340.846487" y="134.356087" transform="rotate(-0 340.846487 134.356087)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g clip-path="url(#pba60be26ff)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACQ0lEQVR4nO3UsUkDYBhF0UTcIogjZB7RXhAEm0wiiQvoNjYOYCVuYB+XkP+D6zkTvOLytp9PN+fNP/JzeJmesNRpt5+esNTF9AD4S4ImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkXF7d3U5vWOpxt5+esNTD98f0hKU8NCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpGzvN9fn6RErPb8fpycs9fX6Nj1hKQ9NiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpvxMUED5cuVaCAAAAAElFTkSuQmCC" id="image77c87e9dbc" transform="scale(1 -1) translate(0 -129.6)" x="54.986787" y="-210.101667" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="76.512367" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_34">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(46.726561 365.386874) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="119.563527" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_35">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(89.777721 365.401602) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="162.614686" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(132.82888 365.394805) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6">
+    <g id="ytick_7">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="232.073768" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_37">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="234.921268" transform="rotate(-0 47.986787 234.921268)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="275.124928" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_38">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="277.980553" transform="rotate(-0 47.986787 277.980553)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="318.176087" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_39">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="321.027962" transform="rotate(-0 47.986787 321.027962)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(13.238438 291.076724) rotate(-90)">medium</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="76.512367" y="233.830018" transform="rotate(-0 76.512367 233.830018)">1.00</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="233.830018" transform="rotate(-0 119.563527 233.830018)">0.09</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="162.614686" y="233.830018" transform="rotate(-0 162.614686 233.830018)">0.19</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="76.512367" y="276.881178" transform="rotate(-0 76.512367 276.881178)">0.09</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="119.563527" y="276.881178" transform="rotate(-0 119.563527 276.881178)">1.00</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="162.614686" y="276.881178" transform="rotate(-0 162.614686 276.881178)">-0.07</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="76.512367" y="319.932337" transform="rotate(-0 76.512367 319.932337)">0.19</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="319.932337" transform="rotate(-0 119.563527 319.932337)">-0.07</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="162.614686" y="319.932337" transform="rotate(-0 162.614686 319.932337)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g clip-path="url(#p7c0c53c94c)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACRElEQVR4nO3UoU0DYBhF0ZagK2uZoIKwTj0Wg8Q0OBISJmICgmCLyi5QliD/l1zOmeCJm7c9vz9dN//I5XianrDU2/4wPWGpm+kB8JcETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSbnd3T9Mb1jqZX+YnrDU8/lnesJSHpoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFK2j5u76/SIlT4+X6cnLHX5/pqesJSHJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAialF9wSxA5XB4wOQAAAABJRU5ErkJggg==" id="image0efabd99b4" transform="scale(1 -1) translate(0 -129.6)" x="233.218588" y="-210.101667" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_7">
+    <g id="xtick_10">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="254.744168" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_50">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(224.958362 365.386874) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="297.795328" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_51">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(268.009522 365.401602) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="340.846487" y="339.701667" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_52">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(311.060681 365.394805) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_8">
+    <g id="ytick_10">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="232.073768" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_53">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="234.921268" transform="rotate(-0 226.218588 234.921268)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="275.124928" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_54">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="277.980553" transform="rotate(-0 226.218588 277.980553)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="318.176087" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_55">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="321.027962" transform="rotate(-0 226.218588 321.027962)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="254.744168" y="233.830018" transform="rotate(-0 254.744168 233.830018)">1.00</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="233.830018" transform="rotate(-0 297.795328 233.830018)">0.11</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="340.846487" y="233.830018" transform="rotate(-0 340.846487 233.830018)">0.16</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="254.744168" y="276.881178" transform="rotate(-0 254.744168 276.881178)">0.11</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="297.795328" y="276.881178" transform="rotate(-0 297.795328 276.881178)">1.00</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="340.846487" y="276.881178" transform="rotate(-0 340.846487 276.881178)">-0.05</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="254.744168" y="319.932337" transform="rotate(-0 254.744168 319.932337)">0.16</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="319.932337" transform="rotate(-0 297.795328 319.932337)">-0.05</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="340.846487" y="319.932337" transform="rotate(-0 340.846487 319.932337)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_5">
+   <g clip-path="url(#p0603bcf6dc)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACRklEQVR4nO3UsUkDYBhF0UQcQFzA0i4DpHYLLQUhrXOkDdirU4iFhQO4UFxC/g+u50zwisvbvlzdnjf/yPXX5/SEpT52++kJS11MD4C/JGhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE3K5f3pYXrDUs+7/fSEpe5+vqcnLOWhSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImZfu0uTlPj1jp+P44PWGpt8Pr9ISlPDQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KT8Ar4LDsHyquI9AAAAAElFTkSuQmCC" id="image8da85eaee7" transform="scale(1 -1) translate(0 -129.6)" x="54.986787" y="-395.677917" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_9">
+    <g id="xtick_13">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="76.512367" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_65">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(46.726561 550.963124) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="119.563527" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_66">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(89.777721 550.977852) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="162.614686" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_67">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(132.82888 550.971055) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_10">
+    <g id="ytick_13">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="417.650018" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_68">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="420.497518" transform="rotate(-0 47.986787 420.497518)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="460.701178" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_69">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="463.556803" transform="rotate(-0 47.986787 463.556803)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="54.986787" y="503.752337" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_70">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="47.986787" y="506.604212" transform="rotate(-0 47.986787 506.604212)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(13.238438 473.124693) rotate(-90)">strong</text>
+   </g>
+   <g id="text_72">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="76.512367" y="419.406268" transform="rotate(-0 76.512367 419.406268)">1.00</text>
+   </g>
+   <g id="text_73">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="419.406268" transform="rotate(-0 119.563527 419.406268)">0.14</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="162.614686" y="419.406268" transform="rotate(-0 162.614686 419.406268)">0.30</text>
+   </g>
+   <g id="text_75">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="76.512367" y="462.457428" transform="rotate(-0 76.512367 462.457428)">0.14</text>
+   </g>
+   <g id="text_76">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="119.563527" y="462.457428" transform="rotate(-0 119.563527 462.457428)">1.00</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="162.614686" y="462.457428" transform="rotate(-0 162.614686 462.457428)">-0.11</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="76.512367" y="505.508587" transform="rotate(-0 76.512367 505.508587)">0.30</text>
+   </g>
+   <g id="text_79">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="119.563527" y="505.508587" transform="rotate(-0 119.563527 505.508587)">-0.11</text>
+   </g>
+   <g id="text_80">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="162.614686" y="505.508587" transform="rotate(-0 162.614686 505.508587)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_6">
+   <g clip-path="url(#pd532581747)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACRklEQVR4nO3UMU0DYBhF0ZYw4oGkwQApDtDAyMxYAcwV0CABEwSCA7CAlWKC/F9yOUfBG27e9u3m9rz5R67eP6YnLPW6209PWOpiegD8JUGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSLu8O99Mblnre7acnLPX48z09YSkPTYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KdunzfV5esRKx5eH6QlLfZ0+pycs5aFJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiblFxX1DrgtOp8TAAAAAElFTkSuQmCC" id="image203b5e5680" transform="scale(1 -1) translate(0 -129.6)" x="233.218588" y="-395.677917" width="129.6" height="129.6"/>
+   </g>
+   <g id="matplotlib.axis_11">
+    <g id="xtick_16">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="254.744168" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_81">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(224.958362 550.963124) rotate(-25)">销量增长</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="297.795328" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_82">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(268.009522 550.977852) rotate(-25)">亩产增长</text>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_33">
+      <g>
+       <use xlink:href="#mb4bdb3918a" x="340.846487" y="525.277917" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_83">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif" transform="translate(311.060681 550.971055) rotate(-25)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_12">
+    <g id="ytick_16">
+     <g id="line2d_34">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="417.650018" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_84">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="420.497518" transform="rotate(-0 226.218588 420.497518)">销量增长</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_35">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="460.701178" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_85">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="463.556803" transform="rotate(-0 226.218588 463.556803)">亩产增长</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_36">
+      <g>
+       <use xlink:href="#m0e127c1fee" x="233.218588" y="503.752337" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_86">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: end" x="226.218588" y="506.604212" transform="rotate(-0 226.218588 506.604212)">价格增长</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="254.744168" y="419.406268" transform="rotate(-0 254.744168 419.406268)">1.00</text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="419.406268" transform="rotate(-0 297.795328 419.406268)">0.16</text>
+   </g>
+   <g id="text_89">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="340.846487" y="419.406268" transform="rotate(-0 340.846487 419.406268)">0.27</text>
+   </g>
+   <g id="text_90">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="254.744168" y="462.457428" transform="rotate(-0 254.744168 462.457428)">0.16</text>
+   </g>
+   <g id="text_91">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="297.795328" y="462.457428" transform="rotate(-0 297.795328 462.457428)">1.00</text>
+   </g>
+   <g id="text_92">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="340.846487" y="462.457428" transform="rotate(-0 340.846487 462.457428)">-0.08</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="254.744168" y="505.508587" transform="rotate(-0 254.744168 505.508587)">0.27</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #333333" x="297.795328" y="505.508587" transform="rotate(-0 297.795328 505.508587)">-0.08</text>
+   </g>
+   <g id="text_95">
+    <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="340.846487" y="505.508587" transform="rotate(-0 340.846487 505.508587)">1.00</text>
+   </g>
+  </g>
+  <g id="axes_7">
+   <g id="patch_2">
+    <path d="M 390.158307 396.689728 
+L 402.314787 396.689728 
+L 402.314787 153.560128 
+L 390.158307 153.560128 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAABEAAAFRCAYAAACSQkYiAAAB9UlEQVR4nO2ayQ3DMAwELVnpJy2l/xos5S/lxwkwIMgCFuR4l/LVXu/PuoI1Wr+jGoxIDytcpnFGuy1MuocJIxLHks5sngACts/GJFcAKztnVXbOEvmk90Z0EheBmDRgnGxMiHE6ARbpxAMW8gnQCWF7FROJCMSksrMX5BMGbFhDxcQCNhuTW5MdopNkIgzYYRlHxOQG3inlY0KMQxxeyZhoAihiohEpJmcVk7MgJsibHGTHxjWY+9gCe5boKSMbE8v9CdIJlR1ARAOW8gkgollK1IEOiED7xMIEsr2lE0CDAntJxkFWAfUdEBDRgBUtakDDtKghnwAiolfuiE8sYE3/FVgCqPKJBCzkE0JEc38y2gr/Rg2BvdaMizRChOiEYhK/Oh6wIp9oRCAmU3KJTUwqO3t5bC/yCWN7IoAax5rAWkSoRf3ERRZiNqATE5MHECFSbGJCiHiYQOPkYsLYXiJC+USyHovJv0QI24uevDTbXmS29UhEislZDJNJHF4asNSBToxDMJnJmFjAZmMyswWwltJWkE8qgD9EgDd+okU9kXEAEVN2islWYxI+yZYd5hJLmCCrgHrKkGQHuTomJsxThoUJFMBisotM4rPmo/lPCUDCjIN0QjGRjJPPJ4hIMiZltq0844z4+VdL6Vdl80kdXkd9AYz1TjQEfJQjAAAAAElFTkSuQmCC" id="imageee1496d3ef" transform="scale(1 -1) translate(0 -242.64)" x="390.24" y="-153.36" width="12.24" height="242.64"/>
+   <g id="matplotlib.axis_13"/>
+   <g id="matplotlib.axis_14">
+    <g id="ytick_19">
+     <g id="line2d_37">
+      <defs>
+       <path id="md49f064068" d="M 0 0 
+L 3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="379.323328" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_96">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="382.007078" transform="rotate(-0 409.314787 382.007078)">-0.3</text>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_38">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="344.590528" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_97">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="347.274278" transform="rotate(-0 409.314787 347.274278)">-0.2</text>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_39">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="309.857728" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_98">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="312.541478" transform="rotate(-0 409.314787 312.541478)">-0.1</text>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_40">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="275.124928" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_99">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="277.808678" transform="rotate(-0 409.314787 277.808678)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_41">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="240.392128" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_100">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="243.075878" transform="rotate(-0 409.314787 243.075878)">0.1</text>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_42">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="205.659328" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_101">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="208.343078" transform="rotate(-0 409.314787 208.343078)">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_43">
+      <g>
+       <use xlink:href="#md49f064068" x="402.314787" y="170.926528" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_102">
+      <text style="font-size: 8px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: start" x="409.314787" y="173.610278" transform="rotate(-0 409.314787 173.610278)">0.3</text>
+     </g>
+    </g>
+    <g id="text_103">
+     <text style="font-size: 9px; font-family: 'DengXian', 'Noto Sans CJK SC', 'DejaVu Sans', sans-serif; text-anchor: middle" x="433.836506" y="275.124928" transform="rotate(-90 433.836506 275.124928)">相关系数</text>
+    </g>
+   </g>
+   <g id="LineCollection_1"/>
+   <g id="patch_3">
+    <path d="M 390.158307 396.689728 
+L 396.236547 396.689728 
+L 402.314787 396.689728 
+L 402.314787 153.560128 
+L 396.236547 153.560128 
+L 390.158307 153.560128 
+L 390.158307 396.689728 
+z
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7f6a35fc32">
+   <rect x="54.986787" y="24.971938" width="129.153479" height="129.153479"/>
+  </clipPath>
+  <clipPath id="pd9faeffbbc">
+   <rect x="233.218588" y="24.971938" width="129.153479" height="129.153479"/>
+  </clipPath>
+  <clipPath id="pba60be26ff">
+   <rect x="54.986787" y="210.548188" width="129.153479" height="129.153479"/>
+  </clipPath>
+  <clipPath id="p7c0c53c94c">
+   <rect x="233.218588" y="210.548188" width="129.153479" height="129.153479"/>
+  </clipPath>
+  <clipPath id="p0603bcf6dc">
+   <rect x="54.986787" y="396.124438" width="129.153479" height="129.153479"/>
+  </clipPath>
+  <clipPath id="pd532581747">
+   <rect x="233.218588" y="396.124438" width="129.153479" height="129.153479"/>
+  </clipPath>
+ </defs>
+</svg>

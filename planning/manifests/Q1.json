@@ -23,6 +23,8 @@
     "final_method_explanation": "methods/Q1/q1_final_method_explanation.md",
     "final_result_analysis": "results/Q1/reports/q1_final_result_analysis.md",
     "figure_table_plan": "methods/Q1/q1_figure_table_plan.md"
+    ,"paper_figures": ["paper/figures/q1_cumulative_profit_comparison.svg"]
+    ,"paper_tables": ["paper/tables/q1_core_results.tex"]
   },
   "allowed": {
     "code_generation": true,
@@ -36,8 +38,8 @@
   ],
   "next_action": {
     "owner": "ai",
-    "skill": "math-figure-generator",
-    "reason": "The Q1 evidence-bearing figure and table plan is approved by existing human claim-scope decisions; generate and render-verify the planned paper visual"
+    "skill": "robustness-checker",
+    "reason": "Planned Q1 submission visuals are generated and render-verified; generate the submission robustness report"
   },
   "updated_at": "2026-08-28T13:56:00+08:00"
 }

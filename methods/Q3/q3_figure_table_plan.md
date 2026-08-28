@@ -6,10 +6,10 @@ Q3 图表必须区分经济结果、宏观结构和相关性验证。关系强�
 
 | ID | 类型 | 形式 | 核心结论 | 数据源 | 目标位置 | 状态与渲染要求 |
 |---|---|---|---|---|---|---|
-| Q3-FIG-01 | Type 3 paper | 弱、中、强三档敏感性双轴或上下双面板图。上图展示平均收益与 5% 分位数，下图展示收益标准差 | 关系强度增强时平均收益变化较小，但收益分布波动和下尾压力增大；三档均未出现模拟亏损 | `results/Q3/experiments/round2/metrics/q3_metrics.json` 中 `comparison` | Q3 关系强度敏感性 | 待生成。优先上下双面板，避免双轴误导；单位统一为万元；中档用轮廓强调而非夸张颜色 |
-| Q3-FIG-02 | Type 3 paper | 宏观稳定判据散点图。横轴为 41 维面积相似度，纵轴为相对收益差；绘制 80% 与 1% 判据线 | 三档方案两两比较均落在“收益差低、面积相似度高”的微观等价平移区域，未发生结构性跳变 | `results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json` | Q3 宏观与微观归因 | 待生成。三个点标注档位对；判据区域只解释预先规定规则，不渲染成统计置信区间 |
-| Q3-TAB-01 | Type 3 paper | Q3 中档与 Q2 baseline 的配对指标表 | 在中档相关情景下列示两种销售规则的平均收益、5% 分位数、下尾均值、最低收益、标准差、亏损概率及配对差 | `results/Q3/experiments/round2/tables/q3_q2_paired_comparison.csv` | Q3 与 Q2 深度比较 | 已有 CSV，待筛选中档行并排版。必须保留下尾差可能为负的事实 |
-| Q3-TAB-02 | Type 4 appendix | 目标与经验相关矩阵核验表或三张小型热图 | 弱、中、强三档目标矩阵均正定，最终经济变量经验相关误差低于 0.08，方向符合模拟设定 | `results/Q3/experiments/round2/metrics/q3_correlation_checks.json` | 附录，正文简要引用 | 待生成。若采用热图，目标矩阵与经验矩阵使用相同色标；不得只展示误差较小的档位 |
+| Q3-FIG-01 | Type 3 paper | 弱、中、强三档敏感性上下双面板图。上图展示平均收益与 5% 分位数，下图展示收益标准差 | 关系强度增强时平均收益变化较小，但收益分布波动和下尾压力增大；三档均未出现模拟亏损 | `results/Q3/experiments/round2/metrics/q3_metrics.json` 中 `comparison` | Q3 关系强度敏感性 | 已生成并通过渲染检查：`paper/figures/q3_relationship_strength_sensitivity.svg`、`.png` |
+| Q3-FIG-02 | Type 3 paper | 宏观稳定判据散点图。横轴为 41 维面积相似度，纵轴为相对收益差；绘制 80% 与 1% 判据线 | 三档方案两两比较均落在“收益差低、面积相似度高”的微观等价平移区域，未发生结构性跳变 | `results/Q3/experiments/round2/metrics/q3_macro_micro_attribution.json` | Q3 宏观与微观归因 | 已生成并通过渲染检查：`paper/figures/q3_macro_structure_stability.svg`、`.png` |
+| Q3-TAB-01 | Type 3 paper | Q3 中档与 Q2 baseline 的配对指标表 | 在中档相关情景下列示两种销售规则的平均收益、5% 分位数、下尾均值、最低收益、标准差、亏损概率及配对差 | `results/Q3/experiments/round2/tables/q3_q2_paired_comparison.csv` | Q3 与 Q2 深度比较 | 已生成：`paper/tables/q3_medium_q2_comparison.tex`、`.csv` |
+| Q3-TAB-02 | Type 4 appendix | 六面板目标与经验相关矩阵热图及精简核验表 | 弱、中、强三档目标矩阵均正定，最终经济变量经验相关误差低于 0.08，方向符合模拟设定 | `results/Q3/experiments/round2/metrics/q3_correlation_checks.json` | 附录，正文简要引用 | 已生成并通过二次渲染检查：`paper/figures/q3_correlation_matrix_validation.svg`、`.png`；表为 `paper/tables/q3_correlation_checks.tex`、`.csv` |
 
 ## 不纳入正文的内容
 

@@ -1,0 +1,28 @@
+{
+  "Main": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -69224840.74325295,
+    "mip_gap": 0.009437300602349149,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 7.463682605000031
+  },
+  "Baseline": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective_minimized": -63510227.938816465,
+    "mip_gap": 0.007394901403221419,
+    "mip_node_count": 1,
+    "mip_rel_gap_target": 0.01,
+    "variables": 22358,
+    "area_variables": 7434,
+    "constraints": 27541,
+    "execution_time_seconds": 13.355997115999344
+  }
+}

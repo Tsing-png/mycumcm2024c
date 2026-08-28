@@ -2,58 +2,75 @@
   "schema_version": 1,
   "question_id": "Q2",
   "language": "python",
-  "reviewed_files": ["code/model_common.py", "code/Q2/q2_scenarios.py", "code/Q2/run_q2.py", "results/Q2/experiments/round1/run_summary.json"],
-  "decision_id": "q2_method_choice",
+  "reviewed_files": [
+    "code/model_common.py",
+    "code/Q2/q2_scenarios.py",
+    "code/Q2/run_q2.py",
+    "code/Q2/q2_code_plan.md",
+    "methods/Q2/q2_method_card.md",
+    "methods/Q2/q2_decisions.jsonl",
+    "results/Q2/experiments/round3/run_summary.json",
+    "results/Q2/experiments/round3/metrics/q2_metrics.json",
+    "results/Q2/experiments/round3/metrics/q2_solver_metrics.json"
+  ],
+  "decision_id": "q2_decoupled_evaluation_contract",
   "checks": {
-    "syntax": {"status": "PASS", "evidence": ["uv run python -m py_compile completed"]},
-    "input_contract": {"status": "PASS", "evidence": ["Clean data only; approved bounded yearly changes are generated with fixed seeds"]},
-    "method_alignment": {
-      "status": "FAIL",
+    "syntax": {
+      "status": "PASS",
       "evidence": [
-        "Q2-M1 averages 20 scenario parameters and solves one deterministic MILP; it is not the approved shared-decision scenario stochastic MILP",
-        "The objective therefore is not the scenario average of piecewise surplus-sale profit",
-        "Endpoint stress scenarios required by the code plan are absent",
-        "The water-mode hard-constraint defect is inherited"
+        "uv run python -m py_compile completed for the shared model and Q2 modules",
+        "The targeted water-mode test passed"
       ]
     },
-    "reproducibility": {"status": "PASS", "evidence": ["Optimization and test seeds are explicit", "Environment versions are recorded"]},
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "The formal entry point reads only workspace/data_clean inputs and does not modify workspace/data_raw",
+        "The center path, static baseline maps and 200 bounded test scenarios contain all required demand, yield, cost and price keys",
+        "The saved test seed and scenario hash reproduce the Round 3 scenario set"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "Q2-M1 uses the approved compounded center trend and Q2-B1 uses static 2023 parameters",
+        "Both methods use alpha=0.5, min_share=0.1, max_crops=3 and the same repaired planting constraints",
+        "The formal entry point does not import or call the retired extensive-form SAA solver",
+        "Independent objective recomputation matches the Main center-path objective and Baseline static objective"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "Seed 2026, derived test seed 3026, input hashes and environment versions are recorded",
+        "Main and Baseline both reached the configured 1% MIP-gap threshold",
+        "The vectorized evaluator matches exact scenario evaluation on five fixed test indices for both methods and both sale rules"
+      ]
+    },
     "output_contract": {
-      "status": "FAIL",
-      "evidence": ["No endpoint-stress table, seed-stability file, distribution-sensitivity file or solver-metrics file", "Fallback tail-change test subtracts a value from itself and can never detect tail sensitivity", "All Q2 schedules have 8-13 water-mode violations under the missing check"]
+      "status": "PASS",
+      "evidence": [
+        "Round 3 contains both schedule CSV files, paired comparison CSV, metrics JSON, solver metrics JSON and run_summary.json",
+        "The run summary agrees with on-disk outputs and correctly defers the official Excel template",
+        "Paired metrics include expected profit, 5% quantile, lower-tail mean, loss probability, concentration and hard-constraint counts",
+        "Fallback is correctly unobserved because Main gap is below 1%, no simulated loss occurs, lower-tail decline is below 10% and evaluation checks pass"
+      ]
     },
-    "constraint_feasibility": {"status": "FAIL", "evidence": ["Independent water-mode audit found violations in every Q2 schedule"]},
-    "scale": {"status": "FAIL", "evidence": ["Zero-surplus main and baseline hit 40 seconds with gaps of 6.25% and 4.35%"]}
-  },
-  "findings": [
-    {
-      "id": "Q2-F01",
-      "priority": "P0",
-      "category": "method_alignment",
-      "finding": "Mean-parameter optimization is mislabeled as scenario stochastic MILP.",
-      "recommended_action": "Build scenario-specific production, normal-sales and profit variables while retaining shared x/z decisions, or explicitly change the approved method through a new human decision."
+    "constraint_feasibility": {
+      "status": "PASS",
+      "evidence": [
+        "Independent schedule checks found zero capacity, suitability, rotation, bean-window or water-mode violations for both schedules"
+      ]
     },
-    {
-      "id": "Q2-F02",
-      "priority": "P0",
-      "category": "hard_constraint",
-      "finding": "The inherited water-mode formulation and verifier accept illegal schedules.",
-      "recommended_action": "Fix the shared formulation and verifier before any Q2 performance comparison."
-    },
-    {
-      "id": "Q2-F03",
-      "priority": "P1",
-      "category": "performance",
-      "finding": "Evaluation repeatedly filters pandas frames inside year-crop-scenario loops, causing most of the long aggregation time.",
-      "recommended_action": "Precompute sparse area matrices and vectorize scenario profit evaluation with NumPy; cache production and weighted prices once per schedule."
-    },
-    {
-      "id": "Q2-F04",
-      "priority": "P1",
-      "category": "performance",
-      "finding": "The model is rebuilt four times from scratch and does not reuse the constraint matrix or incumbents.",
-      "recommended_action": "Build the structural matrix once, change objective/right-hand sides per sale rule, warm-start from baseline where supported, and solve the easier half-price case first."
+    "scale": {
+      "status": "PASS",
+      "evidence": [
+        "Q2-M1 completed in 7.46 seconds at 0.944% gap and Q2-B1 completed in 13.36 seconds at 0.739% gap",
+        "The complete Round 3 run, including 200-scenario evaluation, completed in 23.03 seconds"
+      ]
     }
-  ],
-  "verdict": "FAILED",
-  "reviewed_at": "2026-08-28T11:30:27+08:00"
+  },
+  "findings": [],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-08-28T13:09:45+08:00"
 }

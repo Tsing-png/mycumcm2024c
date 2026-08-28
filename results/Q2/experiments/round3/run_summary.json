@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "round": "round3",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q2_decoupled_evaluation_contract",
+  "methods": [
+    {
+      "method_id": "Q2-M1",
+      "role": "main_candidate",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 7.463682605000031,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q2_m1_schedule.csv",
+        "tables/q2_paired_comparison.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -69224840.74325295,
+          "mip_gap": 0.009437300602349149,
+          "mip_node_count": 1,
+          "mip_rel_gap_target": 0.01,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27541,
+          "execution_time_seconds": 7.463682605000031
+        },
+        "constraint_violations": 0,
+        "evaluation_check": true,
+        "unique_crop_count": 24,
+        "top1_area_share": 0.1752213950719826,
+        "top3_area_share": 0.44407512476359756,
+        "gini_simpson": 0.8992621220332766
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "Q2-B1",
+      "role": "usable_baseline",
+      "script": "code/Q2/run_q2.py",
+      "status": "success",
+      "execution_time_seconds": 13.355997115999344,
+      "input_files": [
+        "workspace/data_clean/plots.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/stats_2023.csv",
+        "workspace/data_clean/stats_2023_derived.csv"
+      ],
+      "output_files": [
+        "tables/q2_b1_schedule.csv",
+        "tables/q2_paired_comparison.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "solver": {
+          "success": true,
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_minimized": -63510227.938816465,
+          "mip_gap": 0.007394901403221419,
+          "mip_node_count": 1,
+          "mip_rel_gap_target": 0.01,
+          "variables": 22358,
+          "area_variables": 7434,
+          "constraints": 27541,
+          "execution_time_seconds": 13.355997115999344
+        },
+        "constraint_violations": 0,
+        "evaluation_check": true,
+        "unique_crop_count": 24,
+        "top1_area_share": 0.16028153472819298,
+        "top3_area_share": 0.4209519367341314,
+        "gini_simpson": 0.9105850968308083
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "file": "tables/q2_paired_comparison.csv",
+    "metrics": "metrics/q2_metrics.json"
+  },
+  "official_template_status": "deferred; q2_m1_schedule.csv is the canonical fill source",
+  "fallback_trigger": {
+    "fallback_id": "Q2-F1",
+    "observed": false,
+    "condition": "main gap >1%, simulated loss, half-price lower-tail drop >10%, or evaluation mismatch",
+    "evidence": [
+      "metrics/q2_solver_metrics.json",
+      "metrics/q2_metrics.json"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.44",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "crops.csv": "206264a732950496562ece5e24bb3a407b68635e13df5d166b1d0bf5fdc1a807",
+    "stats_2023.csv": "fc16e9d374f503454bf169c928eac35cc1d19a6c6f53734192d19292357882c0",
+    "planting_2023.csv": "1703aa965d8bd0f6f3c0d826b972543a96dd2cf84e4bc986c08431b0b5c2078b",
+    "plots.csv": "bd3ab0f666605311348a4a56a723ce24ba6d173113360a40effcdafaee1a523b",
+    "stats_2023_derived.csv": "2a32865b45abbf31359cafea522175bbc408a8eee24a07883054a265ae13d3de"
+  },
+  "execution_time_seconds": 23.034956485999828
+}

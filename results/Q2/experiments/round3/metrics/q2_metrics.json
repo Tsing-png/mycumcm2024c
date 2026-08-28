@@ -1,0 +1,149 @@
+{
+  "paired_test": [
+    {
+      "method": "Main",
+      "method_id": "Q2-M1",
+      "alpha": 0.5,
+      "mean_profit": 68971922.82293294,
+      "q05_profit": 64100025.973725736,
+      "lower_tail_mean": 63177995.23653789,
+      "loss_probability": 0.0,
+      "minimum_profit": 61924174.36154214,
+      "profit_std": 3158945.104345806,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1752213950719826,
+      "top3_area_share": 0.44407512476359756,
+      "gini_simpson": 0.8992621220332766,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Baseline",
+      "method_id": "Q2-B1",
+      "alpha": 0.5,
+      "mean_profit": 68915134.43960667,
+      "q05_profit": 64138688.34846697,
+      "lower_tail_mean": 63102550.3847387,
+      "loss_probability": 0.0,
+      "minimum_profit": 61846281.012956694,
+      "profit_std": 3145160.9332656697,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.16028153472819298,
+      "top3_area_share": 0.4209519367341314,
+      "gini_simpson": 0.9105850968308083,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Main",
+      "method_id": "Q2-M1",
+      "alpha": 0.0,
+      "mean_profit": 25784546.493063074,
+      "q05_profit": 24894897.677639827,
+      "lower_tail_mean": 24684627.21162314,
+      "loss_probability": 0.0,
+      "minimum_profit": 24352230.116122566,
+      "profit_std": 487445.53507671604,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.1752213950719826,
+      "top3_area_share": 0.44407512476359756,
+      "gini_simpson": 0.8992621220332766,
+      "constraint_violations": 0
+    },
+    {
+      "method": "Baseline",
+      "method_id": "Q2-B1",
+      "alpha": 0.0,
+      "mean_profit": 25247135.829561587,
+      "q05_profit": 24265242.477386482,
+      "lower_tail_mean": 24052006.11546447,
+      "loss_probability": 0.0,
+      "minimum_profit": 23753244.342932682,
+      "profit_std": 558990.2093388484,
+      "unique_crop_count": 24,
+      "top1_area_share": 0.16028153472819298,
+      "top3_area_share": 0.4209519367341314,
+      "gini_simpson": 0.9105850968308083,
+      "constraint_violations": 0
+    }
+  ],
+  "schedule_overlap": 0.28634606632904125,
+  "evaluation_checks": {
+    "Main_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        1.4901161193847656e-08,
+        -1.4901161193847656e-08,
+        7.450580596923828e-09,
+        1.4901161193847656e-08,
+        -2.2351741790771484e-08
+      ],
+      "maximum_absolute_difference": 2.2351741790771484e-08,
+      "passed": true
+    },
+    "Baseline_alpha0.5": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        1.4901161193847656e-08,
+        1.4901161193847656e-08,
+        0.0
+      ],
+      "maximum_absolute_difference": 1.4901161193847656e-08,
+      "passed": true
+    },
+    "Main_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    },
+    "Baseline_alpha0.0": {
+      "scenario_indices": [
+        0,
+        50,
+        100,
+        150,
+        199
+      ],
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_difference": 0.0,
+      "passed": true
+    }
+  },
+  "test_scenarios": {
+    "count": 200,
+    "seed": 3026,
+    "shape": "uniform",
+    "hash": "7d2857684aafebc91529083d196a8564dd8f80f49897d3eaacbb43e919216398"
+  }
+}

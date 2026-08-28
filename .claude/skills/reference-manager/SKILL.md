@@ -12,6 +12,41 @@ This skill checks that every cited reference corresponds to an actual source, ve
 
 This skill does not search for new papers, write paper sections, select methods, or perform QA on modeling content.
 
+## 文献选择与补充规约（强制）
+
+> 目的：为论文每个方法补「源头文献」，而非只引同题范文。选文献与选方法同等重要。
+
+### 一、先枚举方法，再补文献
+
+写文献前，先把论文实际用到的每个方法/工具列全：模型类型、核心算法、仿真/评估方法、风险/评价指标、求解器/软件。
+
+### 二、两类文献都要引（互补）
+
+- **方法源头/经典文献**：支撑「方法有依据」。例：LP→Dantzig 1963；CVaR→Rockafellar & Uryasev 2000；蒙特卡洛→Metropolis & Ulam 1949。
+- **同题/近期应用文献**：支撑「这道题怎么做」。
+- 只引同题范文 = 方法缺根基；只引经典 = 与题目脱节。两类都要。
+
+### 三、找「源头」的三条规则
+
+1. 优先奠基人 / 经典专著，不追最新论文（老文献往往是源头）。
+2. 看权威作者 + 权威出版社/期刊（Princeton UP、Wiley、Springer；JASA、Mathematical Programming 等）。
+3. 求解器/工具引官方指定引用（HiGHS → Huangfu & Hall 2018）。
+
+### 四、必须真实、可核验
+
+- 每条文献的 DOI、卷期、页码都要联网核验。
+- 先给作者链接核验，确认后再写入。
+- 绝不编造 DOI、卷期、页码、作者名。
+
+### 五、判断「要不要引」
+
+- 标准教科书技术（Cholesky 分解、Pearson 相关、t 检验）通常可不引，标「可选」。
+- 禁止装饰性引用（为凑数量而引、不支撑论点）。
+
+### 六、格式一致
+
+与论文现有文献格式一致（thebibliography / GB/T 7714；中文期刊 [J]、专著 [M]；作者. 标题. 出处. DOI.）。
+
 # When to use
 
 Use this skill:

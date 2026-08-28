@@ -57,7 +57,7 @@ def main() -> None:
                               "cumulative_profit": evals["cumulative_profit"], "violations": len(violations), **conc, **solver})
             method_records.append({
                 "method_id": "Q1-M1", "role": "main_candidate", "script": "code/Q1/q1_main.py",
-                "status": "success" if solver["success"] and not violations else "failed",
+                "status": "success" if not schedule.empty and not violations else "failed",
                 "execution_time_seconds": solver["execution_time_seconds"], "input_files": method_records[0]["input_files"],
                 "output_files": [f"tables/{name}"], "figure_files": [],
                 "metrics_summary": {**evals, **conc, "constraint_violations": len(violations), "alpha": alpha, "config": config, "solver": solver},
@@ -66,6 +66,17 @@ def main() -> None:
             })
     pd.DataFrame(grid_rows).to_csv(out / "tables/q1_management_grid.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame([{"violation": v} for v in base_viol]).to_csv(out / "tables/q1_feasibility_checks.csv", index=False, encoding="utf-8-sig")
+    profit_rows = []
+    for record in method_records:
+        for year, value in record["metrics_summary"]["profit_by_year"].items():
+            profit_rows.append({"method_id": record["method_id"], "alpha": record["metrics_summary"]["alpha"],
+                                "config": record["metrics_summary"].get("config"), "year": year, "net_profit": value})
+    pd.DataFrame(profit_rows).to_csv(out / "tables/q1_profit_by_year.csv", index=False, encoding="utf-8-sig")
+    write_json(out / "metrics/q1_solver_metrics.json", {
+        "runs": [{"method_id": r["method_id"], "alpha": r["metrics_summary"]["alpha"],
+                  "config": r["metrics_summary"].get("config"), "solver": r["metrics_summary"].get("solver")}
+                 for r in method_records]
+    })
     metrics = {"management_grid": grid_rows, "baseline_concentration": concentration(baseline),
                "baseline_violations": base_viol, "main_baseline_overlap": {str(k): schedule_overlap(v, baseline) for k, v in schedules.items()}}
     write_json(out / "metrics/q1_metrics.json", metrics)

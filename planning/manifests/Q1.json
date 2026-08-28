@@ -2,8 +2,8 @@
   "schema_version": 1,
   "question_id": "Q1",
   "rigor_profile": "lean",
-  "current_gate": "G2.5",
-  "status": "python_review_failed_waiting_shared_constraint_fix",
+  "current_gate": "G3",
+  "status": "code_and_experiment_reviewed_waiting_result_judgment",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -25,14 +25,11 @@
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [
-    "Watered-land rice-versus-two-season-vegetable mode and second-season exact-one constraints are incomplete",
-    "Current Q1 run summary is stale and current schedules must be rerun after the shared constraint fix"
-  ],
+  "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "python-model-code-generator",
-    "reason": "Repair the shared water-mode formulation and verifier, then rerun Q1 before review can pass"
+    "skill": "result-report-generator",
+    "reason": "Q1 main and baseline have rerun and passed Python review; judge feasible incumbents, solver gaps, management settings and fallback trigger"
   },
-  "updated_at": "2026-08-28T11:31:52+08:00"
+  "updated_at": "2026-08-28T11:45:00+08:00"
 }

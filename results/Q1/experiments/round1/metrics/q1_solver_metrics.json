@@ -1,0 +1,84 @@
+{
+  "runs": [
+    {
+      "method_id": "Q1-B1",
+      "alpha": 0.0,
+      "config": null,
+      "solver": null
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.0,
+      "config": "share0_k3",
+      "solver": {
+        "success": false,
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "objective_minimized": -38267120.1387843,
+        "mip_gap": 0.07863795665438518,
+        "mip_node_count": 47,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 20107,
+        "execution_time_seconds": 60.319358642000225
+      }
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.0,
+      "config": "share10_k3",
+      "solver": {
+        "success": false,
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "objective_minimized": -39787762.497176185,
+        "mip_gap": 0.0373801343676862,
+        "mip_node_count": 2,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 60.305360930999996
+      }
+    },
+    {
+      "method_id": "Q1-B1",
+      "alpha": 0.5,
+      "config": null,
+      "solver": null
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.5,
+      "config": "share0_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63432082.98100814,
+        "mip_gap": 0.008636785601124554,
+        "mip_node_count": 1,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 20107,
+        "execution_time_seconds": 3.0971950690000085
+      }
+    },
+    {
+      "method_id": "Q1-M1",
+      "alpha": 0.5,
+      "config": "share10_k3",
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63510227.938816465,
+        "mip_gap": 0.007394901403221419,
+        "mip_node_count": 1,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 14.244275549000122
+      }
+    }
+  ]
+}

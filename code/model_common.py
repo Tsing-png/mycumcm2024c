@@ -90,12 +90,34 @@ def parameter_season(crop: int, plot_type: str, season: str) -> str:
     return season
 
 
+def initial_bean_area(data: DataBundle, plot_id: str) -> float:
+    rows = data.planting[(data.planting.plot_id == plot_id) & data.planting.crop_id.isin(BEANS)]
+    return float(rows.area_mu.sum())
+
+
 def build_rule_schedule(data: DataBundle, bean_years: set[int] | None = None) -> pd.DataFrame:
     bean_years = bean_years or {2024, 2027, 2030}
     rows: list[dict[str, Any]] = []
     for pi, plot in enumerate(data.plots.itertuples()):
         previous = previous_crops(data, plot.plot_id)
         for yi, year in enumerate(YEARS):
+            if plot.plot_type == "水浇地":
+                first_pool = [j for j in range(17, 35) if j not in previous]
+                if year in bean_years:
+                    first_pool = [j for j in first_pool if j in BEANS]
+                crop1 = first_pool[(pi + yi) % len(first_pool)]
+                rows.append(
+                    {"year": year, "season": "第一季", "plot_id": plot.plot_id,
+                     "plot_type": plot.plot_type, "crop_id": crop1, "area_mu": float(plot.area_mu)}
+                )
+                second_pool = [j for j in [35, 36, 37] if j != crop1]
+                crop2 = second_pool[(pi + yi) % len(second_pool)]
+                rows.append(
+                    {"year": year, "season": "第二季", "plot_id": plot.plot_id,
+                     "plot_type": plot.plot_type, "crop_id": crop2, "area_mu": float(plot.area_mu)}
+                )
+                previous = {crop2}
+                continue
             for si, season in enumerate(seasons(plot.plot_type)):
                 pool = allowed(plot.plot_type, season)
                 if season in {"单季", "第一季"} and year in bean_years:
@@ -127,6 +149,24 @@ def check_schedule(data: DataBundle, schedule: pd.DataFrame) -> list[str]:
         rows["so"] = rows.season.map(SEASON_ORDER)
         prev = previous_crops(data, plot)
         ptype = types[plot]
+        if ptype == "水浇地":
+            for year in YEARS:
+                first = rows[(rows.year == year) & (rows.season == "第一季")]
+                second = rows[(rows.year == year) & (rows.season == "第二季")]
+                first_crops = set(first.crop_id.astype(int))
+                second_crops = set(second.crop_id.astype(int))
+                if 16 in first_crops:
+                    if first_crops != {16}:
+                        violations.append(f"water_mode:rice_mixed_first:{plot}:{year}")
+                    if second.area_mu.sum() > 1e-7:
+                        violations.append(f"water_mode:rice_with_second:{plot}:{year}")
+                else:
+                    if not first_crops or not first_crops.issubset(set(range(17, 35))):
+                        violations.append(f"water_mode:invalid_first_vegetables:{plot}:{year}")
+                    if len(second_crops) != 1 or not second_crops.issubset({35, 36, 37}):
+                        violations.append(f"water_mode:second_exactly_one:{plot}:{year}")
+                    if abs(second.area_mu.sum() - capacities[plot]) > 1e-6:
+                        violations.append(f"water_mode:second_area:{plot}:{year}")
         for year in YEARS:
             for season in seasons(ptype):
                 so = SEASON_ORDER[season]
@@ -136,6 +176,11 @@ def check_schedule(data: DataBundle, schedule: pd.DataFrame) -> list[str]:
                     violations.append(f"rotation:{plot}:{year}:{so}:{crop}")
                 prev = crops
         area = capacities[plot]
+        bean_2023_2025 = initial_bean_area(data, plot) + rows[
+            (rows.year >= 2024) & (rows.year <= 2025) & rows.crop_id.isin(BEANS)
+        ].area_mu.sum()
+        if bean_2023_2025 + 1e-6 < area:
+            violations.append(f"bean_window:{plot}:2023")
         for start in range(2024, 2029):
             bean_area = rows[(rows.year >= start) & (rows.year <= start + 2) & rows.crop_id.isin(BEANS)].area_mu.sum()
             if bean_area + 1e-6 < area:
@@ -149,7 +194,7 @@ def evaluate_schedule(
     alpha: float,
     scenario: dict[str, dict[tuple[int, int, str, str], float] | dict[tuple[int, int], float]] | None = None,
 ) -> dict[str, Any]:
-    production: dict[tuple[int, int], float] = {}
+    production_batches: dict[tuple[int, int], list[tuple[float, float]]] = {}
     cost_by_year = {year: 0.0 for year in YEARS}
     for r in schedule.itertuples():
         pseason = parameter_season(int(r.crop_id), r.plot_type, r.season)
@@ -157,30 +202,20 @@ def evaluate_schedule(
         key4 = (int(r.year), int(r.crop_id), r.plot_type, pseason)
         yld = base["yield"] if scenario is None else scenario["yield"][key4]
         cost = base["cost"] if scenario is None else scenario["cost"][key4]
-        production[(int(r.year), int(r.crop_id))] = production.get((int(r.year), int(r.crop_id)), 0.0) + float(r.area_mu) * yld
+        price = base["price"] if scenario is None else scenario["price"][key4]
+        production_batches.setdefault((int(r.year), int(r.crop_id)), []).append((float(r.area_mu) * yld, price))
         cost_by_year[int(r.year)] += float(r.area_mu) * cost
     profit_by_year: dict[int, float] = {}
     for year in YEARS:
         revenue = 0.0
         for crop in range(1, 42):
-            prod = production.get((year, crop), 0.0)
             demand = data.demand0[crop] if scenario is None else scenario["demand"][(year, crop)]
-            normal = min(prod, demand)
-            surplus = max(0.0, prod - demand)
-            price_rows = schedule[(schedule.year == year) & (schedule.crop_id == crop)]
-            if price_rows.empty:
-                continue
-            weighted = 0.0
-            total = 0.0
-            for r in price_rows.itertuples():
-                pseason = parameter_season(crop, r.plot_type, r.season)
-                base = data.params[(crop, r.plot_type, pseason)]
-                key4 = (year, crop, r.plot_type, pseason)
-                price = base["price"] if scenario is None else scenario["price"][key4]
-                weighted += float(r.area_mu) * price
-                total += float(r.area_mu)
-            price = weighted / total
-            revenue += price * (normal + alpha * surplus)
+            remaining_normal = demand
+            for quantity, price in sorted(production_batches.get((year, crop), []), key=lambda item: item[1], reverse=True):
+                normal = min(quantity, remaining_normal)
+                surplus = quantity - normal
+                revenue += price * (normal + alpha * surplus)
+                remaining_normal -= normal
         profit_by_year[year] = revenue - cost_by_year[year]
     return {"profit_by_year": profit_by_year, "cumulative_profit": float(sum(profit_by_year.values()))}
 
@@ -317,10 +352,10 @@ def solve_milp_schedule(
                 veg = [j for j in candidates if j != 16]
                 add([(zidx[(si, j)], 1.0) for j in veg] + [(mode, float(max_crops))], -np.inf, float(max_crops))
             else:
-                add([(zidx[(si, j)], 1.0) for j in candidates] + [(mode, float(max_crops))], -np.inf, float(max_crops))
+                add([(zidx[(si, j)], 1.0) for j in candidates] + [(mode, 1.0)], 1.0, 1.0)
     for year in YEARS:
         for crop in range(1, 42):
-            entries = [(qidx[(si, crop)], 1.0) for si, _ in vars_x if slots[si][0] == year and (si, crop) in qidx]
+            entries = [(qidx[(si, crop)], 1.0) for si in range(len(slots)) if slots[si][0] == year and (si, crop) in qidx]
             if entries:
                 add(entries, -np.inf, demand[(year, crop)])
     by_plot: dict[str, list[int]] = {}
@@ -337,6 +372,13 @@ def solve_milp_schedule(
             for crop in set(allowed(slots[left][2], slots[left][3])) & set(allowed(slots[right][2], slots[right][3])):
                 add([(zidx[(left, crop)], 1.0), (zidx[(right, crop)], 1.0)], -np.inf, 1.0)
         area = slots[sis[0]][4]
+        initial = initial_bean_area(data, plot)
+        entries = []
+        for si in sis:
+            if 2024 <= slots[si][0] <= 2025:
+                for crop in set(allowed(slots[si][2], slots[si][3])) & BEANS:
+                    entries.append((xidx[(si, crop)], 1.0))
+        add(entries, max(0.0, area - initial), np.inf)
         for start in range(2024, 2029):
             entries = []
             for si in sis:

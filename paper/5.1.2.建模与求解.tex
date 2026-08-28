@@ -61,12 +61,35 @@ z_{tis_1,16}&\le w_{ti},\\
 
 对比规则轮作基线，主方法的收益优势显著：滞销模式下基线累计净收益为2195.33万元，主方法高出约84\%；半价模式下基线为3900.24万元，主方法高出约63\%。这一优势源于全局优化对地块间种植结构的统筹调度，而非单季利润的简单追逐。种植结构上，滞销模式保留全部41种作物（前三作物面积占比约42\%），半价模式收敛至24种作物（前三作物面积占比约44\%），均未出现单一作物占据绝大面积或结构退化的现象。这一差异源于销售规则：折价销售使超额产量仍产生一半收益，模型因此倾向集中种植高利润的蔬菜与食用菌；而滞销模式下超额产量无收益，保留作物多样性可规避销量上限约束造成的损失。此外，豆类覆盖约束要求每块地三年内至少轮作一次豆类，在维持地力的同时将部分土地锁定于利润较低的豆类作物，构成收益的隐性成本。最小面积占比由0提高至10\%后，滞销收益下降约0.73\%、半价收益变化约0.12\%，说明管理便利约束对收益影响有限，但会改变具体地块的作物组合。
 
+两种销售模式下的作物面积结构如图\ref{fig:q1_crop_composition}与图\ref{fig:q1_structure_evolution}所示：半价模式高度集中于少数高利润作物，滞销模式则保留较均衡的作物分布，且半价方案的主要作物面积在七年内保持稳定。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{figures/q1_crop_area_composition.png}
+  \caption{问题一两种销售模式下各作物累计面积占比}
+  \label{fig:q1_crop_composition}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{figures/q1_crop_structure_evolution.png}
+  \caption{问题一半价模式下主要作物种植面积随年份的演变}
+  \label{fig:q1_structure_evolution}
+\end{figure}
+
 两种销售规则下的收益比较如图\ref{fig:q1_profit}所示。半价销售允许超额产量继续产生收入，因此整体收益高于滞销模式。两种管理配置的收益差较小，说明10\%最小面积占比并未明显牺牲经济效益。
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{figures/q1_cumulative_profit_comparison.png}
   \caption{问题一两种销售模式的七年累计净收益比较}
   \label{fig:q1_profit}
+\end{figure}
+
+两种销售模式的逐年净收益如图\ref{fig:q1_yearly_profit}所示，半价模式各年净收益均显著高于滞销模式，且主方案在每一年均优于规则轮作基线。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{figures/q1_yearly_profit.png}
+  \caption{问题一两种销售模式与规则轮作基线的逐年净收益}
+  \label{fig:q1_yearly_profit}
 \end{figure}
 
 \begin{longtable}{>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.16\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}}

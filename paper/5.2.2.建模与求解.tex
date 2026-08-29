@@ -4,7 +4,7 @@
 
 \textbf{步骤1 中心趋势路径}
 
-小麦和玉米销量年增长率取7.5\%，其他作物取0；亩产量保持基准水平，成本每年增长5\%，粮食价格不变，蔬菜价格每年增长5\%，一般食用菌价格每年下降3\%，羊肚菌下降5\%。设中心路径参数为$D^c_{tj}$、$y^c_{tgsj}$、$c^c_{tgsj}$和$p^c_{tgsj}$。
+小麦和玉米销量年增长率取7.5\%，其他作物取0；亩产量保持基准水平，成本每年增长5\%，粮食价格不变，蔬菜价格每年增长5\%，一般食用菌价格每年下降3\%，羊肚菌下降5\%，各变化率按复利逐年累乘得到各年参数。设中心路径参数为$D^c_{tj}$、$y^c_{tgsj}$、$c^c_{tgsj}$和$p^c_{tgsj}$。
 
 \textbf{步骤2 固定方案MILP}
 
@@ -25,31 +25,13 @@
 \operatorname{LTM}_{0.05}^{(\alpha)}=\frac{1}{|\Omega_{0.05}|}\sum_{\omega\in\Omega_{0.05}}\Pi_{\omega}^{(\alpha)}.
 \end{equation}
 
-\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.26\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
-  \caption{问题二求解与评估参数}\label{tab:q2_setting}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endfirsthead
-  \caption{问题二求解与评估参数（续）}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  $\alpha$ & 正式销售模式 & 0.5 & 生成面积方案 \\
-  $N$ & 测试情景数 & 200 & 样本外评价 \\
-  seed & 正式随机种子 & 3026 & 可复现 \\
-  Gap & 求解目标 & 1\% & 控制求解质量 \\
-  $\rho$ & 最小面积占比 & 10\% & 管理便利 \\
-\end{longtable}
-
 \subsubsection{模型求解}
 
 半价销售模式下，主方案平均七年净收益为6897.19万元，比基线高5.68万元，最差5\%情景平均收益为6317.80万元。将同一固定方案置于滞销模式时，平均收益为2578.45万元。两种模式的200个正式测试情景中均未出现负收益，硬约束违反数为0。
 
-图\ref{fig:q2_risk}显示，半价模式的平均收益优势较小，5\%分位数并未高于基线，因此不能把均值改善解释成全面下尾优势。
+方案结构上，主方案与基线均使用24种作物，但主方案前三作物面积占比升至44.41\%（基线为42.10\%），Gini-Simpson多样性指标为0.8993，逐地块作物面积重合度仅为28.63\%。这说明中心趋势信息主要改变了地块层面的微观调度，而非作物数量或宏观结构，未造成作物种类退化。
+
+图\ref{fig:q2_risk}显示，半价模式的平均收益优势较小，5\%分位数并未高于基线，因此不能把均值改善解释成全面下尾优势。这一现象说明高期望收益与低下行风险在农业种植中难以兼得：中心趋势信息带来的均值改善，并未转化为下尾情景的稳健性。
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{figures/q2_expected_tail_comparison.png}

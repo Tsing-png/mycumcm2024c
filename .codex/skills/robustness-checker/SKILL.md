@@ -58,6 +58,16 @@ Record:
 - Do not create `robustness-checker_modeler_decision.md`.
 - A failed robustness check is evidence for adjust/fallback/claim downgrade, not permission for AI to decide.
 
+## 不确定性量化与诚实性规约（强制）
+
+除点估计外，主动量化不确定性，并诚实指出量化方法本身的局限：
+
+1. **预测区间**：对关键预测给出分位区间或置信区间，而非只报点估计。
+2. **逐一排除/留一验证**：验证结果是否被个别样本主导。
+3. **噪声/参数扰动**：在合理幅度下检验稳定性。
+4. **诚实指出重采样的统计局限**：如重采样在小样本下独立性有限、扰动不能替代换一批数据。
+5. **区分「稳定的维度」**：明确说清重采样（换数据）与扰动（加噪）检验的是不同的稳定性，不可混为一谈。
+
 # Verification
 
 - Every major final claim has a supporting check or explicit limitation.

@@ -6,7 +6,7 @@
 
 设行归一化响应矩阵为$B^{(h)}$，弱、中、强档系数$h$分别取0.15、0.35和0.55。若问题二中心销量增长向量为$u_t$，则
 \begin{equation}
-r_t^{(h)}=u_t+B^{(h)}u_t,qquad D_{tj}^{(h)}=D_{t-1,j}^{(h)}\left(1+r_{tj}^{(h)}\right).
+r_t^{(h)}=u_t+B^{(h)}u_t,\qquad D_{tj}^{(h)}=D_{t-1,j}^{(h)}\left(1+r_{tj}^{(h)}\right).
 \end{equation}
 增长率超出题目区间时按边界裁剪。三档分别调用与问题二相同的MILP，中档方案作为正式代表。
 
@@ -16,7 +16,7 @@ r_t^{(h)}=u_t+B^{(h)}u_t,qquad D_{tj}^{(h)}=D_{t-1,j}^{(h)}\left(1+r_{tj}^{(h)}\
 \begin{equation}
 \Sigma^{(h)}=\begin{bmatrix}1&0.25h&0.55h\\0.25h&1&-0.20h\\0.55h&-0.20h&1\end{bmatrix}.
 \end{equation}
-对独立标准正态变量作Cholesky变换，再映射到问题二的有界边际区间。经验相关系数直接从最终导出的销量、亩产量和价格增长数组计算。
+对独立标准正态变量作Cholesky变换\upcite{golub2013}，再映射到问题二的有界边际区间。经验相关系数直接从最终导出的销量、亩产量和价格增长数组计算。
 
 \textbf{步骤3 宏观结构判据}
 
@@ -26,30 +26,11 @@ S_A(x,x')=\frac{\sum_{j=1}^{41}\min(A_j,A'_j)}{\sum_{j=1}^{41}\max(A_j,A'_j)}.
 \end{equation}
 当收益差小于1\%且$S_A\ge80\%$时，判定为宏观等价、微观平移。只有收益差大于1\%且$S_A<80\%$时才触发结构性备用方案。
 
-\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.25\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
-  \caption{问题三关系与判据参数}\label{tab:q3_setting}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endfirsthead
-  \caption{问题三关系与判据参数（续）}\\
-  \toprule
-  参数 & 含义 & 取值 & 作用 \\
-  \midrule
-  \endhead
-  \bottomrule
-  \endfoot
-  $h$ & 模拟关系强度 & 0.15，0.35，0.55 & 敏感性分析 \\
-  $E_{\mathrm{corr}}$ & 相关误差阈值 & 0.08 & 数值核验 \\
-  $S_A$ & 面积相似度阈值 & 80\% & 结构判断 \\
-  $\delta_{\Pi}$ & 收益差阈值 & 1\% & 结构判断 \\
-\end{longtable}
-
 \subsubsection{模型求解}
 
-中档关系方案在半价模式下平均收益为6887.03万元，比问题二基线高12.14万元；滞销压力下平均收益优势为62.41万元。正式200个情景中未出现模拟亏损。三档最大相关误差为0.0353，低于0.08阈值。
+中档关系方案在半价模式下平均收益为6887.03万元，比问题二基线高12.14万元；滞销压力下平均收益优势为62.41万元。正式200个情景中未出现模拟亏损。三档最大相关误差为0.0353，低于0.08阈值。需要说明的是，此处问题二基线在问题三的相关情景集下重新评价，其半价均值6874.89万元与问题二自身表格中的6891.51万元不同，差异仅来自情景生成方式，不影响配对比较。
 
-图\ref{fig:q3_strength}显示，关系强度增加时平均收益变化较小，但5\%分位数下降、收益标准差上升。
+半价模式下，弱、中、强三档平均收益分别为6909.83万元、6887.03万元和6865.49万元。随关系强度增强，收益标准差由约361万元增至534万元，5\%分位数由约6331万元降至5986万元，说明更强的模拟相关结构放大了收益波动（图\ref{fig:q3_strength}）。三档均使用24至25种作物，前三作物面积占比约44\%，未发生集中退化。
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.78\textwidth]{figures/q3_relationship_strength_sensitivity.png}

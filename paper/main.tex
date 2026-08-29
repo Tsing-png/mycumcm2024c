@@ -5,16 +5,18 @@
 \usepackage{etoolbox}
 \usepackage{ctex}
 \BeforeBeginEnvironment{tabular}{\zihao{-5}}
-% 参考文献改用纯tex格式，不再需要natbib+bibtex
+% 参考文献使用 GB/T 7714 数字顺序制 BibTeX 样式
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{url}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{longtable}
+\usepackage[numbers,sort&compress]{natbib}
 \setlength{\tabcolsep}{3pt}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\renewcommand{\upcite}[1]{\textsuperscript{\citep{#1}}}
 
 % \renewcommand{\textbf}[1]{{\songti\bfseries #1}}
 

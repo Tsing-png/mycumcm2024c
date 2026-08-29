@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "question": "Q1",
-  "frozen_at": "2026-08-28T15:07:22+08:00",
-  "frozen_by_skill": "paper-polisher-update",
+  "frozen_at": "2026-08-29T13:41:52+08:00",
+  "frozen_by_skill": "solution-package-builder",
   "package_signoff_decision_id": "q1_solution_package_signoff",
   "claims": [
     {
@@ -11,9 +11,9 @@
       "unit": "mixed",
       "source_file": "results/Q1/experiments/round3/metrics/bean_land_value_sensitivity.json",
       "source_locator": "$.rows",
-      "frozen_at": "2026-08-29T13:00:00+08:00",
-      "frozen_by_skill": "paper-polisher-update",
-      "decision_id": "q1_solution_package_signoff"
+      "frozen_at": "2026-08-29T13:41:52+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q1_bean_land_value_claim_scope"
     },
     {
       "claim_id": "q1_unsold_official_profit",

@@ -7,3 +7,5 @@
 变更范围：新增 `experiments/round3` 运行摘要、指标和逐档方案；在 Q1 结果分析与 writer package 中补充该附加实验；在 `frozen_numbers.json` 中登记其数值范围。
 
 正式交付方案与正式 Q1 收益数字未改变。
+
+人工于 2026-08-29 确认全部改动，决策记录为 `q1_bean_land_value_claim_scope`。Q1 材料包及新增敏感性 claim 据此重新冻结，正式填表方案不变。

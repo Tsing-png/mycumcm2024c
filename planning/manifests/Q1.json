@@ -2,8 +2,8 @@
   "schema_version": 1,
   "question_id": "Q1",
   "rigor_profile": "submission",
-  "current_gate": "G4",
-  "status": "paper_draft_complete",
+  "current_gate": "G5",
+  "status": "paper_section_ready",
   "artifacts": {
     "problem_parse": "planning/parse/problem_parse.json",
     "classification": "planning/classification/problem_classification.json",
@@ -41,8 +41,8 @@
   "blockers": [],
   "next_action": {
     "owner": "ai",
-    "skill": "paper-polisher",
-    "reason": "Q1 section draft is compiled from the signed package and frozen numbers"
+    "skill": "completeness-auditor",
+    "reason": "Reference audit and paper section are complete; run final submission completeness check"
   },
   "updated_at": "2026-08-28T15:24:00+08:00"
 }

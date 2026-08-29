@@ -229,6 +229,10 @@ Migrate material evidence into the method card and probe summary. Do not require
 - Risk checks and summary schema: `references/risk-probe-contract.md`
 - Method-family routing cues: `references/method-family-guide.md`
 
+## 知识库参考
+
+选型时按需读取 `knowledge/references/模型选型树.md`、`算法索引.md`，以及 `knowledge/assets/01-07 算法说明`。
+
 # Verification
 
 - Shortlist contains a main candidate and a genuinely usable baseline.

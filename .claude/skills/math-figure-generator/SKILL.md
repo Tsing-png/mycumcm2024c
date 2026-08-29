@@ -94,6 +94,10 @@ Use stable descriptive filenames. Do not copy Type 1 diagnostics into the paper 
 
 公式独占一行居中、编号右对齐（`(1)(2)…` 连续）；正文用 `（n）` 引用；公式出现后解释每个符号。
 
+## 知识库参考
+
+绘图时按需读取 `knowledge/references/绘图参考/`、`knowledge/assets/期刊配色方案.md`。
+
 # Verification
 
 - Source, claim, type, and target section agree.

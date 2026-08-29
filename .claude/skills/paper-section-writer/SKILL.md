@@ -249,6 +249,10 @@ Transcribe these from the decision ledger with provenance. If absent, invoke a c
 - 参考文献真实、GB/T 7714、与正文双向对应；
 - 图表编号连续、图题在下、表题在上。
 
+## 知识库参考
+
+写作时按需读取 `knowledge/references/` 下的：优秀论文写法指南.md、写作与图表规范.md、国赛规范.md、摘要写作/、roles/论文手/。
+
 # Verification
 
 - Three writer prerequisites pass.

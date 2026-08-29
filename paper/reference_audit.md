@@ -18,7 +18,7 @@
 
 ## 完整性检查
 
-- 所有 `\\upcite` 键均出现在 `paper/9.参考文献.tex` 和 `paper/refs.bib`。
+- 所有 `\\upcite` 键均出现在 `paper/refs.bib`，并由 `paper/9.参考文献.tex` 调用。
 - 参考文献表中没有未被正文引用的条目。
 - 正文引用均为 `\\upcite`，没有普通 `\\cite`。
 - 未写入未经确认的 DOI。
@@ -27,4 +27,4 @@
 
 ## 风险与建议
 
-未发现疑似编造或阻塞性引用。当前论文使用手写 `thebibliography` 排版，`paper/refs.bib` 作为可机读的同步书目，不参与当前 XeLaTeX 编译。若后续修改任一书目信息，应同时更新两个文件。
+未发现疑似编造或阻塞性引用。当前论文使用 `gbt7714-numerical.bst` 和 `paper/refs.bib` 生成参考文献，正文通过 `natbib` 数字模式显示上标编号。完整编译顺序为 XeLaTeX、BibTeX、XeLaTeX、XeLaTeX。

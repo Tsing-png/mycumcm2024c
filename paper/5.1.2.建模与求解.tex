@@ -113,4 +113,17 @@ z_{tis_1,16}&\le w_{ti},\\
 
 滞销正式方案仍保留2.126\%的未闭合最优间隙，因此只能表述为达到验收线的高质量可行解，不能称为精确全局最优。
 
-进一步，为说明领域知识对模型结构的影响，本文将豆科固氮养地的跨期价值显式纳入目标函数。设豆类作物的地力价值为 $\beta$ 元/亩，在目标函数中为其附加隐性收益 $\beta x_{tisj}$。随 $\beta$ 由 0 增至 800 元/亩，模型将豆类面积占比由约 30.5\% 提高至约 37.1\%，而真实净收益下降约 0.6\%。这表明豆类轮作在基础模型中仅是被动满足的硬约束，加入地力价值后则转化为主动的地力投入，体现了短期收益与长期地力之间的权衡。
+进一步，为说明领域知识对模型结构的影响，本文将豆科固氮养地的跨期价值显式纳入目标函数。设豆类作物的地力价值为 $\beta$ 元/亩，在目标函数中为其附加隐性收益 $\beta x_{tisj}$。随 $\beta$ 由 0 增至 800 元/亩，模型将豆类面积占比由约 30.5\% 提高至约 37.1\%，而真实净收益下降约 0.6\%。这表明豆类轮作在基础模型中仅是被动满足的硬约束，加入地力价值后则转化为主动的地力投入，体现了短期收益与长期地力之间的权衡。图\ref{fig:q1_bean_area}与图\ref{fig:q1_bean_profit}分别给出豆类面积占比和真实净收益随 $\beta$ 的变化。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.70\textwidth]{figures/q1_bean_land_area_share.png}
+  \caption{豆类面积占比随地力价值系数 $\beta$ 的变化}
+  \label{fig:q1_bean_area}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.70\textwidth]{figures/q1_bean_land_profit.png}
+  \caption{真实净收益随地力价值系数 $\beta$ 的变化}
+  \label{fig:q1_bean_profit}
+\end{figure}

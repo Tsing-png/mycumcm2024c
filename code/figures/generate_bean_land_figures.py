@@ -57,11 +57,12 @@ style(ax)
 fig.tight_layout()
 save(fig, "q1_bean_land_area_share")
 
-# 图B：β → 真实净收益
+# 图B：β → 相对收益变化（%）
+rel_profit = (profit / profit[0] - 1) * 100
 fig, ax = plt.subplots(figsize=(4.4, 3.0))
-ax.plot(beta, profit, marker="s", color=ACCENT)
+ax.plot(beta, rel_profit, marker="s", color=ACCENT)
 ax.set_xlabel("豆类地力价值 β（元/亩）")
-ax.set_ylabel("真实净收益（万元）")
+ax.set_ylabel("相对收益变化（%）")
 ax.set_xticks(beta)
 style(ax)
 fig.tight_layout()

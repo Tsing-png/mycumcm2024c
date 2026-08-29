@@ -1,0 +1,111 @@
+{
+  "question": "Q1",
+  "experiment": "bean_land_value_sensitivity",
+  "rows": [
+    {
+      "beta_cny_per_mu": 0,
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63626827.4058762,
+        "mip_gap": 0.005547956342593222,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 11.122758415000135
+      },
+      "status": "success",
+      "real_profit_cny": 63626827.4058762,
+      "bean_area_share": 0.3046006644661265,
+      "unique_crop_count": 24,
+      "constraint_violations": 0
+    },
+    {
+      "beta_cny_per_mu": 100,
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -63812471.38151914,
+        "mip_gap": 0.006896361004186288,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 10.836324787999956
+      },
+      "status": "success",
+      "real_profit_cny": 63530009.50113636,
+      "bean_area_share": 0.3024864857386755,
+      "unique_crop_count": 24,
+      "constraint_violations": 0
+    },
+    {
+      "beta_cny_per_mu": 300,
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -64420327.02482057,
+        "mip_gap": 0.005886657762204656,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 6.50390361299992
+      },
+      "status": "success",
+      "real_profit_cny": 63530640.637260765,
+      "bean_area_share": 0.31758634524159657,
+      "unique_crop_count": 24,
+      "constraint_violations": 0
+    },
+    {
+      "beta_cny_per_mu": 500,
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -65144258.4271654,
+        "mip_gap": 0.004177532944697642,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 13.330975262000038
+      },
+      "status": "success",
+      "real_profit_cny": 63485110.3271173,
+      "bean_area_share": 0.3553540586952452,
+      "unique_crop_count": 24,
+      "constraint_violations": 0
+    },
+    {
+      "beta_cny_per_mu": 800,
+      "solver": {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_minimized": -66006051.763703704,
+        "mip_gap": 0.006040324453827883,
+        "mip_node_count": 1,
+        "mip_rel_gap_target": 0.01,
+        "variables": 22358,
+        "area_variables": 7434,
+        "constraints": 27541,
+        "execution_time_seconds": 7.8599501819999205
+      },
+      "status": "success",
+      "real_profit_cny": 63235204.983115874,
+      "bean_area_share": 0.370910095923623,
+      "unique_crop_count": 23,
+      "constraint_violations": 0
+    }
+  ]
+}

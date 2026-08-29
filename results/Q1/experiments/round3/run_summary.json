@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "round": "round3",
+  "implementation_target": "python",
+  "status": "success",
+  "approved_methods": [
+    "Q1-M1"
+  ],
+  "experiment": "bean_land_value_sensitivity",
+  "input_files": [
+    "workspace/data_clean/plots.csv",
+    "workspace/data_clean/crops.csv",
+    "workspace/data_clean/planting_2023.csv",
+    "workspace/data_clean/stats_2023.csv",
+    "workspace/data_clean/stats_2023_derived.csv"
+  ],
+  "output_files": [
+    "metrics/bean_land_value_sensitivity.json",
+    "tables/bean_land_value_sensitivity.csv"
+  ],
+  "warnings": [
+    "附加敏感性分析，不改变Q1正式填表方案"
+  ]
+}

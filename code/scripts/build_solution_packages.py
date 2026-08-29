@@ -33,7 +33,18 @@ def q1_claims(frozen_at):
     unsold = rows[(0.0, "share0_k3")]
     half = rows[(0.5, "share10_k3")]
     decision = "q1_solution_package_signoff"
+    sensitivity_source = "results/Q1/experiments/round3/metrics/bean_land_value_sensitivity.json"
+    sensitivity = load(sensitivity_source)["rows"]
+    first, last = sensitivity[0], sensitivity[-1]
     return [
+        claim("q1_bean_land_value_sensitivity", {
+            "beta_min_cny_per_mu": first["beta_cny_per_mu"],
+            "beta_max_cny_per_mu": last["beta_cny_per_mu"],
+            "bean_share_min": first["bean_area_share"],
+            "bean_share_max": last["bean_area_share"],
+            "real_profit_min_cny": last["real_profit_cny"],
+            "real_profit_max_cny": first["real_profit_cny"],
+        }, "mixed", sensitivity_source, "$.rows[0,4]", frozen_at, decision),
         claim("q1_unsold_official_profit", unsold["cumulative_profit"], "CNY", source, "$.management_grid[?(@.alpha==0.0 && @.config=='share0_k3')].cumulative_profit", frozen_at, decision),
         claim("q1_unsold_official_gap", unsold["mip_gap"], "fraction", source, "$.management_grid[?(@.alpha==0.0 && @.config=='share0_k3')].mip_gap", frozen_at, decision),
         claim("q1_half_official_profit", half["cumulative_profit"], "CNY", source, "$.management_grid[?(@.alpha==0.5 && @.config=='share10_k3')].cumulative_profit", frozen_at, decision),

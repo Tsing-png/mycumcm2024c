@@ -37,3 +37,4 @@ Q1 不能支持真实市场参数下的收益保证，也不能证明未测试�
 - 代码与约束核验：`code/Q1/reviews/q1_python_review.json`。
 - 管理阈值稳健性：`robustness/Q1/q1_robustness_summary.json`。
 - 人工结论范围：`methods/Q1/q1_decisions.jsonl` 中的 `q1_zero_surplus_gap_acceptance` 与 `q1_stability_verdict`。
+- 豆类地力价值敏感性：`results/Q1/experiments/round3/metrics/bean_land_value_sensitivity.json`。该附加实验在半价口径、10%最小面积占比下令豆类每亩获得附加价值 $\beta$，五档均通过硬约束检查；$\beta=0$ 至 $800$ 元/亩时，豆类面积占比由 30.46% 增至 37.09%，独立复算的真实净收益由 6362.68 万元降至 6323.52 万元。该实验不改变正式填表方案。

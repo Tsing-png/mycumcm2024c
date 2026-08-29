@@ -29,3 +29,7 @@
 - 方法唯一来源：`methods/Q1/q1_final_method_explanation.md`。
 - 结果唯一来源：`results/Q1/reports/q1_final_result_analysis.md`。
 - 稳健性唯一来源：`robustness/Q1/q1_robustness_report.md`。
+
+## 附加敏感性证据
+
+豆类地力价值敏感性实验见 `results/Q1/experiments/round3/metrics/bean_land_value_sensitivity.json`。在半价销售和 10% 最小面积占比配置下，$\beta$ 从 0 增至 800 元/亩时，豆类面积占比由 30.46% 增至 37.09%，独立复算的真实净收益由 6362.68 万元降至 6323.52 万元；五档硬约束违反数均为 0。该实验用于说明短期收益与地力投入的权衡，不改变 `result1_1.xlsx` 或 `result1_2.xlsx` 的正式来源。

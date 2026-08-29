@@ -34,7 +34,7 @@ This skill does not search for new papers, write paper sections, select methods,
 
 ### 四、必须真实、可核验
 
-- 每条文献的 DOI、卷期、页码都要联网核验。
+- 卷期、页码都要联网核验；DOI 可选——写了就必须能解析（点进去不是 404），否则不写。
 - 先给作者链接核验，确认后再写入。
 - 绝不编造 DOI、卷期、页码、作者名。
 

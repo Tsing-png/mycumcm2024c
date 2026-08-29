@@ -37,7 +37,7 @@
 Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
 % 支持中文的 ctex 宏包
-\RequirePackage{ctex}
+\RequirePackage[fontset=fandol]{ctex}
 % 页面布局
 \RequirePackage{geometry}
 % 数学宏包

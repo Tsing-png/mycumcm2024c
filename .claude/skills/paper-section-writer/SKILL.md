@@ -133,6 +133,16 @@ Transcribe these from the decision ledger with provenance. If absent, invoke a c
 
 判定标准：删掉该句后，内容是否仍完整、结论是否仍成立？若成立，则该句是 meta 注释，应删——领域依据删掉会损失信息，meta 注释删掉只会更简洁。
 
+## 声明、参考文献与附录的排版规约（强制）
+
+按以下结构排版，各成一节、各起一页：
+
+1. 正文结束后，紧跟「AI工具使用声明」作为独立小节（不另起页，紧挨正文末尾）。
+2. 参考文献：用 \newpage 另起一页，只放参考文献本身（thebibliography 或 bibtex 的 \bibliography），不再夹带声明等其他内容。
+3. 附录：用 \newpage 另起一页。
+
+原则：声明、参考文献、附录三者职责分离，文件名与内容一一对应，不混装在同一文件或同一页。
+
 # Verification
 
 - Three writer prerequisites pass.
